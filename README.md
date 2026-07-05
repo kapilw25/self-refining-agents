@@ -32,4 +32,3 @@ cd docs && python3 -m http.server 8000   # → http://localhost:8000
 - Citation counts are Semantic Scholar snapshots (drift daily; lower than Google Scholar).
 - Catalog metadata is best-effort — unlinked rows fall back to a web search; **verify before citing**.
 - The full text of source papers is **not** redistributed here; all systems link to their original sources.
-# self-refining-agents
