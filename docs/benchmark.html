@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SkillStream — A Benchmark for Self-Improving Skill Acquisition</title>
-  <meta name="description" content="SkillStream: a streaming benchmark that measures whether a robot's skill library compounds as it watches human-manipulation clips — the first benchmark for self-improvement in code-as-policy robots.">
+  <title>SkillStream — A Standardized Benchmark for Self-Improving Robots</title>
+  <meta name="description" content="SkillStream: a standardized simulation benchmark + leaderboard for self-improving code-as-policy robots — SWE-bench for self-improvement. Generalizes ASPIRE's Fig-5 protocol into a common arena.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
   <link rel="stylesheet" href="assets/theme-survey.css?v=2">
   <link rel="stylesheet" href="assets/site.css?v=2">
@@ -14,7 +14,7 @@
 <header>
   <div class="bar">
     <div class="brand">
-      <span class="eyebrow">Benchmark · self-improvement from video</span>
+      <span class="eyebrow">Benchmark · standardized self-improvement (sim)</span>
       <h1>SkillStream</h1>
     </div>
     <nav class="nav">
@@ -28,128 +28,159 @@
 
 <div class="wrap">
   <section class="hero" style="padding-bottom:22px">
-    <span class="eyebrow">Watch clips → write skill code → does the library compound?</span>
-    <h2>The first benchmark that scores <em>self-improvement</em>, not one-shot accuracy.</h2>
+    <span class="eyebrow">SWE-bench for self-improving robots — one arena, one leaderboard</span>
+    <h2>A <em>standardized</em> benchmark so every self-improving method is scored on identical footing.</h2>
   </section>
 
   <!-- protocol flowchart -->
-  <div class="sec" style="margin-top:14px"><span class="tag">Figure 1</span><h3>🎬 The streaming self-improvement protocol</h3></div>
+  <div class="sec" style="margin-top:14px"><span class="tag">Figure 1</span><h3>🔁 The protocol (all sim — no video)</h3></div>
   <div class="figure">
     <div class="flow">
-      <div class="io"><span class="g">🎬</span><span>clip stream</span></div>
+      <div class="io"><span class="g">📋</span><span>task stream<br>(sim)</span></div>
       <div class="arrow">→</div>
-      <div class="node accent"><span class="n">1</span><span class="ne">👁️</span><span class="nt">Watch → write skill code</span><span class="sub">VLM reads clip · LLM emits code-as-policy</span></div>
+      <div class="node accent"><span class="n">1</span><span class="ne">🧠</span><span class="nt">Agent: write / refine policy</span><span class="sub">any method — code, RL, or weights</span></div>
       <div class="arrow">→</div>
-      <div class="node accent"><span class="n">2</span><span class="ne">🔬</span><span class="nt">Sim execution (F)</span><span class="sub">run on LIBERO/Robosuite/ManiSkill · traces</span></div>
+      <div class="node accent"><span class="n">2</span><span class="ne">🔬</span><span class="nt">Sim execution (F)</span><span class="sub">LIBERO · Robosuite · BEHAVIOR-1K · fixed seeds</span></div>
       <div class="arrow">→</div>
-      <div class="node accent"><span class="n">3</span><span class="ne">📚</span><span class="nt">Skill library (M)</span><span class="sub">store validated skills · retrieve for next clip</span></div>
+      <div class="node accent"><span class="n">3</span><span class="ne">📚</span><span class="nt">Memory (M)</span><span class="sub">skill library / weights carried forward</span></div>
       <div class="arrow">→</div>
-      <div class="io"><span class="g">📈</span><span>compounding curve</span></div>
+      <div class="io"><span class="g">📈</span><span>frozen held-out<br>→ AULC</span></div>
     </div>
-    <div class="loop">↺ per clip: refine the library from feedback · measure held-out success vs. # clips seen</div>
+    <div class="loop">↺ fixed practice stream + frozen held-out + identical seeds &amp; budget → held-out success vs. # tasks practiced</div>
   </div>
-  <div class="cap">Figure 1 · A self-improving agent's held-out curve <b>rises</b> with clips watched; a zero-shot or VLA agent's stays <b>flat</b>. That separation is the benchmark's validity — and the paper's headline figure.</div>
+  <div class="cap">Figure 1 · The protocol generalizes ASPIRE's Fig 5(b) (success vs library size) into a shared arena any method runs on. Rising curve = compounding; flat = none.</div>
+
+  <!-- HONEST: shared with ASPIRE -->
+  <div class="sec"><span class="tag">Honesty · 1/2</span><h3>🟢 What SkillStream <u>shares</u> with ASPIRE / ENPIRE (NVIDIA GEAR)</h3></div>
+  <div class="scroll"><table class="gt">
+    <thead><tr><th>Shared</th><th>Where it comes from</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Object of study</td><td>self-improving <b>code-as-policy</b> robots + skill libraries</td></tr>
+      <tr><td class="k">⭐ Core metric</td><td>held-out success vs. experience — <b>ASPIRE Fig 5(b)</b>: success vs library size N∈{0,25,50,90}; our AULC <b>generalizes it</b></td></tr>
+      <tr><td class="k">Sim suites</td><td>LIBERO(-Pro) · Robosuite · BEHAVIOR-1K — <b>ASPIRE's exact suites</b></td></tr>
+      <tr><td class="k">Secondary metrics</td><td>efficiency / tokens + cross-embodiment — <b>ASPIRE Table 1</b></td></tr>
+      <tr><td class="k">Mechanisms (F·S·M)</td><td>execution feedback + skill memory + evolutionary search — <b>ASPIRE §2.1–2.3</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="cap">Honest: SkillStream is <b>not</b> a new way to measure self-improvement — ASPIRE already did. Metric + protocol + suites are <b>credited to ASPIRE</b>.</div>
+
+  <!-- HONEST: how we differ -->
+  <div class="sec"><span class="tag">Honesty · 2/2</span><h3>📊 How SkillStream <u>differs</u> — the actual contribution</h3></div>
+  <div class="scroll"><table class="gt">
+    <thead><tr><th>Dimension</th><th>🟢 ASPIRE / ENPIRE (GEAR)</th><th>📊 SkillStream</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Type</td><td>a self-improving <b>system</b> + its own eval</td><td class="new">a shared <b>benchmark + public leaderboard</b></td></tr>
+      <tr><td class="k">Comparability</td><td>own splits, vs CaP-Agent0</td><td class="new">fixed stream + frozen held-out + <b>identical seeds &amp; budget</b> → head-to-head</td></tr>
+      <tr><td class="k">Field compared</td><td>code-as-policy vs VLA</td><td class="new"><b>cross-paradigm</b>: RL-discovery + reward + code + VLA on one axis</td></tr>
+      <tr><td class="k">Eval axes</td><td>library-size scaling + sim2real</td><td class="new">+ <b>new axes ASPIRE didn't test</b>: compositional gen · cross-suite transfer · catastrophic forgetting · budget-Pareto</td></tr>
+      <tr><td class="k">Who runs it</td><td>ASPIRE authors</td><td class="new">anyone — <b>ASPIRE is itself a (likely top) submission</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="cap">Honest verdict: the contribution is <b>standardization + cross-paradigm comparison + new generalization axes</b> — <b>not</b> new science. ⚠️ Scooping risk: <b>GEAR owns ASPIRE + ENPIRE and is the natural author</b> of this benchmark.</div>
 
   <!-- task -->
-  <div class="sec"><span class="tag">Table 1</span><h3>🎯 The task</h3></div>
+  <div class="sec"><span class="tag">Table 1</span><h3>🎯 The task (per stream item)</h3></div>
   <div class="scroll"><table class="gt">
     <tbody>
-      <tr><td class="k">📥 Input</td><td>a short clip — human tabletop manipulation — + language label</td></tr>
-      <tr><td class="k">📤 Output</td><td>an <b>executable skill program</b> (code-as-policy) that reproduces the task</td></tr>
-      <tr><td class="k">🧾 Precedent</td><td>video-instructed policy code already exists (<a class="lnk" href="https://arxiv.org/abs/2501.04268" target="_blank" rel="noopener">RoboPro / Video2Code</a>)</td></tr>
-      <tr><td class="k">✨ What's new</td><td class="new">the <b>streaming self-improvement</b> protocol layered on top</td></tr>
+      <tr><td class="k">📥 Input</td><td>a sim manipulation task — language + sim env + fixed seeds</td></tr>
+      <tr><td class="k">📤 Output</td><td>a policy for it — <b>by any means</b> (code / RL-trained / VLA weights)</td></tr>
+      <tr><td class="k">🧠 Method carries</td><td>a skill library / weights forward across the stream (that's the "self" in self-improvement)</td></tr>
+      <tr><td class="k">📈 Scored on</td><td>frozen held-out suites at checkpoints → the compounding curve</td></tr>
     </tbody>
   </table></div>
 
-  <!-- data tiers -->
-  <div class="sec"><span class="tag">Table 2</span><h3>🗂️ Data — two tiers (share URLs + code, not frames)</h3></div>
+  <!-- suites -->
+  <div class="sec"><span class="tag">Table 2</span><h3>🕹️ Suites (built on ASPIRE's, standardized + extended)</h3></div>
   <div class="scroll"><table class="gt">
-    <thead><tr><th>Tier</th><th>Size</th><th>Scored by</th><th>Purpose</th></tr></thead>
+    <thead><tr><th>Suite</th><th>Role</th><th>Metric</th></tr></thead>
     <tbody>
-      <tr><td class="k">🔬 Sim-grounded</td><td class="mono">~400 clips</td><td>run generated code in sim → <b>Success@k</b></td><td>rigorous, real execution</td></tr>
-      <tr><td class="k">🌐 Scale</td><td class="mono">~15k clips</td><td>skill vs human reference (AST match + LLM-judge)</td><td>diversity, cheap</td></tr>
+      <tr><td class="k">LIBERO-90 → LIBERO-Pro(-Long)</td><td>practice → held-out <span class="none">(ASPIRE's protocol, standardized)</span></td><td>Success@k</td></tr>
+      <tr><td class="k">Robosuite</td><td>contact-rich held-out</td><td>Success@k</td></tr>
+      <tr><td class="k">BEHAVIOR-1K</td><td>long-horizon held-out</td><td>task success</td></tr>
+      <tr><td class="k">Meta-World · ManiSkill2</td><td>breadth + <b>cross-suite transfer</b> (new)</td><td>Success@k</td></tr>
     </tbody>
   </table></div>
 
-  <!-- manifest schema -->
-  <div class="sec"><span class="tag">Table 3</span><h3>🧾 Manifest schema (the released artifact)</h3></div>
+  <!-- manifest -->
+  <div class="sec"><span class="tag">Table 3</span><h3>🧾 Task-stream manifest schema</h3></div>
   <div class="scroll"><table class="gt">
     <thead><tr><th>Field</th><th>Type</th><th>Example</th></tr></thead>
     <tbody>
-      <tr><td class="k">youtube_id</td><td class="mono">str</td><td class="mono">kJQ_1a…</td></tr>
-      <tr><td class="k">start_ts · end_ts</td><td class="mono">float</td><td class="mono">12.4 · 18.9</td></tr>
-      <tr><td class="k">task_verb</td><td class="mono">enum(30)</td><td class="mono">pour</td></tr>
-      <tr><td class="k">objects</td><td class="mono">list[str]</td><td class="mono">[kettle, cup]</td></tr>
-      <tr><td class="k">tier</td><td class="mono">enum</td><td class="mono">sim · scale</td></tr>
+      <tr><td class="k">task_id</td><td class="mono">str</td><td class="mono">ss_lib_000123</td></tr>
+      <tr><td class="k">suite · sim_task</td><td class="mono">enum · str</td><td class="mono">LIBERO · libero_pour_v0</td></tr>
+      <tr><td class="k">embodiment</td><td class="mono">str</td><td class="mono">franka · ur5 · bimanual</td></tr>
+      <tr><td class="k">lang</td><td class="mono">str</td><td class="mono">"pour water into the cup"</td></tr>
       <tr><td class="k">split</td><td class="mono">enum</td><td class="mono">practice · heldout</td></tr>
-      <tr><td class="k">sim_task</td><td class="mono">str?</td><td class="mono">libero_pour_v0 <span class="none">(sim only)</span></td></tr>
-      <tr><td class="k">ref_skill</td><td class="mono">path?</td><td class="mono">refs/pour_0001.py <span class="none">(sim only)</span></td></tr>
+      <tr><td class="k">seed_range</td><td class="mono">[int,int]</td><td class="mono">[1, 50]</td></tr>
+      <tr><td class="k">comp_id</td><td class="mono">str?</td><td class="mono">verb×object combo (compositional split)</td></tr>
     </tbody>
   </table></div>
 
   <!-- metrics -->
-  <div class="sec"><span class="tag">Table 4</span><h3>📐 Metrics — the signature one is #3</h3></div>
+  <div class="sec"><span class="tag">Table 4</span><h3>📐 Metrics (⭐ = ASPIRE-derived · 🆕 = new axis)</h3></div>
   <div class="scroll"><table class="gt">
-    <thead><tr><th class="num">#</th><th>Metric</th><th>Tier</th><th>Captures</th></tr></thead>
+    <thead><tr><th class="num">#</th><th>Metric</th><th>Origin</th><th>Captures</th></tr></thead>
     <tbody>
-      <tr><td class="num">1</td><td class="k">Success@k</td><td>sim</td><td>execution success (k rollouts)</td></tr>
-      <tr><td class="num">2</td><td class="k">Skill-code quality</td><td>scale</td><td>AST/structured match + LLM-judge</td></tr>
-      <tr><td class="num">3</td><td class="k hl">⭐ Compounding AULC</td><td>both</td><td>held-out success <b>vs. # clips practiced</b> (0·25·50·100…)</td></tr>
-      <tr><td class="num">4</td><td class="k">Efficiency</td><td>both</td><td>tokens / compute to first success</td></tr>
-      <tr><td class="num">5</td><td class="k">Cross-embodiment transfer</td><td>sim</td><td>success when eval embodiment ≠ practice</td></tr>
-      <tr><td class="num">6</td><td class="k">Library reuse rate</td><td>both</td><td>% of solved tasks that reused a stored skill</td></tr>
+      <tr><td class="num">1</td><td class="k hl">⭐ Compounding AULC</td><td>ASPIRE Fig 5</td><td>held-out success vs # tasks practiced</td></tr>
+      <tr><td class="num">2</td><td class="k">Success@k</td><td>standard</td><td>sim execution success (k seeds)</td></tr>
+      <tr><td class="num">3</td><td class="k">Efficiency</td><td>ASPIRE Tbl 1</td><td>tokens / compute to first success</td></tr>
+      <tr><td class="num">4</td><td class="k">Cross-embodiment</td><td>ASPIRE Tbl 1</td><td>success when embodiment ≠ practice</td></tr>
+      <tr><td class="num">5</td><td class="k">🆕 Compositional gen</td><td class="new">new</td><td>novel verb × object combinations</td></tr>
+      <tr><td class="num">6</td><td class="k">🆕 Cross-suite transfer</td><td class="new">new</td><td>practice LIBERO → test Robosuite</td></tr>
+      <tr><td class="num">7</td><td class="k">🆕 Catastrophic forgetting</td><td class="new">new</td><td>Δ on early tasks after later ones</td></tr>
+      <tr><td class="num">8</td><td class="k">Library reuse rate</td><td>standard</td><td>% solved via a stored skill</td></tr>
     </tbody>
   </table></div>
 
   <!-- baselines -->
-  <div class="sec"><span class="tag">Table 5</span><h3>🧪 Baselines shipped (you don't train everyone)</h3></div>
+  <div class="sec"><span class="tag">Table 5</span><h3>🧪 Baselines (cross-paradigm — ASPIRE is a submission)</h3></div>
   <div class="scroll"><table class="gt">
     <thead><tr><th>Baseline</th><th>Maps to</th><th>Expected curve</th></tr></thead>
     <tbody>
-      <tr><td class="k">Zero-shot CaP <span class="none">(VLM caption → LLM code, no memory)</span></td><td class="mono">§3.1.1</td><td><span class="mtag F" style="color:var(--no)">▬</span> flat</td></tr>
-      <tr><td class="k">Self-repair <span class="none">(+ execution-feedback loop)</span></td><td class="mono">§3.1.2</td><td><span class="mtag" style="color:var(--warn)">◹</span> small rise (sim tier)</td></tr>
-      <tr><td class="k">Skill-library agent <span class="none">(Voyager/ASPIRE-style, compounds)</span></td><td class="mono">§3.1.3–5</td><td><span class="win">◥ rising</span> ← validates the benchmark</td></tr>
-      <tr><td class="k">OpenVLA fine-tuned <span class="none">(optional foil)</span></td><td class="mono">§3.2</td><td>high one-shot, <span class="none">no compounding</span></td></tr>
+      <tr><td class="k">Skill-library agent <span class="none">(ASPIRE-style)</span></td><td class="mono">§3.1.3–5</td><td><span class="win">◥ rising</span> ← reference top</td></tr>
+      <tr><td class="k">Self-repair <span class="none">(REFLECT-style)</span></td><td class="mono">§3.1.2</td><td><span style="color:var(--warn)">◹ small rise</span></td></tr>
+      <tr><td class="k">Zero-shot CaP</td><td class="mono">§3.1.1</td><td><span style="color:var(--no)">▬ flat</span></td></tr>
+      <tr><td class="k">Reward-synth (Eureka) · RL-discovery (DIAYN)</td><td class="mono">§3.3 · §3.4.1</td><td>cross-paradigm track</td></tr>
+      <tr><td class="k">OpenVLA fine-tuned <span class="none">(foil)</span></td><td class="mono">§3.2</td><td><span style="color:var(--no)">▬ flat</span></td></tr>
     </tbody>
   </table></div>
 
   <!-- leaderboard -->
   <div class="sec"><span class="tag">Leaderboard</span><h3>🏆 SkillStream leaderboard</h3></div>
   <div class="scroll"><table class="gt" id="leaderboard" style="min-width:900px"></table></div>
-  <div class="cap">Scaffold — baseline numbers pending. Submit a run via PR to <span class="mono">skillstream/leaderboard/leaderboard.json</span>. ⭐ = ranks by AULC (self-improvement), not one-shot Success@k.</div>
+  <div class="cap">Scaffold — values pending. Submit via PR to <span class="mono">skillstream/leaderboard/leaderboard.json</span>. Ranked by ⭐ <b>AULC</b> (self-improvement), not one-shot Success@k.</div>
 
-  <!-- repo layout -->
-  <div class="sec"><span class="tag">Repo</span><h3>📦 Scaffold layout</h3></div>
+  <!-- repo -->
+  <div class="sec"><span class="tag">Repo</span><h3>📦 Scaffold layout (all sim — no YouTube)</h3></div>
   <div class="scroll"><table class="gt">
     <thead><tr><th>Path</th><th>Contents</th></tr></thead>
     <tbody>
-      <tr><td class="k mono">data/schema.md · sample_manifest.jsonl</td><td>manifest fields + examples (URLs + timestamps, no frames)</td></tr>
-      <tr><td class="k mono">process_clips.py</td><td>yt-dlp download + ffmpeg split + frame extraction (CPU)</td></tr>
-      <tr><td class="k mono">eval/metrics.py</td><td>success_at_k · <b>aulc</b> · reuse_rate · efficiency</td></tr>
-      <tr><td class="k mono">eval/run.py</td><td>streaming harness: practice → eval → curve</td></tr>
-      <tr><td class="k mono">baselines/</td><td>zero_shot_cap · self_repair · skill_library</td></tr>
-      <tr><td class="k mono">leaderboard/leaderboard.json</td><td>submissions (machine-readable, drives this table)</td></tr>
-      <tr><td class="k mono">sim_mappings/</td><td>clip → LIBERO/Robosuite/ManiSkill task map</td></tr>
+      <tr><td class="k mono">data/schema.md · sample_manifest.jsonl</td><td>task-stream manifest (sim tasks + splits)</td></tr>
+      <tr><td class="k mono">eval/metrics.py</td><td><b>aulc</b> · success_at_k · cross_suite · forgetting · reuse · efficiency</td></tr>
+      <tr><td class="k mono">eval/run.py</td><td>streaming harness: practice → checkpoints → AULC</td></tr>
+      <tr><td class="k mono">baselines/</td><td>zero_shot_cap · self_repair · skill_library (+ cross-paradigm track)</td></tr>
+      <tr><td class="k mono">leaderboard/leaderboard.json</td><td>submissions (drives this page)</td></tr>
+      <tr><td class="k mono">sim_mappings/</td><td>task → LIBERO/Robosuite/ManiSkill env + reference</td></tr>
     </tbody>
   </table></div>
 
-  <!-- deliverables / timeline / risks -->
+  <!-- plan + risks -->
   <div class="sec"><span class="tag">Plan</span><h3>🚀 Deliverables · timeline · risks</h3></div>
   <div class="scroll"><table class="gt">
     <thead><tr><th>Deliverable</th><th>Effort</th><th>Risk → mitigation</th></tr></thead>
     <tbody>
-      <tr><td class="k">Scrape + split pipeline</td><td class="mono">~1–2 wk 🟢</td><td>link rot → ship frame features + coverage report</td></tr>
-      <tr><td class="k">Sim mapping + reference annotations</td><td class="mono">~3–4 wk 🟡</td><td>annotation cost → bound to ~400-clip subset, LLM-assisted + verify</td></tr>
-      <tr><td class="k">Harness + metrics + leaderboard</td><td class="mono">~2 wk 🟢</td><td>—</td></tr>
-      <tr><td class="k">2–3 baselines (reuse open code)</td><td class="mono">~3–4 wk 🟡</td><td>CaP · Voyager · CaP-X harnesses are open</td></tr>
-      <tr><td class="k">arXiv paper (benchmark ⟹ not gated)</td><td class="mono">~2–3 wk 🟢</td><td>adoption → ship headline + baselines + leaderboard day 1</td></tr>
-      <tr><td class="k">Total</td><td class="mono new">~2.5–3 months, solo</td><td>—</td></tr>
+      <tr><td class="k">Curate practice stream + frozen held-out splits</td><td class="mono">~2 wk 🟢</td><td>reuse ASPIRE's LIBERO-90→Pro-Long, standardize seeds</td></tr>
+      <tr><td class="k">Harness + AULC + new axes</td><td class="mono">~2–3 wk 🟡</td><td>—</td></tr>
+      <tr><td class="k">3 code baselines + cross-paradigm track</td><td class="mono">~3–4 wk 🟡</td><td>CaP · Voyager · CaP-X harnesses are open</td></tr>
+      <tr><td class="k">arXiv paper (benchmark ⟹ not gated)</td><td class="mono">~2–3 wk 🟢</td><td>—</td></tr>
+      <tr><td class="k">⚠️ Scooping</td><td class="mono">—</td><td><b>GEAR owns ASPIRE+ENPIRE</b> → ship fast, credit them, add axes they didn't</td></tr>
+      <tr><td class="k">⚠️ Adoption</td><td class="mono">—</td><td>niche field (dozens of papers) → lower ceiling than SWE-bench; seed with baselines + leaderboard</td></tr>
     </tbody>
   </table></div>
 
-  <footer>🎯 Headline target: <b>"On SkillStream, skill-library agents gain +X% over 100 watched clips while zero-shot and VLA baselines stay flat — the first benchmark to measure self-improvement in code-as-policy robots."</b> · Co-cites with the <a href="index.html">survey</a> (§3.1 framing).</footer>
+  <footer>🎯 Honest positioning: SkillStream <b>generalizes ASPIRE's Fig-5 self-improvement protocol into a shared arena</b> (credit: <a href="https://arxiv.org/abs/2607.00272">ASPIRE, 2607.00272</a> · <a href="https://arxiv.org/abs/2606.19980">ENPIRE, 2606.19980</a>, NVIDIA GEAR). Contribution = standardization + cross-paradigm + new axes; <b>not</b> new science. Co-cites with the <a href="index.html">survey</a>.</footer>
 </div>
 
-<script src="assets/skillstream.js?v=1"></script>
+<script src="assets/skillstream.js?v=2"></script>
 </body>
 </html>

@@ -4,9 +4,10 @@
   // succ = Success@k (sim) · aulc = compounding area-under-curve ⭐ · eff = tokens-to-first-success
   // xemb = cross-embodiment success · reuse = library reuse rate · "—" = to be measured
   var rows = [
-    { m: "Skill-library agent", sec: "§3.1.3–5", camp: "code + skills ★", succ: "—", aulc: "—", eff: "—", xemb: "—", reuse: "—", url: "https://arxiv.org/abs/2607.00272", exp: "◥ rising" },
+    { m: "ASPIRE-style skill-library agent", sec: "§3.1.3–5", camp: "code + skills ★", succ: "—", aulc: "—", eff: "—", xemb: "—", reuse: "—", url: "https://arxiv.org/abs/2607.00272", exp: "◥ rising" },
     { m: "Self-repair (REFLECT-style)", sec: "§3.1.2", camp: "code + feedback", succ: "—", aulc: "—", eff: "—", xemb: "—", reuse: "—", url: "https://arxiv.org/abs/2306.15724", exp: "◹ small rise" },
     { m: "Zero-shot CaP", sec: "§3.1.1", camp: "code, no memory", succ: "—", aulc: "—", eff: "—", xemb: "—", reuse: "—", url: "https://arxiv.org/abs/2209.07753", exp: "▬ flat" },
+    { m: "Eureka (reward-synth) · DIAYN (RL-discovery)", sec: "§3.3·§3.4.1", camp: "cross-paradigm", succ: "—", aulc: "—", eff: "—", xemb: "—", reuse: "—", url: "https://arxiv.org/abs/2310.12931", exp: "cross-paradigm" },
     { m: "OpenVLA (fine-tuned)", sec: "§3.2", camp: "weights (foil)", succ: "—", aulc: "—", eff: "—", xemb: "—", reuse: "—", url: "https://arxiv.org/abs/2406.09246", exp: "▬ flat" }
   ];
 

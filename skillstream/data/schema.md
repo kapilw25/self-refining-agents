@@ -1,19 +1,20 @@
-# Manifest schema
+# Task-stream manifest schema
 
-One JSON object per line (`.jsonl`). We ship **URLs + timestamps + annotations only** — never frames.
+One JSON object per line (`.jsonl`). A **stream of sim tasks** — no video. The agent
+practices on `split=practice` in order, then is scored on the frozen `split=heldout`.
 
 | Field | Type | Req | Notes |
 |---|---|---|---|
-| `id` | str | ✓ | stable clip id, e.g. `ss_000123` |
-| `youtube_id` | str | ✓ | 11-char YouTube id |
-| `start_ts` | float | ✓ | clip start (s) |
-| `end_ts` | float | ✓ | clip end (s) |
-| `task_verb` | enum | ✓ | one of 30 (pour, open, stack, insert, wipe, fold, cut, …) |
-| `objects` | list[str] | ✓ | e.g. `["kettle","cup"]` |
-| `tier` | enum | ✓ | `sim` \| `scale` |
+| `task_id` | str | ✓ | stable id, e.g. `ss_lib_000123` |
+| `suite` | enum | ✓ | `LIBERO` \| `Robosuite` \| `BEHAVIOR-1K` \| `MetaWorld` \| `ManiSkill2` |
+| `sim_task` | str | ✓ | env id, e.g. `libero_pour_v0` |
+| `embodiment` | str | ✓ | `franka` \| `ur5` \| `bimanual` |
+| `lang` | str | ✓ | instruction, e.g. `"pour water into the cup"` |
 | `split` | enum | ✓ | `practice` \| `heldout` |
-| `sim_task` | str | sim only | sim env id, e.g. `libero_pour_v0` |
-| `sim_embodiment` | str | sim only | `franka` \| `ur5` \| `bimanual` |
-| `ref_skill` | path | sim only | reference program, e.g. `refs/pour_0001.py` |
+| `seed_range` | [int,int] | ✓ | eval seeds, e.g. `[1, 50]` |
+| `comp_id` | str | — | verb×object combo id — for the **compositional** held-out split |
+| `ref_skill` | path | — | reference program (optional), e.g. `refs/pour.py` |
 
-Splits are **disjoint by task instance**; `heldout` is never seen during the practice stream.
+Splits are **disjoint by task instance**; `heldout` is frozen and never seen during the
+practice stream. Held-out is partitioned into: in-distribution, **compositional** (novel
+verb×object), and **cross-suite** (practiced on one suite, tested on another).

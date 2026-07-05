@@ -1,5 +1,4 @@
-yt-dlp>=2024.0
 numpy>=1.24
-# sim executors (choose per tier): install the suites you evaluate on
-#   libero, robosuite, mani-skill2
-# ffmpeg must be on PATH (brew install ffmpeg / apt install ffmpeg)
+# sim executors — install the suites you evaluate on:
+#   libero, robosuite, mani-skill2, behavior-1k, metaworld
+# (all sim; no video / no yt-dlp)

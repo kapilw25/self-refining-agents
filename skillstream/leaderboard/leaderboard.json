@@ -7,9 +7,10 @@
   },
   "_note": "Ranked by aulc (self-improvement), not one-shot success_at_k. Submit via PR.",
   "entries": [
-    {"method": "Skill-library agent", "section": "3.1.3-5", "camp": "code + skills", "success_at_k": null, "aulc": null, "tokens_to_first_success": null, "cross_embodiment": null, "reuse_rate": null, "url": "https://arxiv.org/abs/2607.00272", "expected_curve": "rising"},
+    {"method": "ASPIRE-style skill-library agent", "section": "3.1.3-5", "camp": "code + skills", "success_at_k": null, "aulc": null, "tokens_to_first_success": null, "cross_embodiment": null, "reuse_rate": null, "url": "https://arxiv.org/abs/2607.00272", "expected_curve": "rising"},
     {"method": "Self-repair (REFLECT-style)", "section": "3.1.2", "camp": "code + feedback", "success_at_k": null, "aulc": null, "tokens_to_first_success": null, "cross_embodiment": null, "reuse_rate": null, "url": "https://arxiv.org/abs/2306.15724", "expected_curve": "small-rise"},
     {"method": "Zero-shot CaP", "section": "3.1.1", "camp": "code, no memory", "success_at_k": null, "aulc": null, "tokens_to_first_success": null, "cross_embodiment": null, "reuse_rate": null, "url": "https://arxiv.org/abs/2209.07753", "expected_curve": "flat"},
+    {"method": "Eureka / DIAYN (cross-paradigm)", "section": "3.3/3.4.1", "camp": "reward-synth / RL-discovery", "success_at_k": null, "aulc": null, "tokens_to_first_success": null, "cross_embodiment": null, "reuse_rate": null, "url": "https://arxiv.org/abs/2310.12931", "expected_curve": "cross-paradigm"},
     {"method": "OpenVLA (fine-tuned)", "section": "3.2", "camp": "weights (foil)", "success_at_k": null, "aulc": null, "tokens_to_first_success": null, "cross_embodiment": null, "reuse_rate": null, "url": "https://arxiv.org/abs/2406.09246", "expected_curve": "flat"}
   ]
 }

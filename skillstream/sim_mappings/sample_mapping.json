@@ -1,7 +1,8 @@
 {
-  "_note": "Maps a sim-tier clip's task to an executable sim env + reference skill.",
+  "_note": "Maps a stream task to an executable sim env + success predicate (+ optional reference skill).",
   "mappings": [
-    {"clip_id": "ss_000001", "sim_task": "libero_pour_v0", "suite": "LIBERO", "embodiment": "franka", "ref_skill": "refs/pour_0001.py", "success_predicate": "liquid_in(cup) and not spilled"},
-    {"clip_id": "ss_000002", "sim_task": "libero_open_drawer_v0", "suite": "LIBERO", "embodiment": "ur5", "ref_skill": "refs/open_0002.py", "success_predicate": "drawer_open > 0.15m"}
+    {"task_id": "ss_lib_000001", "sim_task": "libero_pour_v0", "suite": "LIBERO", "embodiment": "franka", "ref_skill": "refs/pour_0001.py", "success_predicate": "liquid_in(cup) and not spilled"},
+    {"task_id": "ss_lib_000042", "sim_task": "libero_pour_bowl_v0", "suite": "LIBERO", "embodiment": "ur5", "ref_skill": "refs/pour_bowl.py", "success_predicate": "beans_in(bowl) and not spilled"},
+    {"task_id": "ss_rs_000108", "sim_task": "robosuite_stack_v0", "suite": "Robosuite", "embodiment": "franka", "success_predicate": "on(red_block, green_block) and stable"}
   ]
 }

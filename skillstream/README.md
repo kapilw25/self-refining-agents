@@ -1,48 +1,42 @@
 # SkillStream
 
-A streaming benchmark for **self-improving skill acquisition from video**. Watch a stream of human-manipulation clips → write executable robot skill code → measure whether the skill library **compounds** as the stream grows.
+A **standardized simulation benchmark + leaderboard** for self-improving code-as-policy robots — *SWE-bench for self-improvement*. A method practices on a fixed stream of sim tasks, carries a skill library forward, and is scored on frozen held-out suites: **held-out success vs. # tasks practiced** (the compounding curve).
 
-> First benchmark that scores **self-improvement over a stream** (feedback + memory + search), not one-shot accuracy. Companion to the survey → `../docs/` (§3.1).
+> Companion to the survey → `../docs/` (§3.1). All sim — no video.
 
-## Task
+## Honest relationship to ASPIRE / ENPIRE (NVIDIA GEAR)
 
-| | |
-|---|---|
-| Input | short clip (human tabletop manipulation) + language label |
-| Output | executable skill program (code-as-policy) |
-| Metric ⭐ | **AULC** — held-out success vs. # clips practiced |
+SkillStream is **not** a new way to measure self-improvement — ASPIRE already did. It **standardizes** ASPIRE's protocol into a shared arena.
 
-## Data (share URLs + code, not frames)
-
-| Tier | Size | Scored by |
+| | 🟢 ASPIRE / ENPIRE (GEAR) | 📊 SkillStream |
 |---|---|---|
-| sim-grounded | ~400 | run code in sim → Success@k |
-| scale | ~15k | skill vs reference (AST + LLM-judge) |
+| Type | self-improving **system** + own eval | shared **benchmark + leaderboard** |
+| ⭐ Metric | Fig 5(b): success vs library size N | generalizes it → standard **AULC** harness |
+| Suites | LIBERO-Pro · Robosuite · BEHAVIOR-1K | same, standardized splits + seeds |
+| Comparability | own splits, vs CaP-Agent0 | fixed stream + frozen held-out + identical budget → head-to-head |
+| Eval axes | library-size scaling + sim2real | **+ new**: compositional · cross-suite · forgetting |
+| Who runs it | ASPIRE authors | anyone — ASPIRE is itself a (top) submission |
+
+**Contribution = standardization + cross-paradigm comparison + new axes; not new science.** Credit: [ASPIRE 2607.00272](https://arxiv.org/abs/2607.00272) · [ENPIRE 2606.19980](https://arxiv.org/abs/2606.19980). ⚠️ Scooping risk: GEAR is the natural author.
 
 ## Layout
 
 | Path | Contents |
 |---|---|
-| `data/schema.md`, `data/sample_manifest.jsonl` | manifest (URLs + timestamps) |
-| `process_clips.py` | yt-dlp download + ffmpeg split (CPU) |
-| `eval/metrics.py` | `success_at_k` · `aulc` · `reuse_rate` · `tokens_to_first_success` |
-| `eval/run.py` | streaming harness: practice → eval → curve |
-| `baselines/` | `zero_shot_cap` · `self_repair` · `skill_library` |
+| `data/schema.md`, `data/sample_manifest.jsonl` | task-stream manifest (sim tasks + splits) |
+| `eval/metrics.py` | `aulc` · `success_at_k` · `catastrophic_forgetting` · `reuse_rate` · `tokens_to_first_success` |
+| `eval/run.py` | streaming harness: practice → checkpoints → AULC |
+| `baselines/` | `zero_shot_cap` · `self_repair` · `skill_library` (+ cross-paradigm track) |
 | `leaderboard/leaderboard.json` | submissions (drives the web leaderboard) |
-| `sim_mappings/` | clip → LIBERO/Robosuite/ManiSkill task map |
+| `sim_mappings/` | task → LIBERO/Robosuite/ManiSkill env + success predicate |
 
 ## Quickstart
 
 ```bash
-pip install -r requirements.txt          # yt-dlp, ffmpeg-python, numpy
-python process_clips.py --manifest data/sample_manifest.jsonl --out clips/
-python eval/run.py --agent baselines/zero_shot_cap --manifest data/sample_manifest.jsonl
+pip install -r requirements.txt          # numpy + your sim suites
+python eval/run.py --agent baselines/skill_library --manifest data/sample_manifest.jsonl
 ```
 
 ## Submit to the leaderboard
 
-Open a PR appending your run to `leaderboard/leaderboard.json` (schema in that file). Ranked by **AULC**, not one-shot Success@k.
-
-## License / legal
-
-We distribute **manifests (YouTube IDs + timestamps + annotations) and code only** — never video frames. Users re-download clips locally with `process_clips.py`. This mirrors Kinetics / HowTo100M / ActivityNet.
+Open a PR appending your run to `leaderboard/leaderboard.json` (schema in that file). Ranked by ⭐ **AULC** (self-improvement), not one-shot Success@k.

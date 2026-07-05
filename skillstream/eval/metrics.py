@@ -7,14 +7,15 @@ def success_at_k(successes: Sequence[bool]) -> float:
     return sum(bool(s) for s in successes) / max(len(successes), 1)
 
 
-def aulc(clips_seen: Sequence[int], heldout_success: Sequence[float]) -> float:
+def aulc(tasks_seen: Sequence[int], heldout_success: Sequence[float]) -> float:
     """⭐ Area Under the Learning Curve — normalized trapezoidal area of
-    held-out success vs. #clips practiced. Flat curve → low; rising → high.
+    held-out success vs. # tasks practiced. Flat curve → low; rising → high.
+    Generalizes ASPIRE Fig 5(b) (success vs library size) into a shared metric.
 
-    clips_seen: checkpoints, e.g. [0, 25, 50, 100]
+    tasks_seen: checkpoints, e.g. [0, 25, 50, 100]
     heldout_success: held-out success rate at each checkpoint (0..1)
     """
-    xs, ys = list(clips_seen), list(heldout_success)
+    xs, ys = list(tasks_seen), list(heldout_success)
     if len(xs) < 2:
         return float(ys[0]) if ys else 0.0
     area = 0.0
@@ -37,3 +38,15 @@ def tokens_to_first_success(token_log: List[int], successes: List[bool]) -> int:
         if ok:
             return total
     return -1
+
+
+def catastrophic_forgetting(success_before: Sequence[float],
+                            success_after: Sequence[float]) -> float:
+    """🆕 Mean drop on early held-out tasks after practicing later ones (0 = none).
+    Axis ASPIRE did not test. success_before/after aligned per early task."""
+    drops = [max(b - a, 0.0) for b, a in zip(success_before, success_after)]
+    return sum(drops) / max(len(drops), 1)
+
+
+# Compositional generalization and cross-suite transfer reuse `success_at_k`,
+# just evaluated on the compositional / cross-suite held-out partitions.
