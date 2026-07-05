@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Self-Refining Code Agents — A Survey</title>
-  <meta name="description" content="A survey of LLM agents that write, execute, and self-refine code — across software engineering, robotics, RL, and scientific discovery — led by a canonical taxonomy of ~50 systems, anchored on ASPIRE.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌳</text></svg>">
+  <title>How Robots Learn — A Survey of Robot-Learning Techniques</title>
+  <meta name="description" content="A survey of robot-learning techniques for Physical AI — vision-language-action policies, code-as-policy, reward synthesis, self-evolving skill libraries, and cross-embodiment transfer — with a canonical taxonomy of ~47 systems, anchored on ASPIRE (NVIDIA GEAR, 2026).">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦾</text></svg>">
   <link rel="stylesheet" href="assets/theme-survey.css">
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/theme.js"></script>
@@ -14,8 +14,8 @@
 <header>
   <div class="bar">
     <div class="brand">
-      <span class="eyebrow">Self-Refining Code Agents · A Survey</span>
-      <h1>Agents that write, execute &amp; self-refine code</h1>
+      <span class="eyebrow">Robot Learning · A Survey</span>
+      <h1>How robots learn</h1>
     </div>
     <nav class="nav">
       <a href="index.html" aria-current="page">Survey</a>
@@ -27,39 +27,20 @@
 
 <div class="wrap">
   <section class="hero" style="padding-bottom:22px">
-    <span class="eyebrow">Software · Robotics · RL · Discovery — anchor: ASPIRE (2026)</span>
-    <h2>One loop, <em>~50 systems</em>, six domains — the map.</h2>
+    <span class="eyebrow">VLA policies · code-as-policy · self-evolving skills — anchor: ASPIRE (2026)</span>
+    <h2>A survey of robot-learning techniques — from action-predicting weights to robots that write their <em>own skills</em>.</h2>
   </section>
 
   <!-- HERO FIGURE · the taxonomy tree -->
-  <div class="sec" style="margin-top:14px"><span class="tag">The map</span><h3>🌳 Taxonomy of self-refining code agents</h3></div>
+  <div class="sec" style="margin-top:14px"><span class="tag">§3 · the map</span><h3>🌳 A taxonomy of robot-learning techniques</h3></div>
   <div class="figure">
     <div class="tree">
-      <div class="root">🧬 LLM agents that write, execute &amp; self-refine code</div>
+      <div class="root">🦾 Robot-learning techniques for Physical AI</div>
       <div class="branches">
+
         <div class="branch">
-          <div class="bnode d1">💻 Software-engineering agents<span class="sn">§3.1</span><small>fixes code · test &amp; compiler feedback</small></div>
+          <div class="bnode d1">🤖 Code-as-policy for robots<span class="sn">§3.1</span><small>write &amp; debug executable control programs — ASPIRE's home</small></div>
           <div class="leaves d1">
-            <a class="leaf" href="https://arxiv.org/abs/2405.15793" target="_blank" rel="noopener"><b>SWE-agent</b> — agent–computer interfaces <span class="ct">[Yang et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2407.16741" target="_blank" rel="noopener"><b>OpenHands</b> — open agent platform <span class="ct">[Wang et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2404.05427" target="_blank" rel="noopener"><b>AutoCodeRover</b> — structure-aware repair <span class="ct">[Zhang et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2407.01489" target="_blank" rel="noopener"><b>Agentless</b> — localize–repair–validate <span class="ct">[Xia et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2406.01304" target="_blank" rel="noopener"><b>CodeR</b> — multi-agent task graphs <span class="ct">[Chen et al., 2024]</span></a>
-            <a class="leaf" href="https://github.com/aorwall/moatless-tools" target="_blank" rel="noopener"><b>Moatless</b> — search-based context tools <span class="ct">[Örwall, 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2406.11638" target="_blank" rel="noopener"><b>MASAI</b> — modular SWE agent <span class="ct">[Arora et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2405.11403" target="_blank" rel="noopener"><b>MapCoder</b> — multi-agent competitive code-gen <span class="ct">[Islam et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2304.05128" target="_blank" rel="noopener"><b>Self-Debug</b> — teach LLMs to self-debug <span class="ct">[Chen et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2303.11366" target="_blank" rel="noopener"><b>Reflexion</b> — verbal reinforcement learning <span class="ct">[Shinn et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2303.17651" target="_blank" rel="noopener"><b>Self-Refine</b> — iterative self-feedback <span class="ct">[Madaan et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2305.11738" target="_blank" rel="noopener"><b>CRITIC</b> — tool-interactive self-correction <span class="ct">[Gou et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2303.17491" target="_blank" rel="noopener"><b>RCI</b> — recursively criticize &amp; improve <span class="ct">[Kim et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2402.16906" target="_blank" rel="noopener"><b>LDB</b> — runtime-verified debugging <span class="ct">[Zhong et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2405.18649" target="_blank" rel="noopener"><b>LeDex</b> — train to self-debug &amp; explain <span class="ct">[Jiang et al., 2024]</span></a>
-          </div>
-        </div>
-        <div class="branch">
-          <div class="bnode d2">🤖 Robot control / embodied<span class="sn">§3.2</span><small>code-as-policy · executable behaviors</small></div>
-          <div class="leaves d2">
             <a class="leaf" href="https://arxiv.org/abs/2209.07753" target="_blank" rel="noopener"><b>Code-as-Policies</b> — LM programs for control <span class="ct">[Liang et al., 2023]</span></a>
             <a class="leaf" href="https://arxiv.org/abs/2209.11302" target="_blank" rel="noopener"><b>ProgPrompt</b> — situated task-plan programs <span class="ct">[Singh et al., 2023]</span></a>
             <a class="leaf" href="https://arxiv.org/abs/2307.05973" target="_blank" rel="noopener"><b>VoxPoser</b> — composable 3D value maps <span class="ct">[Huang et al., 2023]</span></a>
@@ -69,13 +50,30 @@
             <a class="leaf" href="https://arxiv.org/abs/2406.03757" target="_blank" rel="noopener"><b>RoboCoder</b> — basic skills → general tasks <span class="ct">[Li et al., 2024]</span></a>
             <a class="leaf" href="https://arxiv.org/abs/2603.22435" target="_blank" rel="noopener"><b>CaP-X</b> — benchmarking robot coding agents <span class="ct">[Fu et al., 2026]</span></a>
             <a class="leaf" href="https://arxiv.org/abs/2603.11558" target="_blank" rel="noopener"><b>RoboClaw</b> — scalable long-horizon agent <span class="ct">[Li et al., 2026]</span></a>
-            <a class="leaf anchor" href="https://arxiv.org/abs/2607.00272" target="_blank" rel="noopener"><b>ASPIRE ★</b> — agentic skills discovery <span class="ct">[Lu et al., 2026]</span></a>
-            <a class="leaf" href="https://research.nvidia.com/labs/gear/enpire/" target="_blank" rel="noopener"><b>ENPIRE</b> — real-world self-improvement <span class="ct">[NVIDIA GEAR, 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2603.02623" target="_blank" rel="noopener"><b>Uni-Skill</b> — self-evolving skill repository <span class="ct">[Xie et al., 2026]</span></a>
+            <a class="leaf anchor" href="https://arxiv.org/abs/2607.00272" target="_blank" rel="noopener"><b>ASPIRE ★</b> — agentic skill discovery + self-improvement <span class="ct">[Lu et al., 2026]</span></a>
+            <a class="leaf" href="https://research.nvidia.com/labs/gear/enpire/" target="_blank" rel="noopener"><b>ENPIRE</b> — real-world policy self-improvement <span class="ct">[NVIDIA GEAR, 2026]</span></a>
           </div>
         </div>
+
         <div class="branch">
-          <div class="bnode d3">🎁 Reward / curriculum / env synthesis<span class="sn">§3.3</span><small>code that trains policies · exploration</small></div>
+          <div class="bnode d2">🧠 End-to-end VLA / generalist policies<span class="sn">§3.2</span><small>the foil — ship weights, not code</small></div>
+          <div class="leaves d2">
+            <a class="leaf" href="https://arxiv.org/abs/2212.06817" target="_blank" rel="noopener"><b>RT-1</b> — robotics transformer at scale <span class="ct">[Brohan et al., 2022]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2307.15818" target="_blank" rel="noopener"><b>RT-2</b> — web knowledge → control <span class="ct">[Brohan et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2405.12213" target="_blank" rel="noopener"><b>Octo</b> — open generalist policy <span class="ct">[Octo Model Team, 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2406.09246" target="_blank" rel="noopener"><b>OpenVLA</b> — open-source VLA <span class="ct">[Kim et al., 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2311.01378" target="_blank" rel="noopener"><b>RoboFlamingo</b> — VLM robot imitator <span class="ct">[Li et al., 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2411.19650" target="_blank" rel="noopener"><b>CogACT</b> — cognition + action VLA <span class="ct">[Li et al., 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2501.15830" target="_blank" rel="noopener"><b>SpatialVLA</b> — spatial-enhanced VLA <span class="ct">[Qu et al., 2025]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2410.24164" target="_blank" rel="noopener"><b>π0</b> — VLA flow model <span class="ct">[Black et al., 2025]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2504.16054" target="_blank" rel="noopener"><b>π0.5</b> — open-world generalization <span class="ct">[Physical Intelligence, 2025]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2503.14734" target="_blank" rel="noopener"><b>GR00T N1</b> — humanoid foundation model <span class="ct">[NVIDIA, 2025]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2503.20020" target="_blank" rel="noopener"><b>Gemini Robotics</b> — AI in the physical world <span class="ct">[DeepMind, 2025]</span></a>
+          </div>
+        </div>
+
+        <div class="branch">
+          <div class="bnode d3">🎁 LLM-authored rewards / curricula / sim<span class="sn">§3.3</span><small>code that trains policies</small></div>
           <div class="leaves d3">
             <a class="leaf" href="https://arxiv.org/abs/2310.12931" target="_blank" rel="noopener"><b>Eureka</b> — human-level reward design <span class="ct">[Ma et al., 2024]</span></a>
             <a class="leaf" href="https://arxiv.org/abs/2406.01967" target="_blank" rel="noopener"><b>DrEureka</b> — LM-guided sim-to-real <span class="ct">[Ma et al., 2024]</span></a>
@@ -86,92 +84,178 @@
             <a class="leaf" href="https://arxiv.org/abs/2312.09238" target="_blank" rel="noopener"><b>Auto MC-Reward</b> — automated dense rewards <span class="ct">[Li et al., 2024]</span></a>
           </div>
         </div>
+
         <div class="branch">
-          <div class="bnode d4">🔬 Algorithmic / scientific discovery<span class="sn">§3.4</span><small>finds algorithms · evolutionary search</small></div>
+          <div class="bnode d4">📚 Robot skill libraries &amp; lifelong learning<span class="sn">§3.4</span><small>accumulate &amp; reuse skills over a lifetime</small></div>
           <div class="leaves d4">
-            <a class="leaf" href="https://www.nature.com/articles/s41586-023-06924-6" target="_blank" rel="noopener"><b>FunSearch</b> — math discovery via program search <span class="ct">[Romera-Paredes et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2506.13131" target="_blank" rel="noopener"><b>AlphaEvolve</b> — coding agent for discovery <span class="ct">[Novikov et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2510.14150" target="_blank" rel="noopener"><b>CodeEvolve</b> — open-source evolutionary coder <span class="ct">[Assumpção et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2509.19349" target="_blank" rel="noopener"><b>ShinkaEvolve</b> — sample-efficient evolution <span class="ct">[Lange et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2510.03760" target="_blank" rel="noopener"><b>EvoEngineer</b> — CUDA kernel evolution <span class="ct">[Guo et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2602.19128" target="_blank" rel="noopener"><b>K-Search</b> — kernel generation via evolution <span class="ct">[Cao et al., 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2604.24372" target="_blank" rel="noopener"><b>SeaEvo</b> — strategy-space algorithm discovery <span class="ct">[Luo et al., 2026]</span></a>
-          </div>
-        </div>
-        <div class="branch">
-          <div class="bnode d5">📚 Self-improving agents &amp; skill libraries<span class="sn">§3.5</span><small>accumulates skills · persistent memory</small></div>
-          <div class="leaves d5">
             <a class="leaf" href="https://arxiv.org/abs/2305.16291" target="_blank" rel="noopener"><b>Voyager</b> — open-ended embodied agent <span class="ct">[Wang et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2311.02058" target="_blank" rel="noopener"><b>LOTUS</b> — unsupervised skill discovery <span class="ct">[Wan et al., 2023]</span></a>
             <a class="leaf" href="https://arxiv.org/abs/2406.18746" target="_blank" rel="noopener"><b>LRLL</b> — lifelong robot library learning <span class="ct">[Tziafas &amp; Kasaei, 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2310.10021" target="_blank" rel="noopener"><b>BOSS</b> — bootstrap your own skills <span class="ct">[Zhang et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2306.11886" target="_blank" rel="noopener"><b>SPRINT</b> — scalable skill pre-training <span class="ct">[Zhang et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2603.02623" target="_blank" rel="noopener"><b>Uni-Skill</b> — self-evolving skill repository <span class="ct">[Xie et al., 2026]</span></a>
             <a class="leaf" href="https://arxiv.org/abs/2604.17308" target="_blank" rel="noopener"><b>SkillFlow</b> — lifelong skill discovery <span class="ct">[Zhang et al., 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2304.03442" target="_blank" rel="noopener"><b>Generative Agents</b> — human-behavior simulacra <span class="ct">[Park et al., 2023]</span></a>
-            <span class="leaf"><b>VistaWise</b> — cross-modal KG agent <span class="ct">[Fu et al., 2025]</span></span>
           </div>
         </div>
+
         <div class="branch">
-          <div class="bnode d6">🧪 Data-science / ML-engineering<span class="sn">§3.6</span><small>writes &amp; runs ML pipelines</small></div>
-          <div class="leaves d6">
-            <a class="leaf" href="https://arxiv.org/abs/2402.18679" target="_blank" rel="noopener"><b>Data Interpreter</b> — LLM agent for data science <span class="ct">[Hong et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2502.13138" target="_blank" rel="noopener"><b>AIDE</b> — ML engineering as code search <span class="ct">[Jiang et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2407.16732" target="_blank" rel="noopener"><b>PyBench</b> — real-world coding agent eval <span class="ct">[Zhang et al., 2024]</span></a>
+          <div class="bnode d5">🌉 Sim-to-real &amp; cross-embodiment transfer<span class="sn">§3.5</span><small>the physical-AI axis ASPIRE advances</small></div>
+          <div class="leaves d5">
+            <a class="leaf" href="https://arxiv.org/abs/2310.08864" target="_blank" rel="noopener"><b>Open X-Embodiment</b> — RT-X cross-embodiment <span class="ct">[Collaboration, 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2408.11812" target="_blank" rel="noopener"><b>CrossFormer</b> — one policy, many embodiments <span class="ct">[Doshi et al., 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2306.11706" target="_blank" rel="noopener"><b>RoboCat</b> — self-improving generalist agent <span class="ct">[Bousmalis et al., 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2402.19249" target="_blank" rel="noopener"><b>Mirage</b> — zero-shot cross-embodiment transfer <span class="ct">[Chen et al., 2024]</span></a>
           </div>
         </div>
+
+        <div class="branch">
+          <div class="bnode d6">🕹️ Embodied benchmarks &amp; simulators<span class="sn">§3.6</span><small>where these systems are measured</small></div>
+          <div class="leaves d6">
+            <a class="leaf" href="https://arxiv.org/abs/2306.03310" target="_blank" rel="noopener"><b>LIBERO</b> — lifelong manipulation benchmark <span class="ct">[Liu et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2009.12293" target="_blank" rel="noopener"><b>Robosuite</b> — modular sim framework <span class="ct">[Zhu et al., 2020]</span></a>
+            <span class="leaf"><b>BEHAVIOR-1K</b> — 1,000 household activities <span class="ct">[Li et al., 2024]</span></span>
+            <a class="leaf" href="https://arxiv.org/abs/1910.10897" target="_blank" rel="noopener"><b>Meta-World</b> — 50-task multi-task RL <span class="ct">[Yu et al., 2020]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/1909.12271" target="_blank" rel="noopener"><b>RLBench</b> — 100-task robot learning <span class="ct">[James et al., 2020]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2302.04659" target="_blank" rel="noopener"><b>ManiSkill2</b> — generalizable manipulation <span class="ct">[Gu et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2112.03227" target="_blank" rel="noopener"><b>CALVIN</b> — long-horizon language tasks <span class="ct">[Mees et al., 2022]</span></a>
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="treekey">
-      <span class="d1"><i></i>software</span><span class="d2"><i></i>robotics</span><span class="d3"><i></i>reward/curriculum</span>
-      <span class="d4"><i></i>discovery</span><span class="d5"><i></i>skill libraries</span><span class="d6"><i></i>data science</span>
+      <span class="d1"><i></i>code-as-policy</span><span class="d2"><i></i>VLA (foil)</span><span class="d3"><i></i>rewards/curricula</span>
+      <span class="d4"><i></i>skill libraries</span><span class="d5"><i></i>transfer</span><span class="d6"><i></i>benchmarks</span>
     </div>
   </div>
-  <div class="cap">The canonical map — ~50 systems across six domains, all running one <b>write → execute → refine → remember</b> loop. Each leaf: <b>method — what it does [first-author et&nbsp;al., year]</b>, linked to its paper. <b>ASPIRE ★</b> is the only leaf filling all three mechanism slots (feedback + search + memory). Full sortable list → <a class="lnk" href="catalog.html">the catalog</a>.</div>
+  <div class="cap">The map — ~47 physical-AI systems. The fight: <b>§3.2 ship weights</b> (end-to-end VLA) vs <b>§3.1 ship code + skills</b>. <b>ASPIRE ★</b> is the frontier of the code-and-skills camp — the only system that writes, debugs, and <em>compounds</em> its own skills. Each leaf: method — descriptor [first-author et&nbsp;al., year]. Full sortable list → <a class="lnk" href="catalog.html">the catalog</a>.</div>
 
-  <!-- everything below is supporting context -->
-  <div class="sec"><span class="tag">Figure 2</span><h3>🧩 The loop behind every leaf</h3></div>
+  <!-- §3.1 DEEP DIVE · the gap, expanded -->
+  <div class="sec"><span class="tag">§3.1 · in depth</span><h3>🔬 The gap, expanded — code-as-policy by self-improvement</h3></div>
+  <div class="figure">
+    <div class="tree">
+      <div class="root">🤖 §3.1 Code-as-policy for robots — ordered by <b>how much a system improves itself</b></div>
+      <div class="branches">
+
+        <div class="branch">
+          <div class="bnode d1">§3.1.1 · Zero-shot synthesis<span class="sn">n=13</span><small>write code once · no learning from execution</small></div>
+          <div class="leaves d1">
+            <a class="leaf" href="https://arxiv.org/abs/2209.07753" target="_blank" rel="noopener"><b>Code-as-Policies</b> <span class="ct">[Liang et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2209.11302" target="_blank" rel="noopener"><b>ProgPrompt</b> <span class="ct">[Singh et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2307.05973" target="_blank" rel="noopener"><b>VoxPoser</b> <span class="ct">[Huang et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2305.11176" target="_blank" rel="noopener"><b>Instruct2Act</b> <span class="ct">[Huang et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2306.17582" target="_blank" rel="noopener"><b>ChatGPT for Robotics</b> <span class="ct">[Vemprala et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2305.05658" target="_blank" rel="noopener"><b>TidyBot</b> <span class="ct">[Wu et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2402.16117" target="_blank" rel="noopener"><b>RoboCodeX</b> <span class="ct">[Mu et al., 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2402.14623" target="_blank" rel="noopener"><b>RoboScript</b> <span class="ct">[Chen et al., 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2303.12153" target="_blank" rel="noopener"><b>Text2Motion</b> <span class="ct">[Lin et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2305.16744" target="_blank" rel="noopener"><b>Demo2Code</b> <span class="ct">[Wang et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2306.17840" target="_blank" rel="noopener"><b>Statler</b> <span class="ct">[Yoneda et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2309.09969" target="_blank" rel="noopener"><b>Prompt2Walk</b> <span class="ct">[Wang et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2501.04268" target="_blank" rel="noopener"><b>RoboPro</b> <span class="ct">[Robotic Programmer, 2025]</span></a>
+          </div>
+        </div>
+
+        <div class="branch">
+          <div class="bnode d3">§3.1.2 · Closed-loop self-repair<span class="sn">n=6</span><small>detect &amp; fix failures within a task, from feedback</small></div>
+          <div class="leaves d3">
+            <a class="leaf" href="https://arxiv.org/abs/2207.05608" target="_blank" rel="noopener"><b>Inner Monologue</b> <span class="ct">[Huang et al., 2022]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2307.00329" target="_blank" rel="noopener"><b>DoReMi</b> <span class="ct">[Guo et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2306.15724" target="_blank" rel="noopener"><b>REFLECT</b> <span class="ct">[Liu et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2412.04455" target="_blank" rel="noopener"><b>Code-as-Monitor</b> <span class="ct">[Zhou et al., 2025]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2410.00371" target="_blank" rel="noopener"><b>AHA</b> <span class="ct">[Duan et al., 2025]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2402.06529" target="_blank" rel="noopener"><b>Introspective Planning</b> <span class="ct">[Liang et al., 2024]</span></a>
+          </div>
+        </div>
+
+        <div class="branch">
+          <div class="bnode d4">§3.1.3 · Skill-library accumulation<span class="sn">n=5</span><small>store &amp; retrieve code skills across tasks</small></div>
+          <div class="leaves d4">
+            <a class="leaf" href="https://arxiv.org/abs/2305.16291" target="_blank" rel="noopener"><b>Voyager</b> <span class="ct">[Wang et al., 2023]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2406.18746" target="_blank" rel="noopener"><b>LRLL</b> <span class="ct">[Tziafas &amp; Kasaei, 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2406.03757" target="_blank" rel="noopener"><b>RoboCoder</b> <span class="ct">[Li et al., 2024]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2603.02623" target="_blank" rel="noopener"><b>Uni-Skill</b> <span class="ct">[Xie et al., 2026]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2311.10678" target="_blank" rel="noopener"><b>DROC</b> <span class="ct">[Zha et al., 2023]</span></a>
+          </div>
+        </div>
+
+        <div class="branch">
+          <div class="bnode d5">§3.1.4 · Evolutionary program search<span class="sn">n=3</span><small>search a population of programs, not one repair</small></div>
+          <div class="leaves d5">
+            <a class="leaf" href="https://arxiv.org/abs/2603.22435" target="_blank" rel="noopener"><b>CaP-X</b> <span class="ct">[Fu et al., 2026]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2601.06845" target="_blank" rel="noopener"><b>Code Evolution for Control</b> <span class="ct">[Guo et al., 2026]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2605.13775" target="_blank" rel="noopener"><b>RoboEvolve</b> <span class="ct">[Chen et al., 2026]</span></a>
+          </div>
+        </div>
+
+        <div class="branch">
+          <div class="bnode d2">§3.1.5 · Full self-improving loop<span class="sn">n=3</span><small><b style="color:var(--accent)">◀ the gap</b> · feedback + memory + search, together</small></div>
+          <div class="leaves d2">
+            <a class="leaf anchor" href="https://arxiv.org/abs/2607.00272" target="_blank" rel="noopener"><b>ASPIRE ★</b> <span class="ct">[Lu et al., 2026]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2606.19980" target="_blank" rel="noopener"><b>ENPIRE</b> <span class="ct">[NVIDIA GEAR, 2026]</span></a>
+            <a class="leaf" href="https://arxiv.org/abs/2603.11558" target="_blank" rel="noopener"><b>RoboClaw</b> <span class="ct">[Li et al., 2026]</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="cap">Figure · The funnel <b>13 → 6 → 5 → 3 → 3</b>. As you demand more self-improvement (write once → repair → remember → search → all three), the occupants thin out fast. <b>§3.1.5</b> — the cell where <b>feedback + memory + search</b> combine into one open-ended loop — is nearly empty, and only <b>ASPIRE ★</b> was built for it end-to-end. <b>This is the un-surveyed gap the survey claims</b> — no existing survey organizes code-as-policy by self-improvement, or names this cell.</div>
+
+  <div class="cap" style="margin-top:18px"><b>🌱 Origins (outside the taxonomy):</b> the <b>write → execute → refine → remember</b> loop is borrowed from non-physical software-engineering agents (<a class="lnk" href="https://arxiv.org/abs/2405.15793" target="_blank" rel="noopener">SWE-agent</a>, <a class="lnk" href="https://arxiv.org/abs/2407.16741" target="_blank" rel="noopener">OpenHands</a>, <a class="lnk" href="https://arxiv.org/abs/2303.11366" target="_blank" rel="noopener">Reflexion</a>) and LLM program search (<a class="lnk" href="https://www.nature.com/articles/s41586-023-06924-6" target="_blank" rel="noopener">FunSearch</a>, <a class="lnk" href="https://arxiv.org/abs/2506.13131" target="_blank" rel="noopener">AlphaEvolve</a>) — inspiration only, not physical-AI systems.</div>
+
+  <!-- Figure 2 · the loop -->
+  <div class="sec"><span class="tag">Figure</span><h3>🧩 The loop behind the code-and-skills camp</h3></div>
   <div class="figure">
     <div class="flow">
       <div class="io"><span class="g">🎯</span><span>task</span></div>
       <div class="arrow">→</div>
-      <div class="node accent"><span class="n">1</span><span class="ne">🔬</span><span class="nt">Execution / feedback substrate</span><span class="sub">per-primitive traces · tests · compiler · reward returns · evaluator score</span></div>
+      <div class="node accent"><span class="n">1</span><span class="ne">🔬</span><span class="nt">Robot execution engine</span><span class="sub">per-primitive multimodal traces · perception overlays · grasp candidates · motion · collisions</span></div>
       <div class="arrow">→</div>
-      <div class="node accent"><span class="n">2</span><span class="ne">📚</span><span class="nt">Memory</span><span class="sub">code skills + when-to-apply guards · program archive · distilled repairs</span></div>
+      <div class="node accent"><span class="n">2</span><span class="ne">📚</span><span class="nt">Skill memory</span><span class="sub">code skills + when-to-apply guards · distilled validated repairs</span></div>
       <div class="arrow">→</div>
-      <div class="node accent"><span class="n">3</span><span class="ne">🧬</span><span class="nt">Search / refinement</span><span class="sub">evolutionary population · iterative debugging · closed-loop validation</span></div>
+      <div class="node accent"><span class="n">3</span><span class="ne">🧬</span><span class="nt">Evolutionary search</span><span class="sub">population of K programs · iterative debugging · closed-loop validation</span></div>
       <div class="arrow">→</div>
-      <div class="io"><span class="g">✅</span><span>validated code</span></div>
+      <div class="io"><span class="g">✅</span><span>validated skill</span></div>
     </div>
-    <div class="loop">↺ experience compounds — validated code feeds the memory and every future task</div>
+    <div class="loop">↺ experience compounds — skills transfer sim→real and across embodiments</div>
   </div>
-  <div class="cap">Figure 2 · Every leaf in the map instantiates these three slots; the <b>F / S / M</b> tags in Table 2 name them.</div>
+  <div class="cap">Figure · ASPIRE's loop. VLAs (§3.2) have no such loop — they bake competence into frozen weights. The <b>F / S / M</b> tags in Table 2 name these three slots.</div>
 
-  <div class="sec"><span class="tag">Table 1</span><h3>🔀 The paradigm shift</h3></div>
+  <!-- Table 1 · ship weights vs ship code -->
+  <div class="sec"><span class="tag">Table 1</span><h3>🔀 The thesis — ship weights vs ship code + skills</h3></div>
   <div class="scroll"><table class="gt">
-    <thead><tr><th>Aspect</th><th>⚙️ Old — gradient policies</th><th>🧬 New — code that self-refines</th></tr></thead>
+    <thead><tr><th>Aspect</th><th>🧠 Ship weights (end-to-end VLA)</th><th>💻 Ship code + skills (ASPIRE)</th></tr></thead>
     <tbody>
-      <tr><td class="k">🏋️ Training</td><td>gradient descent on collected data</td><td class="new">iterative refinement via execution feedback</td></tr>
-      <tr><td class="k">💾 Trained model</td><td>floating-point weights (a GGUF blob)</td><td class="new">a repo of readable, reusable code</td></tr>
-      <tr><td class="k">📤 Transfer</td><td>ship tensors across the gap</td><td class="new">ship know-how (text + code)</td></tr>
-      <tr><td class="k">🌐 Distributed training</td><td>sharded minibatches</td><td class="new">a panel of agents, each on a task</td></tr>
-      <tr><td class="k">📉 Learning signal</td><td>a scalar loss gradient</td><td class="new">execution-trace failure attribution</td></tr>
-      <tr><td class="k">🔍 Debuggability</td><td>opaque, black-box weights</td><td class="new">inspectable, editable programs</td></tr>
-      <tr><td class="k">♾️ Improvement</td><td>frozen after the training run</td><td class="new">compounds indefinitely across tasks</td></tr>
+      <tr><td class="k">🎯 Output</td><td>continuous action tokens (opaque)</td><td class="new">executable control programs (readable)</td></tr>
+      <tr><td class="k">🏋️ Training</td><td>gradient descent on robot demos</td><td class="new">iterative refinement via execution feedback</td></tr>
+      <tr><td class="k">💾 Artifact</td><td>floating-point policy weights</td><td class="new">a repo of sensorimotor code skills</td></tr>
+      <tr><td class="k">📤 Transfer</td><td>ship tensors; re-collect data + fine-tune</td><td class="new">ship know-how (code) across embodiments</td></tr>
+      <tr><td class="k">🔍 Debuggability</td><td>black-box; a failure is hard to localize</td><td class="new">inspect the trace, edit the program</td></tr>
+      <tr><td class="k">♾️ Improvement</td><td>frozen after the training run</td><td class="new">compounds across tasks via the skill library</td></tr>
+      <tr><td class="k">🆕 A new task</td><td>collect data + retrain / fine-tune</td><td class="new">retrieve skills, write &amp; debug a program</td></tr>
+      <tr><td class="k">🍽️ Data hunger</td><td>large teleoperation datasets</td><td class="new">few demos + self-debugging</td></tr>
     </tbody>
   </table></div>
+  <div class="cap">Table 1 · The two camps aren't enemies — but the code-and-skills camp is where <b>self-improvement</b> and <b>interpretability</b> live. VLAs win on raw dexterity and freedom from a fixed API (Table 3).</div>
 
+  <!-- Table 2 · mechanism taxonomy -->
   <div class="sec"><span class="tag">Table 2</span><h3>🧭 Mechanism taxonomy — six axes (the F/S/M key)</h3></div>
   <div class="scroll"><table class="gt">
     <thead><tr><th>🧭 Axis</th><th>❓ Question it answers</th><th>🎛️ Values <span class="hl">(ASPIRE in teal)</span></th></tr></thead>
     <tbody>
-      <tr><td class="k">✍️ What is authored</td><td>output of the LLM</td><td><span class="hl">policy code</span> · reward · value map · curriculum · env</td></tr>
-      <tr><td class="k">🔬 Feedback granularity (F)</td><td>debugging substrate</td><td>task-level · trajectory · <span class="hl">per-primitive multimodal</span></td></tr>
-      <tr><td class="k">📚 Memory (M)</td><td>what persists</td><td>none · weights · text reflections · <span class="hl">code skills w/ when-to-apply guards</span></td></tr>
+      <tr><td class="k">✍️ What is authored</td><td>output of the model</td><td><span class="hl">policy code</span> · reward · value map · curriculum · action tokens</td></tr>
+      <tr><td class="k">🔬 Feedback granularity (F)</td><td>debugging substrate</td><td>none · task-level · trajectory · <span class="hl">per-primitive multimodal</span></td></tr>
+      <tr><td class="k">📚 Memory (M)</td><td>what persists</td><td>weights · none · text reflections · <span class="hl">code skills w/ when-to-apply guards</span></td></tr>
       <tr><td class="k">🔍 Search operator (S)</td><td>how it explores</td><td>none · single-trajectory repair · <span class="hl">evolutionary population</span> · MCTS</td></tr>
-      <tr><td class="k">📐 Gradient?</td><td>learning mechanism</td><td>gradient · <span class="hl">gradient-free</span></td></tr>
+      <tr><td class="k">📐 Gradient?</td><td>learning mechanism</td><td>gradient (VLA) · <span class="hl">gradient-free (code)</span></td></tr>
       <tr><td class="k">🦾 Transfer axis</td><td>what generalizes</td><td><span class="hl">sim2real · cross-embodiment · cross-task</span></td></tr>
     </tbody>
   </table></div>
-  <div class="cap">Table 2 · The mechanism key — these F / S / M axes color the map above and tag every row of the catalog.</div>
+  <div class="cap">Table 2 · These F / S / M axes color the map above and tag every row of the catalog.</div>
 
-  <div class="sec"><span class="tag">Table 3</span><h3>🥇 Method capability matrix</h3></div>
+  <!-- Table 3 · capability matrix -->
+  <div class="sec"><span class="tag">Table 3</span><h3>🥇 Capability matrix — one exemplar per camp</h3></div>
   <div class="legend">
     <span><i class="swatch" style="background:var(--yes-bg);color:var(--yes)">✓</i> present / yes</span>
     <span><i class="swatch" style="background:var(--no-bg);color:var(--no)">✕</i> absent / no</span>
@@ -181,10 +265,11 @@
   </div>
   <div class="scroll"><table class="matrix" id="matrix"></table></div>
 
-  <div class="sec"><span class="tag">Table 4</span><h3>📚 Related surveys — the competitive landscape</h3></div>
+  <!-- Table 4 · related surveys -->
+  <div class="sec"><span class="tag">Table 4</span><h3>📚 Related surveys — the physical-AI landscape</h3></div>
   <div class="scroll"><table class="gt" id="surveys" style="min-width:1080px"></table></div>
 
-  <footer>📊 Citations = Semantic Scholar snapshots, 5 Jul 2026 (drift daily · lower than Google Scholar) · ➖ "none found" = no dedicated repo verified · anchor: <a href="https://arxiv.org/abs/2607.00272">ASPIRE (arXiv:2607.00272)</a></footer>
+  <footer>📊 Citations = Semantic Scholar snapshots, 5 Jul 2026 (drift daily · lower than Google Scholar) · years use venue where known, else arXiv · anchor: <a href="https://arxiv.org/abs/2607.00272">ASPIRE (arXiv:2607.00272)</a></footer>
 </div>
 
 <script src="assets/matrix.js"></script>

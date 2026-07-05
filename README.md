@@ -1,6 +1,8 @@
-# Self-Refining Code Agents — A Survey
+# How Robots Learn — A Survey of Robot-Learning Techniques
 
-A survey and **living catalog** of LLM agents that **write, execute, and self-refine code** — across software engineering, robotics, reinforcement learning, and scientific discovery — anchored on [ASPIRE](https://arxiv.org/abs/2607.00272).
+A survey and **living catalog** of robot-learning techniques for **Physical AI** — vision-language-action policies, code-as-policy, reward synthesis, self-evolving skill libraries, and cross-embodiment transfer — anchored on [ASPIRE](https://arxiv.org/abs/2607.00272) (NVIDIA GEAR, 2026).
+
+The thesis: two ways to build a generalist robot — **ship weights** (end-to-end VLA) vs **ship code + skills**. ASPIRE is the frontier of the second camp, the one system that writes, debugs, and *compounds* its own skills.
 
 🔗 **Live site:** `https://kapilw25.github.io/self-refining-agents/`
 
@@ -8,8 +10,8 @@ A survey and **living catalog** of LLM agents that **write, execute, and self-re
 
 | Page | Contents |
 |---|---|
-| `index.html` | **The survey** — opens with the canonical **taxonomy tree** (~50 systems, the hero figure), then the loop, paradigm-shift table, mechanism taxonomy, capability matrix, and related-survey landscape |
-| `catalog.html` | Sortable / filterable catalog of ~50 systems, tagged by domain × mechanism (**F** feedback · **S** search · **M** memory) × year × benchmark |
+| `index.html` | **The survey** — opens with the canonical **taxonomy tree** (~47 physical-AI systems in 6 branches §3.1–§3.6, the hero figure), then the loop, the ship-weights-vs-code thesis table, mechanism taxonomy, a capability matrix (one exemplar per camp), and the related-survey landscape |
+| `catalog.html` | Sortable / filterable catalog of ~47 systems, tagged by domain × mechanism (**F** feedback · **S** search · **M** memory) × year × benchmark |
 
 Everything is a **self-contained static site** — no build step, no server. Plain HTML/CSS/vanilla JS with light/dark themes.
 
