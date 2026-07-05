@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalog — Self-Refining Code Agents</title>
+  <meta name="description" content="A sortable, filterable catalog of ~50 LLM agents that write, execute, and self-refine code, tagged by domain, mechanism, year, and benchmark.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗂️</text></svg>">
+  <link rel="stylesheet" href="assets/theme-survey.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/theme.js"></script>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="brand">
+      <span class="eyebrow">Living catalog · ~50 systems</span>
+      <h1>Agents that write, execute &amp; self-refine code</h1>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="survey.html">Survey</a>
+      <a href="catalog.html" aria-current="page">Catalog</a>
+      <button class="toggle" id="themeBtn" aria-label="Toggle color theme"><span class="dot"></span><span id="themeLabel">Theme</span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <span class="eyebrow">6 domains · one write→execute→refine→remember loop</span>
+    <h2>The <em>catalog</em> — filter, search, and sort ~50 code-refining agents.</h2>
+    <p>Every system tagged by domain, by mechanism (<b>F</b> feedback substrate · <b>S</b> search operator · <b>M</b> memory/skill library), year, and benchmark. ★ marks systems that fill all three mechanism slots.</p>
+  </section>
+
+  <div class="sec"><span class="tag">Catalog</span><h3>🗂️ ~50 systems</h3></div>
+  <div class="controls">
+    <div class="filters" id="filters"></div>
+    <input type="search" id="q" placeholder="search system / benchmark…" aria-label="Search catalog">
+    <span class="count" id="count"></span>
+  </div>
+  <div class="scroll"><table class="gt" id="catalog" style="min-width:760px"></table></div>
+
+  <footer>Mechanism: <span class="mtag F">F</span> execution/feedback substrate · <span class="mtag S">S</span> search operator · <span class="mtag M">M</span> memory / skill library · ★ = all three. Metadata is best-effort — unlinked rows fall back to a web search; verify before citing. Anchor: <a href="https://arxiv.org/abs/2607.00272">ASPIRE (arXiv:2607.00272)</a>.</footer>
+</div>
+
+<script src="assets/catalog.js"></script>
+</body>
+</html>

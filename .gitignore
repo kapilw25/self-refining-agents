@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+*.swp
+
+# python
+__pycache__/
+*.pyc
+
+# scratch / temp
+scratchpad/
+*.log
+
+# excluded from the public site repo
+#  - literature/: contains full third-party paper text (copyright)
+#  - logs/: contains third-party figure screenshots
+#  - .claude/: local tooling / slash commands
+literature/
+logs/
+.claude/
