@@ -2,14 +2,13 @@
 
 A survey and **living catalog** of LLM agents that **write, execute, and self-refine code** — across software engineering, robotics, reinforcement learning, and scientific discovery — anchored on [ASPIRE](https://arxiv.org/abs/2607.00272).
 
-🔗 **Live site:** `https://kapilw25.github.io/<repo-name>/`
+🔗 **Live site:** `https://kapilw25.github.io/self-refining-agents/`
 
 ## What's inside (`docs/`)
 
 | Page | Contents |
 |---|---|
-| `index.html` | Landing — survey card + living-catalog card + figure index |
-| `survey.html` | The survey: unifying template (Fig 1), **canonical taxonomy tree** (Fig 2, ~50 systems), paradigm-shift table, six-axis mechanism taxonomy, capability matrix, related-survey landscape |
+| `index.html` | **The survey** — opens with the canonical **taxonomy tree** (~50 systems, the hero figure), then the loop, paradigm-shift table, mechanism taxonomy, capability matrix, and related-survey landscape |
 | `catalog.html` | Sortable / filterable catalog of ~50 systems, tagged by domain × mechanism (**F** feedback · **S** search · **M** memory) × year × benchmark |
 
 Everything is a **self-contained static site** — no build step, no server. Plain HTML/CSS/vanilla JS with light/dark themes.
@@ -33,3 +32,4 @@ cd docs && python3 -m http.server 8000   # → http://localhost:8000
 - Citation counts are Semantic Scholar snapshots (drift daily; lower than Google Scholar).
 - Catalog metadata is best-effort — unlinked rows fall back to a web search; **verify before citing**.
 - The full text of source papers is **not** redistributed here; all systems link to their original sources.
+# self-refining-agents
