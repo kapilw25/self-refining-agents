@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SkillStream — A Benchmark for Self-Improving Skill Acquisition</title>
+  <meta name="description" content="SkillStream: a streaming benchmark that measures whether a robot's skill library compounds as it watches human-manipulation clips — the first benchmark for self-improvement in code-as-policy robots.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+  <link rel="stylesheet" href="assets/theme-survey.css?v=2">
+  <link rel="stylesheet" href="assets/site.css?v=2">
+  <script src="assets/theme.js?v=2"></script>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="brand">
+      <span class="eyebrow">Benchmark · self-improvement from video</span>
+      <h1>SkillStream</h1>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Survey</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="benchmark.html" aria-current="page">Benchmark</a>
+      <button class="toggle" id="themeBtn" aria-label="Toggle color theme"><span class="dot"></span><span id="themeLabel">Theme</span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero" style="padding-bottom:22px">
+    <span class="eyebrow">Watch clips → write skill code → does the library compound?</span>
+    <h2>The first benchmark that scores <em>self-improvement</em>, not one-shot accuracy.</h2>
+  </section>
+
+  <!-- protocol flowchart -->
+  <div class="sec" style="margin-top:14px"><span class="tag">Figure 1</span><h3>🎬 The streaming self-improvement protocol</h3></div>
+  <div class="figure">
+    <div class="flow">
+      <div class="io"><span class="g">🎬</span><span>clip stream</span></div>
+      <div class="arrow">→</div>
+      <div class="node accent"><span class="n">1</span><span class="ne">👁️</span><span class="nt">Watch → write skill code</span><span class="sub">VLM reads clip · LLM emits code-as-policy</span></div>
+      <div class="arrow">→</div>
+      <div class="node accent"><span class="n">2</span><span class="ne">🔬</span><span class="nt">Sim execution (F)</span><span class="sub">run on LIBERO/Robosuite/ManiSkill · traces</span></div>
+      <div class="arrow">→</div>
+      <div class="node accent"><span class="n">3</span><span class="ne">📚</span><span class="nt">Skill library (M)</span><span class="sub">store validated skills · retrieve for next clip</span></div>
+      <div class="arrow">→</div>
+      <div class="io"><span class="g">📈</span><span>compounding curve</span></div>
+    </div>
+    <div class="loop">↺ per clip: refine the library from feedback · measure held-out success vs. # clips seen</div>
+  </div>
+  <div class="cap">Figure 1 · A self-improving agent's held-out curve <b>rises</b> with clips watched; a zero-shot or VLA agent's stays <b>flat</b>. That separation is the benchmark's validity — and the paper's headline figure.</div>
+
+  <!-- task -->
+  <div class="sec"><span class="tag">Table 1</span><h3>🎯 The task</h3></div>
+  <div class="scroll"><table class="gt">
+    <tbody>
+      <tr><td class="k">📥 Input</td><td>a short clip — human tabletop manipulation — + language label</td></tr>
+      <tr><td class="k">📤 Output</td><td>an <b>executable skill program</b> (code-as-policy) that reproduces the task</td></tr>
+      <tr><td class="k">🧾 Precedent</td><td>video-instructed policy code already exists (<a class="lnk" href="https://arxiv.org/abs/2501.04268" target="_blank" rel="noopener">RoboPro / Video2Code</a>)</td></tr>
+      <tr><td class="k">✨ What's new</td><td class="new">the <b>streaming self-improvement</b> protocol layered on top</td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- data tiers -->
+  <div class="sec"><span class="tag">Table 2</span><h3>🗂️ Data — two tiers (share URLs + code, not frames)</h3></div>
+  <div class="scroll"><table class="gt">
+    <thead><tr><th>Tier</th><th>Size</th><th>Scored by</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td class="k">🔬 Sim-grounded</td><td class="mono">~400 clips</td><td>run generated code in sim → <b>Success@k</b></td><td>rigorous, real execution</td></tr>
+      <tr><td class="k">🌐 Scale</td><td class="mono">~15k clips</td><td>skill vs human reference (AST match + LLM-judge)</td><td>diversity, cheap</td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- manifest schema -->
+  <div class="sec"><span class="tag">Table 3</span><h3>🧾 Manifest schema (the released artifact)</h3></div>
+  <div class="scroll"><table class="gt">
+    <thead><tr><th>Field</th><th>Type</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td class="k">youtube_id</td><td class="mono">str</td><td class="mono">kJQ_1a…</td></tr>
+      <tr><td class="k">start_ts · end_ts</td><td class="mono">float</td><td class="mono">12.4 · 18.9</td></tr>
+      <tr><td class="k">task_verb</td><td class="mono">enum(30)</td><td class="mono">pour</td></tr>
+      <tr><td class="k">objects</td><td class="mono">list[str]</td><td class="mono">[kettle, cup]</td></tr>
+      <tr><td class="k">tier</td><td class="mono">enum</td><td class="mono">sim · scale</td></tr>
+      <tr><td class="k">split</td><td class="mono">enum</td><td class="mono">practice · heldout</td></tr>
+      <tr><td class="k">sim_task</td><td class="mono">str?</td><td class="mono">libero_pour_v0 <span class="none">(sim only)</span></td></tr>
+      <tr><td class="k">ref_skill</td><td class="mono">path?</td><td class="mono">refs/pour_0001.py <span class="none">(sim only)</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- metrics -->
+  <div class="sec"><span class="tag">Table 4</span><h3>📐 Metrics — the signature one is #3</h3></div>
+  <div class="scroll"><table class="gt">
+    <thead><tr><th class="num">#</th><th>Metric</th><th>Tier</th><th>Captures</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td class="k">Success@k</td><td>sim</td><td>execution success (k rollouts)</td></tr>
+      <tr><td class="num">2</td><td class="k">Skill-code quality</td><td>scale</td><td>AST/structured match + LLM-judge</td></tr>
+      <tr><td class="num">3</td><td class="k hl">⭐ Compounding AULC</td><td>both</td><td>held-out success <b>vs. # clips practiced</b> (0·25·50·100…)</td></tr>
+      <tr><td class="num">4</td><td class="k">Efficiency</td><td>both</td><td>tokens / compute to first success</td></tr>
+      <tr><td class="num">5</td><td class="k">Cross-embodiment transfer</td><td>sim</td><td>success when eval embodiment ≠ practice</td></tr>
+      <tr><td class="num">6</td><td class="k">Library reuse rate</td><td>both</td><td>% of solved tasks that reused a stored skill</td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- baselines -->
+  <div class="sec"><span class="tag">Table 5</span><h3>🧪 Baselines shipped (you don't train everyone)</h3></div>
+  <div class="scroll"><table class="gt">
+    <thead><tr><th>Baseline</th><th>Maps to</th><th>Expected curve</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Zero-shot CaP <span class="none">(VLM caption → LLM code, no memory)</span></td><td class="mono">§3.1.1</td><td><span class="mtag F" style="color:var(--no)">▬</span> flat</td></tr>
+      <tr><td class="k">Self-repair <span class="none">(+ execution-feedback loop)</span></td><td class="mono">§3.1.2</td><td><span class="mtag" style="color:var(--warn)">◹</span> small rise (sim tier)</td></tr>
+      <tr><td class="k">Skill-library agent <span class="none">(Voyager/ASPIRE-style, compounds)</span></td><td class="mono">§3.1.3–5</td><td><span class="win">◥ rising</span> ← validates the benchmark</td></tr>
+      <tr><td class="k">OpenVLA fine-tuned <span class="none">(optional foil)</span></td><td class="mono">§3.2</td><td>high one-shot, <span class="none">no compounding</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- leaderboard -->
+  <div class="sec"><span class="tag">Leaderboard</span><h3>🏆 SkillStream leaderboard</h3></div>
+  <div class="scroll"><table class="gt" id="leaderboard" style="min-width:900px"></table></div>
+  <div class="cap">Scaffold — baseline numbers pending. Submit a run via PR to <span class="mono">skillstream/leaderboard/leaderboard.json</span>. ⭐ = ranks by AULC (self-improvement), not one-shot Success@k.</div>
+
+  <!-- repo layout -->
+  <div class="sec"><span class="tag">Repo</span><h3>📦 Scaffold layout</h3></div>
+  <div class="scroll"><table class="gt">
+    <thead><tr><th>Path</th><th>Contents</th></tr></thead>
+    <tbody>
+      <tr><td class="k mono">data/schema.md · sample_manifest.jsonl</td><td>manifest fields + examples (URLs + timestamps, no frames)</td></tr>
+      <tr><td class="k mono">process_clips.py</td><td>yt-dlp download + ffmpeg split + frame extraction (CPU)</td></tr>
+      <tr><td class="k mono">eval/metrics.py</td><td>success_at_k · <b>aulc</b> · reuse_rate · efficiency</td></tr>
+      <tr><td class="k mono">eval/run.py</td><td>streaming harness: practice → eval → curve</td></tr>
+      <tr><td class="k mono">baselines/</td><td>zero_shot_cap · self_repair · skill_library</td></tr>
+      <tr><td class="k mono">leaderboard/leaderboard.json</td><td>submissions (machine-readable, drives this table)</td></tr>
+      <tr><td class="k mono">sim_mappings/</td><td>clip → LIBERO/Robosuite/ManiSkill task map</td></tr>
+    </tbody>
+  </table></div>
+
+  <!-- deliverables / timeline / risks -->
+  <div class="sec"><span class="tag">Plan</span><h3>🚀 Deliverables · timeline · risks</h3></div>
+  <div class="scroll"><table class="gt">
+    <thead><tr><th>Deliverable</th><th>Effort</th><th>Risk → mitigation</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Scrape + split pipeline</td><td class="mono">~1–2 wk 🟢</td><td>link rot → ship frame features + coverage report</td></tr>
+      <tr><td class="k">Sim mapping + reference annotations</td><td class="mono">~3–4 wk 🟡</td><td>annotation cost → bound to ~400-clip subset, LLM-assisted + verify</td></tr>
+      <tr><td class="k">Harness + metrics + leaderboard</td><td class="mono">~2 wk 🟢</td><td>—</td></tr>
+      <tr><td class="k">2–3 baselines (reuse open code)</td><td class="mono">~3–4 wk 🟡</td><td>CaP · Voyager · CaP-X harnesses are open</td></tr>
+      <tr><td class="k">arXiv paper (benchmark ⟹ not gated)</td><td class="mono">~2–3 wk 🟢</td><td>adoption → ship headline + baselines + leaderboard day 1</td></tr>
+      <tr><td class="k">Total</td><td class="mono new">~2.5–3 months, solo</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+
+  <footer>🎯 Headline target: <b>"On SkillStream, skill-library agents gain +X% over 100 watched clips while zero-shot and VLA baselines stay flat — the first benchmark to measure self-improvement in code-as-policy robots."</b> · Co-cites with the <a href="index.html">survey</a> (§3.1 framing).</footer>
+</div>
+
+<script src="assets/skillstream.js?v=1"></script>
+</body>
+</html>

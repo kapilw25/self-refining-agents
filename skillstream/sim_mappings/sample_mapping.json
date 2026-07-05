@@ -1,0 +1,7 @@
+{
+  "_note": "Maps a sim-tier clip's task to an executable sim env + reference skill.",
+  "mappings": [
+    {"clip_id": "ss_000001", "sim_task": "libero_pour_v0", "suite": "LIBERO", "embodiment": "franka", "ref_skill": "refs/pour_0001.py", "success_predicate": "liquid_in(cup) and not spilled"},
+    {"clip_id": "ss_000002", "sim_task": "libero_open_drawer_v0", "suite": "LIBERO", "embodiment": "ur5", "ref_skill": "refs/open_0002.py", "success_predicate": "drawer_open > 0.15m"}
+  ]
+}
