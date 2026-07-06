@@ -1,6 +1,30 @@
 \subsection{Reward and Curriculum Synthesis}
 \label{sec:reward}
 
-Here the LLM writes \emph{reward} code rather than policy code; an RL loop trains on it
-and a reflection step revises it~\citep{eureka}. One feedback loop, but the artifact
-shipped is still weights, not a reusable skill.
+A third family keeps the language model in the role of programmer but points it at a
+different artefact: instead of policy code, it writes the \emph{reward}, \emph{environment},
+or \emph{curriculum} that a reinforcement-learning loop then compiles into a policy. A
+feedback loop exists---the model reads back training statistics and revises---but what ships
+is still weights, which is why we separate this family from the self-improving code camp
+(\S\ref{sec:code}).
+
+\emph{Eureka}~\citep{eureka} is the canonical instance: given unmodified environment source
+code and a task description, a coding LLM zero-shot generates an executable reward function,
+then improves it by \emph{evolutionary search} guided by \emph{reward reflection}---a textual
+summary of training statistics---exceeding expert human rewards on 83\% of a 29-task IsaacGym
+suite. \emph{DrEureka}~\citep{dreureka} extends the idea to sim-to-real by also synthesising
+domain-randomisation ranges, achieving zero-shot real-world locomotion.
+\emph{Text2Reward}~\citep{text2reward} generates dense reward programs grounded in a compact
+environment representation and refines them from human feedback, matching or beating
+expert-written rewards on most of a seventeen-task suite, while \emph{Language to
+Rewards}~\citep{l2r} uses the reward function as the interface between an LLM and a MuJoCo
+model-predictive controller.
+
+Beyond the reward itself, the same generative recipe is applied to the \emph{training
+environment}. \emph{Eurekaverse}~\citep{eurekaverse} has an LLM propose a progressively harder
+curriculum of environments---learning parkour skills that transfer to a real robot---and
+\emph{RoboGen}~\citep{robogen} runs a propose-generate-learn cycle that fabricates tasks,
+scenes, and supervision in simulation to unlock effectively unlimited training data;
+\emph{Auto MC-Reward}~\citep{automcreward} automates dense rewards for open-world Minecraft.
+The through-line is that language becomes a bridge from high-level intent to low-level control
+\emph{via} an RL optimiser, rather than producing an executable, reusable skill directly.
