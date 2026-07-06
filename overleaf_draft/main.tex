@@ -24,6 +24,26 @@
 \newcommand{\yy}{\textcolor{ForestGreen}{\ding{52}}}      % yes
 \newcommand{\nn}{\textcolor{BrickRed}{\ding{56}}}         % no
 \newcommand{\dm}{\textcolor{gray!65}{\textbf{--}}}         % n/a
+\usepackage{longtable}
+
+% coloured category labels for the comparison tables
+\newcommand{\tcode}{\textcolor{cat-code!55!black}{\textsf{\textbf{code}}}}
+\newcommand{\tweights}{\textcolor{cat-vla!45!black}{\textsf{\textbf{weights}}}}
+\newcommand{\treward}{\textcolor{cat-rew!55!black}{\textsf{\textbf{reward}}}}
+\newcommand{\tskill}{\textcolor{cat-skill!45!black}{\textsf{\textbf{skill}}}}
+\newcommand{\tpolicy}{\textcolor{cat-trans!55!black}{\textsf{\textbf{policy}}}}
+\newcommand{\tbench}{\textcolor{cat-bench!45!black}{\textsf{\textbf{bench}}}}
+% eval domains
+\newcommand{\dreal}{\textcolor{ForestGreen}{\textsf{real}}}
+\newcommand{\dsim}{\textcolor{RoyalBlue}{\textsf{sim}}}
+\newcommand{\dgame}{\textcolor{Purple}{\textsf{game}}}
+\newcommand{\dtext}{\textcolor{gray!70}{\textsf{text}}}
+% skill forms
+\newcommand{\flatent}{\textcolor{secA!45!black}{\textsf{latent-RL}}}
+\newcommand{\fspace}{\textcolor{secB!45!black}{\textsf{skill-space}}}
+\newcommand{\fcodelib}{\textcolor{secF!45!black}{\textsf{code-lib}}}
+\newcommand{\fagent}{\textcolor{secG!45!black}{\textsf{agent-lib}}}
+\newcommand{\pp}{\textcolor{orange!90!black}{\textbf{\textasciitilde}}}  % partial
 
 % ---- shared Fig2-style taxonomy forest style + colours ----
 \input{styles/taxonomy_style}
