@@ -1,0 +1,53 @@
+% Figure — §3.1 deep-dive funnel (§3.1.1–§3.1.5), Fig2 forest style.
+% Each sub-section has its own colour (secA..secE); leaves use real \citep keys.
+% Category content is brace-wrapped {...} so the "=" in "(n=13)" is not mis-parsed.
+\begin{figure*}[tbp]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{forest}
+[\textbf{\S3.1 Code-as-policy}\\\textbf{ordered by how much a}\\\textbf{system improves itself}, fill=tx-root, text width=12em
+  [{\textbf{\S3.1.1 Zero-shot synthesis} (n=13)\\\emph{write once, no learning from execution}}, fill=secA, text width=19em, for descendants={fill=secAl, text width=26em}
+    [\textbf{Code-as-Policies}~\citep{codeaspolicies}]
+    [\textbf{ProgPrompt}~\citep{progprompt}]
+    [\textbf{VoxPoser}~\citep{voxposer}]
+    [\textbf{Instruct2Act}~\citep{instruct2act}]
+    [\textbf{ChatGPT for Robotics}~\citep{chatgptrobotics}]
+    [\textbf{TidyBot}~\citep{tidybot}]
+    [\textbf{RoboCodeX}~\citep{robocodex}]
+    [\textbf{RoboScript}~\citep{roboscript}]
+    [\textbf{Text2Motion}~\citep{text2motion}]
+    [\textbf{Demo2Code}~\citep{demo2code}]
+    [\textbf{Statler}~\citep{statler}]
+    [\textbf{Prompt2Walk}~\citep{prompt2walk}]
+    [\textbf{RoboPro}~\citep{robopro}]
+  ]
+  [{\textbf{\S3.1.2 Closed-loop self-repair} (n=6)\\\emph{detect \& fix failures from feedback}}, fill=secB, text width=19em, for descendants={fill=secBl, text width=26em}
+    [\textbf{Inner Monologue}~\citep{innermonologue}]
+    [\textbf{DoReMi}~\citep{doremi}]
+    [\textbf{REFLECT}~\citep{reflect}]
+    [\textbf{Code-as-Monitor}~\citep{codeasmonitor}]
+    [\textbf{AHA}~\citep{aha}]
+    [\textbf{Introspective Planning}~\citep{introspective}]
+  ]
+  [{\textbf{\S3.1.3 Skill-library accumulation} (n=5)\\\emph{the memory step}}, fill=secC, text width=19em, for descendants={fill=secCl, text width=40em}
+    [{code skill libraries $\rightarrow$ cataloged once in \textbf{\S3.4.3} (Voyager, LRLL, RoboCoder, Uni-Skill, DROC)}]
+  ]
+  [{\textbf{\S3.1.4 Evolutionary program search} (n=3)\\\emph{search a population, not one repair}}, fill=secD, text width=19em, for descendants={fill=secDl, text width=26em}
+    [\textbf{CaP-X}~\citep{capx}]
+    [\textbf{RoboEvolve}~\citep{roboevolve}]
+    [\textbf{GEAR (code evolution)}~\citep{codeevolution}]
+  ]
+  [{\textbf{\S3.1.5 Full self-improving loop} (n=3)\\\emph{the gap: feedback + memory + search}}, fill=secE, text width=19em, for descendants={fill=secEl, text width=26em}
+    [\textbf{ASPIRE}~$\star$~\citep{aspire}]
+    [\textbf{ENPIRE}~\citep{enpire}]
+    [\textbf{RoboClaw}~\citep{roboclaw}]
+  ]
+]
+\end{forest}
+}
+\caption{The self-improvement funnel within code-as-policy ($13\!\to\!6\!\to\!5\!\to\!3\!\to\!3$),
+one colour per sub-section. As the demand rises (write once $\to$ repair $\to$ remember $\to$
+search $\to$ all three), occupants thin out; \S3.1.5---feedback $+$ memory $+$ search
+combined---is nearly empty, and only \textbf{ASPIRE}~$\star$ was built for it end-to-end.}
+\label{fig:taxonomy_31}
+\end{figure*}

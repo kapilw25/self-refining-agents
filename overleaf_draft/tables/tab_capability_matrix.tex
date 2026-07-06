@@ -1,0 +1,26 @@
+% Table — capability matrix: one exemplar per camp.
+\begin{table*}[t]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{@{}p{0.26\textwidth}p{0.17\textwidth}p{0.15\textwidth}p{0.15\textwidth}p{0.15\textwidth}@{}}
+\toprule
+\textbf{Dimension} & \textbf{ASPIRE} & \textbf{$\pi_0$} & \textbf{Code-as-Policies} & \textbf{Eureka} \\
+& \footnotesize (code+skills) & \footnotesize (VLA weights) & \footnotesize (code, no mem.) & \footnotesize (reward) \\
+\midrule
+What it outputs        & skill code + library & action chunks & policy code & reward code \\
+How it improves        & feedback+mem+search & gradient pretrain & --- (one-shot) & RL + reflection \\
+Gradient training?     & no & yes & no & yes (downstream) \\
+Persistent skill library? & yes & no & no & no \\
+Failure feedback signal & exec. traces & --- & --- & training stats \\
+Search strategy        & evolutionary & --- & --- & --- \\
+Real-robot validation  & yes (sim2real) & yes & yes & yes \\
+Continual / open-ended? & yes & no & no & no \\
+Beyond fixed APIs?     & yes & yes & no & n/a \\
+Interpretable / editable? & yes (code) & no & yes (code) & yes (code) \\
+\bottomrule
+\end{tabular}
+\caption{Capability matrix, one exemplar per camp. Only the code+skills camp (ASPIRE)
+combines a persistent library with feedback- and search-driven self-improvement.}
+\label{tab:matrix}
+\end{table*}

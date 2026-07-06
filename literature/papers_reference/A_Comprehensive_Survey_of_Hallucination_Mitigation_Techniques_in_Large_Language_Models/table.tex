@@ -1,0 +1,133 @@
+\tikzstyle{my-box}=[
+    rectangle,
+    draw=hidden-draw,
+    rounded corners,
+    text opacity=1,
+    minimum height=1.5em,
+    minimum width=40 em,
+    inner sep=2pt,
+    align=center,
+    fill opacity=.5,
+    line width=0.8pt,
+]
+\tikzstyle{leaf}=[my-box, minimum height=1.5em,
+    fill=hidden-pink!80, text=black, align=center,font=\normalsize,
+    inner xsep=2pt,
+    inner ysep=4pt,
+    line width=0.8pt,
+]
+\begin{figure*}[t!]
+    \centering
+    \resizebox{\textwidth}{!}{
+        \begin{forest}
+            forked edges,
+            for tree={
+                grow=east,
+                reversed=true,
+                anchor=base west,
+                parent anchor=east,
+                child anchor=west,
+                base=center,
+                font=\large,
+                rectangle,
+                draw=hidden-draw,
+                rounded corners,
+                align=center,
+                text centered,
+                minimum width=5em,
+                edge+={darkgray, line width=1pt},
+                s sep=3pt,
+                inner xsep=2pt,
+                inner ysep=3pt,
+                line width=0.8pt,
+                ver/.style={rotate=90, child anchor=north, parent anchor=south, anchor=center},
+            },
+            where level=1{text width=15em,font=\normalsize,}{},
+            where level=2{text width=14em,font=\normalsize,}{},
+            where level=3{text width=30em,font=\normalsize,}{},
+            where level=4{text width=22em,font=\normalsize,}{},
+            where level=5{text width=18em,font=\normalsize,}{},
+            [
+                Hallucination Mitigation\\ Techniques in LLMs
+                [
+                    Prompt Engineering
+                    [
+                        Retrieval-based \\ Post-hoc Editing
+                        [LLM-Augmenter \cite{peng2023check} \\ 
+                        Knowledge Retrieval \cite{varshney2023stitch} \\
+                        RARR \cite{gao2023rarr} \\
+                        FreshPrompt \cite{vu2023freshllms} \\
+                        High Entropy Word Spotting and Replacement \cite{rawte2023troubling} 
+                            , leaf
+                        ]
+                    ]
+                    [
+                        Self Refinement through \\ Feedback and Reasoning
+                        [Prompting GPT-3 To Be Reliable \cite{si2022prompting} \\
+                        ChatProtect \cite{mündler2023selfcontradictory} \\
+                        Self-Reflection Methodology \cite{ji2023mitigating} \\
+                        Decompose-and Query framework (D\&Q) \cite{cao2023step} \\
+                        Structured Comparative reasoning \cite{yan2023basis} \\
+                        EVER \cite{kang2023ever} \\
+                        Mind’s Mirror \cite{liu2023minds} \\
+                        DRESS \cite{chen2023dress} \\
+                        MixAlign \cite{zhang2023knowledge} \\
+                        CoVe \cite{dhuliawala2023chainofverification} \\
+                        CoNLI \cite{lei2023chain} 
+                            , leaf
+                        ]
+                    ]
+                    [
+                        Prompt Tuning
+                        [UPRISE \cite{cheng2023uprise} \\
+                        SynTra \cite{jones2023teaching} 
+                            , leaf
+                        ]
+                    ]
+                ]
+
+                [
+                    Developing Models
+                    [
+                        Introducing New Decoding \\ Strategy
+                        [
+                            CAD \cite{shi2023trusting} \\
+                            DoLa \cite{chuang2023dola} \\
+                            Inference-Time Intervention (ITI) \cite{li2023inference} 
+                            , leaf
+                        ]
+                    ]
+                    [
+                        Utilization of Knowledge Graph
+                        [RHO \cite{ji-etal-2023-rho} \\
+                            FLEEK \cite{bayat2023fleek} 
+                            , leaf
+                        ]
+                    ]
+                    [
+                        Introducing Faithfulness \\ based Loss Function
+                        [
+                                THAM Framework \cite{yoon-etal-2022-information} \\
+                                Loss Weighting Method \cite{qiu2023detecting} 
+                            , leaf
+                        ]
+                    ]
+                    [
+                        Supervised Finetuning
+                        [
+                            Knowledge Injection and Teacher-Student Approach \cite{elaraby2023halo} \\
+                            HAR \cite{köksal2023hallucination} \\
+                            Fine-tuning Language Models for Factuality \cite{tian2023finetuning} \\
+                            BEINFO \cite{razumovskaia2023textitdial} \\
+                            R-Tuning \cite{zhang2023r} \\
+                            TWEAK \cite{qiu2023think} 
+                            , leaf
+                        ]
+                    ]
+                ]
+            ]
+        \end{forest}
+    }
+    \caption{Taxonomy for Hallucination Mitigation Techniques in Large Language Models focusing on existing/new model development and prompting techniques. The model development has several internal fine-tuning or knowledge graph-based optimizations whereas feedback and retrievals are highlighted in the prompt engineering section}
+    \label{fig:lit_surv}
+\end{figure*}

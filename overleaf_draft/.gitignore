@@ -1,0 +1,11 @@
+# LaTeX build artifacts (Overleaf / latexmk regenerate these)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+# main.pdf is intentionally committed so it can be eyeballed without compiling

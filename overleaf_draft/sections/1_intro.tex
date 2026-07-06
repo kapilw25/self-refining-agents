@@ -1,0 +1,29 @@
+\section{Introduction}
+\label{sec:intro}
+
+% TODO: motivate weights-vs-skills; state contributions.
+Two paradigms now dominate robot learning. \emph{Vision-language-action} (VLA)
+models predict actions from frozen weights; \emph{code-as-policy} agents instead
+write executable programs and improve them from experience~\citep{codeaspolicies,aspire}.
+This survey is organized around that fault line.
+
+\paragraph{Why now: the skill stack.}
+The app store for robot skills has arrived---Unitree UniStore ships one-tap,
+cross-model motion downloads~\citep{unistore2026}. But every skill in it is
+\emph{canned playback}: the least-capable point on our map. The skill stack has
+three layers---\textbf{(1) Build} (how skills are created, \S\ref{sec:taxonomy}--\S\ref{sec:bench}),
+\textbf{(2) Distribute} (marketplaces and hubs), and \textbf{(3) Adapt} (on-device
+self-improvement, \S\ref{sec:code}). UniStore is layer~2 over static layer-1 skills;
+the promised value---``adjust grip per fruit so nothing bruises''---lives in layer~3,
+which no shipped skill does today.
+
+\paragraph{Contributions.}
+(i) a taxonomy of robot-learning techniques organized by \emph{weights vs.\ skills}
+(\S\ref{sec:taxonomy}); (ii) a deep-dive arranging code-as-policy by \emph{degree of
+self-improvement} and isolating the un-surveyed \S3.1.5 cell (\S\ref{sec:code});
+(iii) a companion map of the ``skills'' pole (\S\ref{sec:skill}); and (iv) an
+open-problems agenda for the emerging skill economy (\S\ref{sec:open}).
+
+\paragraph{Related surveys.}
+% TODO: prose contrast.
+\input{tables/tab_related_surveys}

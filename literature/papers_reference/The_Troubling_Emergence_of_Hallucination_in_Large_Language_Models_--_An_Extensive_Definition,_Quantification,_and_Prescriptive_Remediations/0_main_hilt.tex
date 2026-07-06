@@ -1,0 +1,253 @@
+% This must be in the first 5 lines to tell arXiv to use pdfLaTeX, which is strongly recommended.
+\pdfoutput=1
+% In particular, the hyperref package requires pdfLaTeX in order to break URLs across lines.
+\RequirePackage[svgnames]{xcolor}
+
+\documentclass[11pt]{article}
+
+% Remove the "review" option to generate the final version.
+\usepackage{EMNLP2023}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{fontawesome}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{lipsum}
+% lmodern}
+%\usepackage{algorithm,algorithmic}
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{colortbl}
+\usepackage[export]{adjustbox} % for the valign option
+\usepackage{varwidth}
+\usepackage{enumitem}
+\setlist{leftmargin=1mm}
+\usepackage{pifont}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{resizegather}
+\usepackage{breqn}
+\usepackage[capitalise]{cleveref}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+\usetikzlibrary{decorations.markings}
+\usepackage{soul}
+\usepackage{wrapfig,graphicx,lipsum}% http://ctan.org/pkg/{wrapfig,graphicx,lipsum}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[italian]{babel}
+%\usepackage{lmodern}
+\usepackage{extsizes}
+\usepackage{mathptmx}
+\usepackage{cuted}
+\usepackage{flushend}
+\usepackage{float}
+\usepackage{changepage,threeparttable}
+\usepackage{anyfontsize}
+\usepackage{setspace}
+\usepackage[draft,textsize=footnotesize,textwidth=15mm]{todonotes}
+%\usepackage[usenames,dvipsnames]{color}
+%\usepackage{color}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{dblfloatfix} 
+%\usepackage[letterspace=125]{microtype}
+% \renewcommand\baselinestretch{0.85}
+
+\DeclareRobustCommand{\hlpink}[1]{{\sethlcolor{pink}\hl{#1}}}
+\DeclareRobustCommand{\hlgreen}[1]{{\sethlcolor{green}\hl{#1}}}
+
+\usepackage{environ}
+
+\newlength{\myl}
+\expandafter\let\expandafter\origequation\csname equation*\endcsname
+\expandafter\let\expandafter\endorigequation\csname endequation*\endcsname
+\long\def\[#1\]{\begin{equation*}#1\end{equation*}}
+\RenewEnviron{equation*}{
+  \settowidth{\myl}{$\displaystyle\BODY$} % calculate width and save as \myl
+  \origequation
+    \ifdim\myl>\linewidth
+      \resizebox{\linewidth}{!}{$\displaystyle\BODY$}% \myl > \linewidth
+    \else
+      \BODY % \myl <= \linewidth
+    \fi
+  \endorigequation
+}
+
+
+\makeatletter
+\newcommand{\DrawLine}{%
+  \begin{tikzpicture}
+  \path[use as bounding box] (0,0) -- (\linewidth,0);
+  \draw[color=blue!75!black,dashed,dash phase=.5pt]
+        (0-\kvtcb@leftlower-\kvtcb@boxsep,0)--
+        (\linewidth+\kvtcb@rightlower+\kvtcb@boxsep,0);
+  \end{tikzpicture}%
+  }
+\makeatother
+
+%resize/scale equations
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+\newcommand*{\Resize}[2]{\resizebox{#1}{!}{$#2$}}%
+
+
+%fix page number
+
+
+
+     
+%--Aman--
+\newcommand\ac[1]{\todo[author=AC,color=blue!40]{#1}}
+\newcommand\acil[1]{\todo[author=AC,color=blue!40,inline]{#1}}
+\newcommand\acb[1]{\textcolor{blue}{#1}}
+\newcommand\act[1]{\textcolor{blue}{#1}}
+
+%--Amitava---
+\newcommand\ad[1]{\todo[author=AD,color=purple!40]{#1}}
+\newcommand\adil[1]{\todo[author=AD,color=purple!40,inline]{#1}}
+\newcommand\adt[1]{\textcolor{purple}{#1}}
+%\renewcommand{\tablename}{Table}
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+% \title{Hallucination Detection and Mitigation}
+
+% \title{"Am I Delusional?": Hallucination Detection and Mitigation for Language Models}
+% \title{"Is this a figment of my imagination?": Hallucination Detection and Mitigation for Language Models}
+% \title{Demystifying the Delirium of Language Models by Hallucination Detection and Mitigation}
+% \title{Mirage or Oasis: Hallucination Detection and Mitigation for Language Models}
+% \title{The Troubling Emergence of Lying Proficiency in Large Language Models - An Extensive Examination, Quantification, and Prescriptive Remediations of Hallucination}
+\newcommand*{\affaddr}[1]{#1}
+\newcommand*{\affmark}[1][*]{\textsuperscript{#1}}
+\newcommand*{\email}[1]{\texttt{#1}}
+\author{
+Vipula Rawte\affmark[1]\thanks{\,\,\,Corresponding author.},\,\,Swagata Chakraborty\affmark[2], Agnibh Pathak\affmark[2], Anubhav Sarkar\affmark[2], \\ \bf S.M Towhidul Islam Tonmoy\affmark[3], Aman Chadha\affmark[4,5]\thanks{\,\,\,Work does not relate to position at Amazon.}, Amit Sheth\affmark[1], Amitava Das\affmark[1]  \\
+\affaddr{\affmark[1]AI Institute, University of South Carolina, USA, \affmark[2]Christ University, India \\
+\affmark[3]Islamic University of Technology, Bangladesh \\
+\affmark[4]Stanford University, USA, 
+\affmark[5]Amazon AI, USA}\\
+\email{vrawte@mailbox.sc.edu}
+}
+
+\title{The Troubling Emergence of Hallucination in Large Language Models -- An Extensive Definition, Quantification, and Prescriptive Remediations}
+%\todo[inline]{VR: paper title is oddly long}}
+
+% Author information can be set in various styles:
+% For several authors from the same institution:
+% \author{Author 1 \and ... \and Author n \\
+%         Address line \\ ... \\ Address line}
+% if the names do not fit well on one line use
+%         Author 1 \\ {\bf Author 2} \\ ... \\ {\bf Author n} \\
+% For authors from different institutions:
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \And  ... \And
+%         Author n \\ Address line \\ ... \\ Address line}
+% To start a separate ``row'' of authors use \AND, as in
+% \author{Author 1 \\ Address line \\  ... \\ Address line
+%         \AND
+%         Author 2 \\ Address line \\ ... \\ Address line \And
+%         Author 3 \\ Address line \\ ... \\ Address line}
+
+\begin{comment}
+  \author{First Author \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  \texttt{email@domain} \\\And
+  Second Author \\
+  Affiliation / Address line 1 \\
+  Affiliation / Address line 2 \\
+  Affiliation / Address line 3 \\
+  \texttt{email@domain} \\}
+\end{comment}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+The recent advancements in Large Language Models (LLMs) have garnered widespread acclaim for their remarkable \emph{emerging capabilities}. However, the issue of \emph{hallucination} has parallelly emerged as a by-product, posing significant concerns. While some recent endeavors have been made to identify and mitigate different types of hallucination, there has been a limited emphasis on the nuanced categorization of hallucination and associated mitigation methods.
+%Although there are a few latest attempts at identifying the hallucination types and mitigating them, there is minimal effort put into categorizing, detecting, and mitigating them succinctly. 
+To address this gap, we offer a fine-grained discourse on profiling hallucination based on its \emph{degree, orientation,} and \emph{category}, along with offering strategies for alleviation. As such, we define two overarching orientations of hallucination: (i) \emph{factual mirage (FM)}
+%-- the phenomenon wherein an LLM engages in hallucination or distortion of a  given prompt that is \ul{factually accurate},  
+and (ii) \emph{silver lining (SL)}.
+%-- LLM indulges in hallucination by conjuring an elaborate and captivating narrative based on a given prompt that is \ul{factually inaccurate}. 
+To provide a more comprehensive understanding, both orientations are further sub-categorized into \emph{intrinsic} and \emph{extrinsic}, with three degrees of severity - (i) \emph{mild}, (ii) \emph{moderate}, and (iii) \emph{alarming}. 
+%Both orientations are then sub-categorized into intrinsic and extrinsic with three degrees: \emph{1. mild, 2. moderate, and 3. alarming}. 
+%Finally, we categorize hallucination into six fine-grained types: \emph{1. Acronym Ambiguity, 2. Numeric Nuisance, 3. Generated Golem, 4. Virtual Voice, 5. Geographic Erratum,} and \emph{6. Time Wrap Troubles,}. 
+We also meticulously categorize hallucination into six types: (i) \emph{acronym ambiguity}, (ii) \emph{numeric nuisance}, (iii) \emph{generated golem}, (iv) \emph{virtual voice}, (v) \emph{geographic erratum}, and (vi) \emph{time wrap}.
+Furthermore, we curate \textbf{H}alluc\textbf{I}nation e\textbf{L}ici\textbf{T}ation (\includegraphics[height=0.27cm,width=1.2cm]{img/hilt.png}), a publicly available dataset comprising of 75,000 samples generated using 
+% curated prompts fed to 
+15 contemporary LLMs along with human annotations for the aforementioned categories.
+% [$15 \times 5,000$ (2,500 Factual Mirage + 2,500 Silver Lining)].
+%Secondly, we introduce \textbf{HILT}, a \textbf{H}allucinat\textbf{I}on e\textbf{L}ici\textbf{T}ation benchmark which is a large collection of AI-generated and human-annotated hallucinated text. For constructing this dataset, we use two news sources, New York Times and Politifact for factually correct and incorrect news respectively. We use human labelers to annotate AI-generated texts with three degrees: \emph{1. mild, 2. moderate, and 3. alarming}. We conduct all our experiments with an exhaustive list of fifteen LLMs. 
+%While studying hallucination it is good to be able to measure which language model hallucinates more than others or to have a comparative measure. We propose a novel idea of HVI (Hallucination Vulnerability Index) that quantifies available LLMs into a spectrum based on their ability to hallucinate. 
+Finally, to establish a method for quantifying and to offer a comparative spectrum that allows us to evaluate and rank LLMs based on their vulnerability to producing hallucinations, we propose \emph{\ul{Hallucination Vulnerability Index (HVI)}}. Amidst the extensive deliberations on policy-making for regulating AI development, it is of utmost importance to assess and measure which LLM is more vulnerable towards hallucination. We firmly believe that HVI holds significant value as a tool for the wider NLP community, with the potential to serve as a rubric in AI-related policy-making. In conclusion, we propose two solution strategies for mitigating hallucinations.
+%The HVI offers a comparative spectrum that allows us to evaluate and rank LLMs based on their vulnerability to producing hallucinations. 
+%Our empirical findings reveal larger LLMs exhibit a higher HVI compared to smaller ones. 
+%\textcolor{red}{In conclusion, we offer actionable solutions for addressing hallucinations. Our approach entails pinpointing high entropy words within a text generated by an LLM (high HVI). Afterwards, we substitute these words with text generated by another LLM (lower HVI). By implementing this method, we have observed a substantial reduction in the occurrence of hallucinatory content in the resulting text.}
+%In conclusion, we present prescriptive remediations for hallucination. Our proposal involves identifying high-entropy points within a text generated by an LLM with a high HVI. Subsequently, we replace these points with text generated by an LLM with a lower HVI value. Through this approach, we have observed a notable reduction in hallucinated content within the resulting text.
+
+%We offer prescriptive remediations for \acb{alleviating hallucination by proposing an automated HVI-based solution and a human-in-the-loop solution, which lead to a} notable reduction in hallucinated content within the resulting text.
+% identifying high-entropy points in text generated by an LLM with a high HVI and replacing them using an LLM with a lower HVI, which 
+
+% \todo{dr das --- provide a link with fewer samples or say we will provide dataset upon acceptance???}
+%We also propose a novel evaluation metric called HVI (Hallucination Vulnerability Index) to detect the extent to which each LLM is likely to hallucinate. 
+%Finally, we use the high-entropy points to detect and mitigate the generated hallucinations. Our empirical results show that the HVI increases with the LLM size and hence, the bigger LLMs tend to hallucinate more than the smaller ones. Our dataset is available at: \url{https://github/hilt/}
+
+
+
+
+%We also offer a striated treatment to delineate the degrees of hallucination for various LLMs. We create a new AI-generated dataset based on the news article titles from news media houses.
+% , New York Times. To the best of our knowledge, this is the first dataset in this line of work. Further, we also propose some mitigation strategies using factual knowledge from the knowledge graphs.
+\end{abstract}
+
+\input{1_intro}
+%\input{2_related}
+\input{3_def_eg}
+\input{4_data}
+\input{5_hvi}
+\input{6_mitigation}
+\input{7_conclusion}
+
+\newpage
+\input{8_limitations}
+
+% Entries for the entire Anthology, followed by custom entries
+\bibliography{hallucination}
+\bibliographystyle{acl_natbib}
+
+
+\newpage
+\input{9_faq}
+\input{10_appendix}
+
+\end{document}

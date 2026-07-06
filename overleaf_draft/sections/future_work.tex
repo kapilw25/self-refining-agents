@@ -1,0 +1,19 @@
+\section{Future Directions}
+\label{sec:future}
+
+Three directions follow directly from the map. \textbf{(1) Standardised evaluation of
+self-improvement.} The systems on the top rung (\S3.1.5) each report improvement on their
+own splits; the field lacks a shared protocol that measures held-out success as a function
+of accumulated experience (an area-under-the-learning-curve metric), cross-embodiment
+transfer, and library-reuse rate under a common budget. Building such a benchmark is the
+natural companion to this survey. \textbf{(2) Adaptation as a first-class marketplace
+primitive.} The open problems of \S\ref{sec:open} suggest a research programme in which a
+downloaded skill is not a frozen artefact but a starting point that the \S\ref{sec:code}
+loop specialises to the local robot and environment---turning distribution (layer~2) and
+adaptation (layer~3) into a single pipeline. \textbf{(3) Bridging the RL and code flavours
+of skills.} \S\ref{sec:skill} shows that skills are learned either as latent RL policies or
+as retrievable code; a unifying interface---code that wraps, calls, and refines learned
+policies, and learned policies distilled back into inspectable code---would let the
+self-improvement machinery of \S\ref{sec:code} operate over both. We see the combination of
+a standard self-improvement benchmark with an adaptation-centric marketplace as the most
+likely path from today's static skill stores to genuinely capable, compounding robots.

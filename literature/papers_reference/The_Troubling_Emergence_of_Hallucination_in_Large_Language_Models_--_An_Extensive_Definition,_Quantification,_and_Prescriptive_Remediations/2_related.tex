@@ -1,0 +1,24 @@
+\section{Related Work}
+
+%Large language models (LLMs) have gained a lot of attention in recent years due to their impressive performance in natural language processing tasks. These models have been developed using various architectures such as Transformer, GPT, BERT, and others. In this section, we provide an overview of the related work in the field of large language models.
+
+
+%\subsection{Language Models}
+%The development of LLMs dates back to the early 2000s when researchers started exploring the use of statistical language models based on n-grams. However, the effectiveness of these models was limited due to the inability to capture long-range dependencies in language.
+
+%\subsection{Large Language Models}
+
+%The Transformer architecture was introduced in the seminal paper \citep{vaswani2017attention}. The Transformer architecture achieved state-of-the-art results in machine translation and language modeling. The success of the Transformer architecture has led to the development of several large-scale language models such as GPT \citep{radford2018improving}, GPT-2 \citep{radford2019language}, GPT-3 \citep{brown2020language}. Yet another model that utilizes the Transformer architecture is Bidirectional Encoder Representations from Transformers (BERT) was introduced by \citep{devlin2018bert}. BERT is a pre-trained language model that has shown state-of-the-art performance in several NLP tasks such as question answering and sentiment analysis. Since its introduction, several variants of BERT have been developed, including RoBERTa \citep{liu2019roberta}, ELECTRA \citep{clark2020electra}, ALBERT \citep{lan2019albert}, etc.
+
+%Apart from the Transformer-based models and BERT variants, several other architectures have been proposed for LLMs. For example, XLNet \citep{yang2019xlnet} introduced a permutation-based training method that allows for modeling bidirectional context. T5 \citep{raffel2020exploring} is a unified text-to-text transfer transformer that can be fine-tuned for a wide range of NLP tasks.
+
+%\subsection{Hallucination in LLMs}
+\textbf{Hallucination problem catches attention back in 2019-2020. It is more alarming now:} With the sky-rocketing trajectory of progress in the LLM space over the last year -- especially with the advent of ChatGPT and GPT-4 -- one of the most significant challenges associated with LLMs, namely, the issue of hallucination has cropped up. It is a complex issue that warrants attention and further research to ensure the reliability and accuracy of LLM-generated outputs. Hallucination in large language models has been studied for the natural language generation area starting in \citep{maynez-etal-2020-faithfulness}. As the size of LLMs continues to grow, their emerging abilities and thus the possibilities of their use cases expand, leading to a higher chance of hallucination in the wild.
+
+\textbf{Researchers defined hallucination loosely and studied it in bits and pieces:} Some of the previous works have tried to categorize hallucination into name-nationality category \citep{ladhak2023pre}. Other prior works have also defined intrinsic and extrinsic hallucination \citep{maynez-etal-2020-faithfulness}. Although such broad categories of hallucination have been proposed, there is a lack of a finer-grained comprehensive set of categories that can help delineate the nuances. Put simply, while existing literature has defined hallucination in bits and pieces, we believe we are the first to provide a holistic treatment of the topic -- spanning the orientation, degree, and type of hallucination -- along with a large-scale dataset to further research in this area. \textbf{we are defining hallucination more comprehensive way:} Even if the above-mentioned works have defined hallucination patterns, in this work, we are defining hallucination in a more comprehensive way.
+
+\textbf{brief on proposed mitigation strategies:}
+\textcolor{red}{to-do: Also, add black box - gray box methods} 
+There are a few ways to reduce hallucinations in LLMs. Reranking the generated sample responses can be used to reduce hallucination \cite{dale2022detecting}. \cite{sridhar2022improved} discusses how hallucinations in abstractive summarization can be reduced by improving the beam search. 
+\textcolor{red}{elaborate a bit on mitigation and separate the detection technique}
+Some latest mitigation techniques \cite{li2023halueval,mündler2023selfcontradictory,pfeiffer2023mmt5,chen2023purr,zhang2023mitigating,zhang2023language,ladhak-etal-2023-pre,manakul2023selfcheckgpt,agrawal2023language} show several initial attempts at reducing hallucinations.

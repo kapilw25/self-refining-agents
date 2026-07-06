@@ -1,0 +1,233 @@
+\begin{thebibliography}{52}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+
+\bibitem[{Bayat et~al.(2023)Bayat, Qian, Han, Sang, Belyi, Khorshidi, Wu, Ilyas, and Li}]{bayat2023fleek}
+Farima~Fatahi Bayat, Kun Qian, Benjamin Han, Yisi Sang, Anton Belyi, Samira Khorshidi, Fei Wu, Ihab~F. Ilyas, and Yunyao Li. 2023.
+\newblock \href {http://arxiv.org/abs/2310.17119} {Fleek: Factual error detection and correction with evidence retrieved from external knowledge}.
+
+\bibitem[{Cao et~al.(2023)Cao, An, Feng, Xu, Chen, and Zhao}]{cao2023step}
+Hejing Cao, Zhenwei An, Jiazhan Feng, Kun Xu, Liwei Chen, and Dongyan Zhao. 2023.
+\newblock \href {http://arxiv.org/abs/2311.07491} {A step closer to comprehensive answers: Constrained multi-stage question decomposition with large language models}.
+
+\bibitem[{Chen et~al.(2023)Chen, Sikka, Cogswell, Ji, and Divakaran}]{chen2023dress}
+Yangyi Chen, Karan Sikka, Michael Cogswell, Heng Ji, and Ajay Divakaran. 2023.
+\newblock Dress: Instructing large vision-language models to align and interact with humans via natural language feedback.
+\newblock \emph{arXiv preprint arXiv:2311.10081}.
+
+\bibitem[{Cheng et~al.(2023)Cheng, Huang, Bi, Zhan, Liu, Wang, Sun, Wei, Deng, and Zhang}]{cheng2023uprise}
+Daixuan Cheng, Shaohan Huang, Junyu Bi, Yuefeng Zhan, Jianfeng Liu, Yujing Wang, Hao Sun, Furu Wei, Denvy Deng, and Qi~Zhang. 2023.
+\newblock \href {http://arxiv.org/abs/2303.08518} {Uprise: Universal prompt retrieval for improving zero-shot evaluation}.
+
+\bibitem[{Chrysostomou and Aletras(2021)}]{chrysostomou2021enjoy}
+George Chrysostomou and Nikolaos Aletras. 2021.
+\newblock Enjoy the salience: Towards better transformer-based faithful explanations with word salience.
+\newblock \emph{arXiv preprint arXiv:2108.13759}.
+
+\bibitem[{Chuang et~al.(2023)Chuang, Xie, Luo, Kim, Glass, and He}]{chuang2023dola}
+Yung-Sung Chuang, Yujia Xie, Hongyin Luo, Yoon Kim, James Glass, and Pengcheng He. 2023.
+\newblock \href {http://arxiv.org/abs/2309.03883} {Dola: Decoding by contrasting layers improves factuality in large language models}.
+
+\bibitem[{Chung et~al.(2022)Chung, Hou, Longpre, Zoph, Tay, Fedus, Li, Wang, Dehghani, Brahma, Webson, Gu, Dai, Suzgun, Chen, Chowdhery, Castro-Ros, Pellat, Robinson, Valter, Narang, Mishra, Yu, Zhao, Huang, Dai, Yu, Petrov, Chi, Dean, Devlin, Roberts, Zhou, Le, and Wei}]{chung2022scaling}
+Hyung~Won Chung, Le~Hou, Shayne Longpre, Barret Zoph, Yi~Tay, William Fedus, Yunxuan Li, Xuezhi Wang, Mostafa Dehghani, Siddhartha Brahma, Albert Webson, Shixiang~Shane Gu, Zhuyun Dai, Mirac Suzgun, Xinyun Chen, Aakanksha Chowdhery, Alex Castro-Ros, Marie Pellat, Kevin Robinson, Dasha Valter, Sharan Narang, Gaurav Mishra, Adams Yu, Vincent Zhao, Yanping Huang, Andrew Dai, Hongkun Yu, Slav Petrov, Ed~H. Chi, Jeff Dean, Jacob Devlin, Adam Roberts, Denny Zhou, Quoc~V. Le, and Jason Wei. 2022.
+\newblock \href {http://arxiv.org/abs/2210.11416} {Scaling instruction-finetuned language models}.
+
+\bibitem[{Dhuliawala et~al.(2023)Dhuliawala, Komeili, Xu, Raileanu, Li, Celikyilmaz, and Weston}]{dhuliawala2023chainofverification}
+Shehzaad Dhuliawala, Mojtaba Komeili, Jing Xu, Roberta Raileanu, Xian Li, Asli Celikyilmaz, and Jason Weston. 2023.
+\newblock \href {http://arxiv.org/abs/2309.11495} {Chain-of-verification reduces hallucination in large language models}.
+
+\bibitem[{Elaraby et~al.(2023)Elaraby, Lu, Dunn, Zhang, Wang, Liu, Tian, Wang, and Wang}]{elaraby2023halo}
+Mohamed Elaraby, Mengyin Lu, Jacob Dunn, Xueying Zhang, Yu~Wang, Shizhu Liu, Pingchuan Tian, Yuping Wang, and Yuxuan Wang. 2023.
+\newblock \href {http://arxiv.org/abs/2308.11764} {Halo: Estimation and reduction of hallucinations in open-source weak large language models}.
+
+\bibitem[{Feldman et~al.(2023)Feldman, Foulds, and Pan}]{feldman2023trapping}
+Philip Feldman, James~R. Foulds, and Shimei Pan. 2023.
+\newblock \href {http://arxiv.org/abs/2306.06085} {Trapping llm hallucinations using tagged context prompts}.
+
+\bibitem[{Gao et~al.(2023)Gao, Dai, Pasupat, Chen, Chaganty, Fan, Zhao, Lao, Lee, Juan et~al.}]{gao2023rarr}
+Luyu Gao, Zhuyun Dai, Panupong Pasupat, Anthony Chen, Arun~Tejasvi Chaganty, Yicheng Fan, Vincent Zhao, Ni~Lao, Hongrae Lee, Da-Cheng Juan, et~al. 2023.
+\newblock Rarr: Researching and revising what language models say, using language models.
+\newblock In \emph{Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 16477--16508.
+
+\bibitem[{Iyer et~al.(2023)Iyer, Lin, Pasunuru, Mihaylov, Simig, Yu, Shuster, Wang, Liu, Koura, Li, O'Horo, Pereyra, Wang, Dewan, Celikyilmaz, Zettlemoyer, and Stoyanov}]{iyer2023optiml}
+Srinivasan Iyer, Xi~Victoria Lin, Ramakanth Pasunuru, Todor Mihaylov, Daniel Simig, Ping Yu, Kurt Shuster, Tianlu Wang, Qing Liu, Punit~Singh Koura, Xian Li, Brian O'Horo, Gabriel Pereyra, Jeff Wang, Christopher Dewan, Asli Celikyilmaz, Luke Zettlemoyer, and Ves Stoyanov. 2023.
+\newblock \href {http://arxiv.org/abs/2212.12017} {Opt-iml: Scaling language model instruction meta learning through the lens of generalization}.
+
+\bibitem[{Jain(2023)}]{Jain2023HallucinationMitigation}
+Vinija Jain. 2023.
+\newblock Hallucination mitigation.
+\newblock \emph{Distilled AI}.
+\newblock \url{https://vinija.ai}.
+
+\bibitem[{Ji et~al.(2023{\natexlab{a}})Ji, Liu, Lee, Yu, Wilie, Zeng, and Fung}]{ji-etal-2023-rho}
+Ziwei Ji, Zihan Liu, Nayeon Lee, Tiezheng Yu, Bryan Wilie, Min Zeng, and Pascale Fung. 2023{\natexlab{a}}.
+\newblock \href {https://doi.org/10.18653/v1/2023.findings-acl.275} {{RHO}: Reducing hallucination in open-domain dialogues with knowledge grounding}.
+\newblock In \emph{Findings of the Association for Computational Linguistics: ACL 2023}, pages 4504--4522, Toronto, Canada. Association for Computational Linguistics.
+
+\bibitem[{Ji et~al.(2023{\natexlab{b}})Ji, Yu, Xu, Lee, Ishii, and Fung}]{ji2023mitigating}
+Ziwei Ji, Tiezheng Yu, Yan Xu, Nayeon Lee, Etsuko Ishii, and Pascale Fung. 2023{\natexlab{b}}.
+\newblock \href {http://arxiv.org/abs/2310.06271} {Towards mitigating hallucination in large language models via self-reflection}.
+
+\bibitem[{Jones et~al.(2023)Jones, Palangi, Simões, Chandrasekaran, Mukherjee, Mitra, Awadallah, and Kamar}]{jones2023teaching}
+Erik Jones, Hamid Palangi, Clarisse Simões, Varun Chandrasekaran, Subhabrata Mukherjee, Arindam Mitra, Ahmed Awadallah, and Ece Kamar. 2023.
+\newblock \href {http://arxiv.org/abs/2310.06827} {Teaching language models to hallucinate less with synthetic tasks}.
+
+\bibitem[{Kang et~al.(2023)Kang, Ni, and Yao}]{kang2023ever}
+Haoqiang Kang, Juntong Ni, and Huaxiu Yao. 2023.
+\newblock \href {http://arxiv.org/abs/2311.09114} {Ever: Mitigating hallucination in large language models through real-time verification and rectification}.
+
+\bibitem[{Köksal et~al.(2023)Köksal, Aksitov, and Chang}]{köksal2023hallucination}
+Abdullatif Köksal, Renat Aksitov, and Chung-Ching Chang. 2023.
+\newblock \href {http://arxiv.org/abs/2311.07424} {Hallucination augmented recitations for language models}.
+
+\bibitem[{Lan et~al.(2020)Lan, Chen, Goodman, Gimpel, Sharma, and Soricut}]{Lan2020ALBERT:}
+Zhenzhong Lan, Mingda Chen, Sebastian Goodman, Kevin Gimpel, Piyush Sharma, and Radu Soricut. 2020.
+\newblock \href {https://openreview.net/forum?id=H1eA7AEtvS} {Albert: A lite bert for self-supervised learning of language representations}.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{Lango and Dusek(2023)}]{lango-dusek-2023-critic}
+Mateusz Lango and Ondrej Dusek. 2023.
+\newblock \href {https://doi.org/10.18653/v1/2023.emnlp-main.172} {Critic-driven decoding for mitigating hallucinations in data-to-text generation}.
+\newblock In \emph{Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing}, pages 2853--2862, Singapore. Association for Computational Linguistics.
+
+\bibitem[{Lei et~al.(2023)Lei, Li, Hu, Wang, Yun, Ching, and Kamal}]{lei2023chain}
+Deren Lei, Yaxi Li, Mengya Hu, Mingyu Wang, Vincent Yun, Emily Ching, and Eslam Kamal. 2023.
+\newblock \href {http://arxiv.org/abs/2310.03951} {Chain of natural language inference for reducing large language model ungrounded hallucinations}.
+
+\bibitem[{Lester et~al.(2021)Lester, Al-Rfou, and Constant}]{lester-etal-2021-power}
+Brian Lester, Rami Al-Rfou, and Noah Constant. 2021.
+\newblock \href {https://doi.org/10.18653/v1/2021.emnlp-main.243} {The power of scale for parameter-efficient prompt tuning}.
+\newblock In \emph{Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing}, pages 3045--3059, Online and Punta Cana, Dominican Republic. Association for Computational Linguistics.
+
+\bibitem[{Lewis et~al.(2021)Lewis, Perez, Piktus, Petroni, Karpukhin, Goyal, Küttler, Lewis, Yih, Rocktäschel, Riedel, and Kiela}]{lewis2021RAG}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela. 2021.
+\newblock Retrieval-augmented generation for knowledge-intensive nlp tasks.
+\newblock \emph{arXiv preprint arXiv:2005.11401v4}.
+
+\bibitem[{Li et~al.(2023{\natexlab{a}})Li, Patel, Vi{\'e}gas, Pfister, and Wattenberg}]{li2023inference}
+Kenneth Li, Oam Patel, Fernanda Vi{\'e}gas, Hanspeter Pfister, and Martin Wattenberg. 2023{\natexlab{a}}.
+\newblock Inference-time intervention: Eliciting truthful answers from a language model.
+\newblock \emph{arXiv preprint arXiv:2306.03341}.
+
+\bibitem[{Li et~al.(2023{\natexlab{b}})Li, Peng, and Zhang}]{li2023selfchecker}
+Miaoran Li, Baolin Peng, and Zhu Zhang. 2023{\natexlab{b}}.
+\newblock \href {http://arxiv.org/abs/2305.14623} {Self-checker: Plug-and-play modules for fact-checking with large language models}.
+
+\bibitem[{Liu et~al.(2023)Liu, Li, Zhang, Du, Chen, Hu, Xu, Chen, and Wu}]{liu2023minds}
+Weize Liu, Guocong Li, Kai Zhang, Bang Du, Qiyuan Chen, Xuming Hu, Hongxia Xu, Jintai Chen, and Jian Wu. 2023.
+\newblock \href {http://arxiv.org/abs/2311.09214} {Mind's mirror: Distilling self-evaluation capability and comprehensive thinking from large language models}.
+
+\bibitem[{Madaan et~al.(2023)Madaan, Tandon, Gupta, Hallinan, Gao, Wiegreffe, Alon, Dziri, Prabhumoye, Yang, Gupta, Majumder, Hermann, Welleck, Yazdanbakhsh, and Clark}]{madaan2023selfrefine}
+Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank Gupta, Bodhisattwa~Prasad Majumder, Katherine Hermann, Sean Welleck, Amir Yazdanbakhsh, and Peter Clark. 2023.
+\newblock \href {http://arxiv.org/abs/2303.17651} {Self-refine: Iterative refinement with self-feedback}.
+
+\bibitem[{M{\"u}ndler et~al.(2023)M{\"u}ndler, He, Jenko, and Vechev}]{mundler2023self}
+Niels M{\"u}ndler, Jingxuan He, Slobodan Jenko, and Martin Vechev. 2023.
+\newblock Self-contradictory hallucinations of large language models: Evaluation, detection and mitigation.
+\newblock \emph{arXiv preprint arXiv:2305.15852}.
+
+\bibitem[{Mündler et~al.(2023)Mündler, He, Jenko, and Vechev}]{mündler2023selfcontradictory}
+Niels Mündler, Jingxuan He, Slobodan Jenko, and Martin Vechev. 2023.
+\newblock \href {http://arxiv.org/abs/2305.15852} {Self-contradictory hallucinations of large language models: Evaluation, detection and mitigation}.
+
+\bibitem[{Peng et~al.(2023)Peng, Galley, He, Cheng, Xie, Hu, Huang, Liden, Yu, Chen, and Gao}]{peng2023check}
+Baolin Peng, Michel Galley, Pengcheng He, Hao Cheng, Yujia Xie, Yu~Hu, Qiuyuan Huang, Lars Liden, Zhou Yu, Weizhu Chen, and Jianfeng Gao. 2023.
+\newblock \href {http://arxiv.org/abs/2302.12813} {Check your facts and try again: Improving large language models with external knowledge and automated feedback}.
+
+\bibitem[{Qiu et~al.(2023{\natexlab{a}})Qiu, Embar, Cohen, and Han}]{qiu2023think}
+Yifu Qiu, Varun Embar, Shay~B Cohen, and Benjamin Han. 2023{\natexlab{a}}.
+\newblock Think while you write: Hypothesis verification promotes faithful knowledge-to-text generation.
+\newblock \emph{arXiv preprint arXiv:2311.09467}.
+
+\bibitem[{Qiu et~al.(2023{\natexlab{b}})Qiu, Ziser, Korhonen, Ponti, and Cohen}]{qiu2023detecting}
+Yifu Qiu, Yftah Ziser, Anna Korhonen, Edoardo~M. Ponti, and Shay~B. Cohen. 2023{\natexlab{b}}.
+\newblock \href {http://arxiv.org/abs/2305.13632} {Detecting and mitigating hallucinations in multilingual summarisation}.
+
+\bibitem[{Rawte et~al.(2023)Rawte, Chakraborty, Pathak, Sarkar, Tonmoy, Chadha, Sheth, and Das}]{rawte2023troubling}
+Vipula Rawte, Swagata Chakraborty, Agnibh Pathak, Anubhav Sarkar, S.~M Towhidul~Islam Tonmoy, Aman Chadha, Amit~P. Sheth, and Amitava Das. 2023.
+\newblock \href {http://arxiv.org/abs/2310.04988} {The troubling emergence of hallucination in large language models -- an extensive definition, quantification, and prescriptive remediations}.
+
+\bibitem[{Ray(2023)}]{RAY2023121}
+Partha~Pratim Ray. 2023.
+\newblock \href {https://doi.org/https://doi.org/10.1016/j.iotcps.2023.04.003} {Chatgpt: A comprehensive review on background, applications, key challenges, bias, ethics, limitations and future scope}.
+\newblock \emph{Internet of Things and Cyber-Physical Systems}, 3:121--154.
+
+\bibitem[{Razumovskaia et~al.(2023)Razumovskaia, Vulić, Marković, Cichy, Zheng, Wen, and Budzianowski}]{razumovskaia2023textitdial}
+Evgeniia Razumovskaia, Ivan Vulić, Pavle Marković, Tomasz Cichy, Qian Zheng, Tsung-Hsien Wen, and Paweł Budzianowski. 2023.
+\newblock \href {http://arxiv.org/abs/2311.09800} {$\textit{Dial BeInfo for Faithfulness}$: Improving factuality of information-seeking dialogue via behavioural fine-tuning}.
+
+\bibitem[{Sanh et~al.(2019)Sanh, Debut, Chaumond, and Wolf}]{sanh2019distilbert}
+Victor Sanh, Lysandre Debut, Julien Chaumond, and Thomas Wolf. 2019.
+\newblock Distilbert, a distilled version of bert: smaller, faster, cheaper and lighter.
+\newblock \emph{arXiv preprint arXiv:1910.01108}.
+
+\bibitem[{Shi et~al.(2023)Shi, Han, Lewis, Tsvetkov, Zettlemoyer, and tau Yih}]{shi2023trusting}
+Weijia Shi, Xiaochuang Han, Mike Lewis, Yulia Tsvetkov, Luke Zettlemoyer, and Scott~Wen tau Yih. 2023.
+\newblock \href {http://arxiv.org/abs/2305.14739} {Trusting your evidence: Hallucinate less with context-aware decoding}.
+
+\bibitem[{Si et~al.(2022)Si, Gan, Yang, Wang, Wang, Boyd-Graber, and Wang}]{si2022prompting}
+Chenglei Si, Zhe Gan, Zhengyuan Yang, Shuohang Wang, Jianfeng Wang, Jordan Boyd-Graber, and Lijuan Wang. 2022.
+\newblock Prompting gpt-3 to be reliable.
+\newblock \emph{arXiv preprint arXiv:2210.09150}.
+
+\bibitem[{Sun et~al.(2023{\natexlab{a}})Sun, Xu, Zha, Liu, and Dong}]{sun2023head}
+Kai Sun, Yifan~Ethan Xu, Hanwen Zha, Yue Liu, and Xin~Luna Dong. 2023{\natexlab{a}}.
+\newblock Head-to-tail: How knowledgeable are large language models (llm)? aka will llms replace knowledge graphs?
+\newblock \emph{arXiv preprint arXiv:2308.10168}.
+
+\bibitem[{Sun et~al.(2023{\natexlab{b}})Sun, Shen, Zhou, Zhang, Chen, Cox, Yang, and Gan}]{sun2023principledriven}
+Zhiqing Sun, Yikang Shen, Qinhong Zhou, Hongxin Zhang, Zhenfang Chen, David Cox, Yiming Yang, and Chuang Gan. 2023{\natexlab{b}}.
+\newblock \href {http://arxiv.org/abs/2305.03047} {Principle-driven self-alignment of language models from scratch with minimal human supervision}.
+
+\bibitem[{Tian et~al.(2023)Tian, Mitchell, Yao, Manning, and Finn}]{tian2023finetuning}
+Katherine Tian, Eric Mitchell, Huaxiu Yao, Christopher~D. Manning, and Chelsea Finn. 2023.
+\newblock \href {http://arxiv.org/abs/2311.08401} {Fine-tuning language models for factuality}.
+
+\bibitem[{Touvron et~al.(2023)Touvron, Martin, Stone, Albert, Almahairi, Babaei, Bashlykov, Batra, Bhargava, Bhosale, Bikel, Blecher, Ferrer, Chen, Cucurull, Esiobu, Fernandes, Fu, Fu, Fuller, Gao, Goswami, Goyal, Hartshorn, Hosseini, Hou, Inan, Kardas, Kerkez, Khabsa, Kloumann, Korenev, Koura, Lachaux, Lavril, Lee, Liskovich, Lu, Mao, Martinet, Mihaylov, Mishra, Molybog, Nie, Poulton, Reizenstein, Rungta, Saladi, Schelten, Silva, Smith, Subramanian, Tan, Tang, Taylor, Williams, Kuan, Xu, Yan, Zarov, Zhang, Fan, Kambadur, Narang, Rodriguez, Stojnic, Edunov, and Scialom}]{touvron2023llama}
+Hugo Touvron, Louis Martin, Kevin Stone, Peter Albert, Amjad Almahairi, Yasmine Babaei, Nikolay Bashlykov, Soumya Batra, Prajjwal Bhargava, Shruti Bhosale, Dan Bikel, Lukas Blecher, Cristian~Canton Ferrer, Moya Chen, Guillem Cucurull, David Esiobu, Jude Fernandes, Jeremy Fu, Wenyin Fu, Brian Fuller, Cynthia Gao, Vedanuj Goswami, Naman Goyal, Anthony Hartshorn, Saghar Hosseini, Rui Hou, Hakan Inan, Marcin Kardas, Viktor Kerkez, Madian Khabsa, Isabel Kloumann, Artem Korenev, Punit~Singh Koura, Marie-Anne Lachaux, Thibaut Lavril, Jenya Lee, Diana Liskovich, Yinghai Lu, Yuning Mao, Xavier Martinet, Todor Mihaylov, Pushkar Mishra, Igor Molybog, Yixin Nie, Andrew Poulton, Jeremy Reizenstein, Rashi Rungta, Kalyan Saladi, Alan Schelten, Ruan Silva, Eric~Michael Smith, Ranjan Subramanian, Xiaoqing~Ellen Tan, Binh Tang, Ross Taylor, Adina Williams, Jian~Xiang Kuan, Puxin Xu, Zheng Yan, Iliyan Zarov, Yuchen Zhang, Angela Fan, Melanie Kambadur, Sharan Narang, Aurelien Rodriguez, Robert Stojnic, Sergey Edunov, and Thomas
+  Scialom. 2023.
+\newblock \href {http://arxiv.org/abs/2307.09288} {Llama 2: Open foundation and fine-tuned chat models}.
+
+\bibitem[{Varshney et~al.(2023)Varshney, Yao, Zhang, Chen, and Yu}]{varshney2023stitch}
+Neeraj Varshney, Wenlin Yao, Hongming Zhang, Jianshu Chen, and Dong Yu. 2023.
+\newblock \href {http://arxiv.org/abs/2307.03987} {A stitch in time saves nine: Detecting and mitigating hallucinations of llms by validating low-confidence generation}.
+
+\bibitem[{Vu et~al.(2023)Vu, Iyyer, Wang, Constant, Wei, Wei, Tar, Sung, Zhou, Le, and Luong}]{vu2023freshllms}
+Tu~Vu, Mohit Iyyer, Xuezhi Wang, Noah Constant, Jerry Wei, Jason Wei, Chris Tar, Yun-Hsuan Sung, Denny Zhou, Quoc Le, and Thang Luong. 2023.
+\newblock \href {http://arxiv.org/abs/2310.03214} {Freshllms: Refreshing large language models with search engine augmentation}.
+
+\bibitem[{Wang et~al.(2023)Wang, Kordi, Mishra, Liu, Smith, Khashabi, and Hajishirzi}]{wang2023selfinstruct}
+Yizhong Wang, Yeganeh Kordi, Swaroop Mishra, Alisa Liu, Noah~A. Smith, Daniel Khashabi, and Hannaneh Hajishirzi. 2023.
+\newblock \href {http://arxiv.org/abs/2212.10560} {Self-instruct: Aligning language models with self-generated instructions}.
+
+\bibitem[{White et~al.(2023)White, Fu, Hays, Sandborn, Olea, Gilbert, Elnashar, Spencer-Smith, and Schmidt}]{white2023prompt}
+Jules White, Quchen Fu, Sam Hays, Michael Sandborn, Carlos Olea, Henry Gilbert, Ashraf Elnashar, Jesse Spencer-Smith, and Douglas~C. Schmidt. 2023.
+\newblock \href {http://arxiv.org/abs/2302.11382} {A prompt pattern catalog to enhance prompt engineering with chatgpt}.
+
+\bibitem[{Workshop et~al.(2022)Workshop, Scao, Fan, Akiki, Pavlick, Ili{\'c}, Hesslow, Castagn{\'e}, Luccioni, Yvon et~al.}]{workshop2022bloom}
+BigScience Workshop, Teven~Le Scao, Angela Fan, Christopher Akiki, Ellie Pavlick, Suzana Ili{\'c}, Daniel Hesslow, Roman Castagn{\'e}, Alexandra~Sasha Luccioni, Fran{\c{c}}ois Yvon, et~al. 2022.
+\newblock Bloom: A 176b-parameter open-access multilingual language model.
+\newblock \emph{arXiv preprint arXiv:2211.05100}.
+
+\bibitem[{Xu et~al.(2023)Xu, Sun, Zheng, Geng, Zhao, Feng, Tao, and Jiang}]{xu2023wizardlm}
+Can Xu, Qingfeng Sun, Kai Zheng, Xiubo Geng, Pu~Zhao, Jiazhan Feng, Chongyang Tao, and Daxin Jiang. 2023.
+\newblock \href {http://arxiv.org/abs/2304.12244} {Wizardlm: Empowering large language models to follow complex instructions}.
+
+\bibitem[{Yan et~al.(2023)Yan, Liu, Chiu, Shen, Qin, Yu, Zhao, Lakshmanan, Kurzion, Rush, Liu, and Bendersky}]{yan2023basis}
+Jing~Nathan Yan, Tianqi Liu, Justin~T Chiu, Jiaming Shen, Zhen Qin, Yue Yu, Yao Zhao, Charu Lakshmanan, Yair Kurzion, Alexander~M. Rush, Jialu Liu, and Michael Bendersky. 2023.
+\newblock \href {http://arxiv.org/abs/2311.08390} {On what basis? predicting text preference via structured comparative reasoning}.
+
+\bibitem[{Yoon et~al.(2022)Yoon, Yoon, Yoon, Kim, and Yoo}]{yoon-etal-2022-information}
+Sunjae Yoon, Eunseop Yoon, Hee~Suk Yoon, Junyeong Kim, and Chang Yoo. 2022.
+\newblock \href {https://doi.org/10.18653/v1/2022.emnlp-main.280} {Information-theoretic text hallucination reduction for video-grounded dialogue}.
+\newblock In \emph{Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing}, pages 4182--4193, Abu Dhabi, United Arab Emirates. Association for Computational Linguistics.
+
+\bibitem[{Zhang et~al.(2023{\natexlab{a}})Zhang, Diao, Lin, Fung, Lian, Wang, Chen, Ji, and Zhang}]{zhang2023r}
+Hanning Zhang, Shizhe Diao, Yong Lin, Yi~R Fung, Qing Lian, Xingyao Wang, Yangyi Chen, Heng Ji, and Tong Zhang. 2023{\natexlab{a}}.
+\newblock R-tuning: Teaching large language models to refuse unknown questions.
+\newblock \emph{arXiv preprint arXiv:2311.09677}.
+
+\bibitem[{Zhang et~al.(2023{\natexlab{b}})Zhang, Pan, Zhao, and Wang}]{zhang2023knowledge}
+Shuo Zhang, Liangming Pan, Junzhou Zhao, and William~Yang Wang. 2023{\natexlab{b}}.
+\newblock \href {http://arxiv.org/abs/2305.13669} {The knowledge alignment problem: Bridging human and external knowledge for large language models}.
+
+\end{thebibliography}

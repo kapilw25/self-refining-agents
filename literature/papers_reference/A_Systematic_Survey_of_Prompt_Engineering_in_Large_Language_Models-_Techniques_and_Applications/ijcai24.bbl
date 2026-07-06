@@ -1,0 +1,226 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Bahng \bgroup \em et al.\egroup }{2022}]{bahng2022exploring}
+Hyojin Bahng, Ali Jahanian, Swami Sankaranarayanan, and Phillip Isola.
+\newblock Exploring visual prompts for adapting large-scale models.
+\newblock {\em arXiv preprint arXiv:2203.17274}, 2022.
+
+\bibitem[\protect\citeauthoryear{Brown \bgroup \em et al.\egroup }{2020}]{brown2020language}
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei.
+\newblock Language models are few-shot learners, 2020.
+
+\bibitem[\protect\citeauthoryear{Chen \bgroup \em et al.\egroup }{2022}]{chen2022program}
+Wenhu Chen, Xueguang Ma, Xinyi Wang, and William~W Cohen.
+\newblock Program of thoughts prompting: Disentangling computation from reasoning for numerical reasoning tasks.
+\newblock {\em arXiv preprint arXiv:2211.12588}, 2022.
+
+\bibitem[\protect\citeauthoryear{Chen \bgroup \em et al.\egroup }{2023}]{chen2023unleashing}
+Banghao Chen, Zhaofeng Zhang, Nicolas Langren{\'e}, and Shengxin Zhu.
+\newblock Unleashing the potential of prompt engineering in large language models: a comprehensive review.
+\newblock {\em arXiv preprint arXiv:2310.14735}, 2023.
+
+\bibitem[\protect\citeauthoryear{Chia \bgroup \em et al.\egroup }{2023}]{chia2023contrastive}
+Yew~Ken Chia, Guizhen Chen, Luu~Anh Tuan, Soujanya Poria, and Lidong Bing.
+\newblock Contrastive chain-of-thought prompting.
+\newblock {\em arXiv preprint arXiv:2311.09277}, 2023.
+
+\bibitem[\protect\citeauthoryear{Deng \bgroup \em et al.\egroup }{2023}]{deng2023rephrase}
+Yihe Deng, Weitong Zhang, Zixiang Chen, and Quanquan Gu.
+\newblock Rephrase and respond: Let large language models ask better questions for themselves.
+\newblock {\em arXiv preprint arXiv:2311.04205}, 2023.
+
+\bibitem[\protect\citeauthoryear{Deng \bgroup \em et al.\egroup }{2024}]{deng2024rcotreversechainofthoughtproblem}
+Linger Deng, Yuliang Liu, Bohan Li, Dongliang Luo, Liang Wu, Chengquan Zhang, Pengyuan Lyu, Ziyang Zhang, Gang Zhang, Errui Ding, Yingying Zhu, and Xiang Bai.
+\newblock R-cot: Reverse chain-of-thought problem generation for geometric reasoning in large multimodal models, 2024.
+
+\bibitem[\protect\citeauthoryear{Dhuliawala \bgroup \em et al.\egroup }{2023}]{dhuliawala2023chain}
+Shehzaad Dhuliawala, Mojtaba Komeili, Jing Xu, Roberta Raileanu, Xian Li, Asli Celikyilmaz, and Jason Weston.
+\newblock Chain-of-verification reduces hallucination in large language models.
+\newblock {\em arXiv preprint arXiv:2309.11495}, 2023.
+
+\bibitem[\protect\citeauthoryear{Diao \bgroup \em et al.\egroup }{2023}]{diao2023active}
+Shizhe Diao, Pengcheng Wang, Yong Lin, and Tong Zhang.
+\newblock Active prompting with chain-of-thought for large language models.
+\newblock {\em arXiv preprint arXiv:2302.12246}, 2023.
+
+\bibitem[\protect\citeauthoryear{Fungwacharakorn \bgroup \em et al.\egroup }{2024}]{fungwacharakorn2024layerofthoughtspromptinglotleveraging}
+Wachara Fungwacharakorn, Nguyen~Ha Thanh, May~Myo Zin, and Ken Satoh.
+\newblock Layer-of-thoughts prompting (lot): Leveraging llm-based retrieval with constraint hierarchies, 2024.
+
+\bibitem[\protect\citeauthoryear{Hong \bgroup \em et al.\egroup }{2024}]{hong2024endtoendgraphflatteningmethod}
+Bin Hong, Jinze Wu, Jiayu Liu, Liang Ding, Jing Sha, Kai Zhang, Shijin Wang, and Zhenya Huang.
+\newblock End-to-end graph flattening method for large language models, 2024.
+
+\bibitem[\protect\citeauthoryear{Hu \bgroup \em et al.\egroup }{2023}]{hu2023chainofsymbol}
+Hanxu Hu, Hongyuan Lu, Huajian Zhang, Yun-Ze Song, Wai Lam, and Yue Zhang.
+\newblock Chain-of-symbol prompting elicits planning in large langauge models, 2023.
+
+\bibitem[\protect\citeauthoryear{Lewis \bgroup \em et al.\egroup }{2020}]{lewis2020retrieval}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich K{\"u}ttler, Mike Lewis, Wen-tau Yih, Tim Rockt{\"a}schel, et~al.
+\newblock Retrieval-augmented generation for knowledge-intensive nlp tasks.
+\newblock {\em Advances in Neural Information Processing Systems}, 33:9459--9474, 2020.
+
+\bibitem[\protect\citeauthoryear{Li \bgroup \em et al.\egroup }{2023a}]{li2023large}
+Cheng Li, Jindong Wang, Yixuan Zhang, Kaijie Zhu, Wenxin Hou, Jianxun Lian, Fang Luo, Qiang Yang, and Xing Xie.
+\newblock Large language models understand and can be enhanced by emotional stimuli.
+\newblock {\em arXiv preprint arXiv:2307.11760}, 2023.
+
+\bibitem[\protect\citeauthoryear{Li \bgroup \em et al.\egroup }{2023b}]{li2023chain}
+Chengshu Li, Jacky Liang, Andy Zeng, Xinyun Chen, Karol Hausman, Dorsa Sadigh, Sergey Levine, Li~Fei-Fei, Fei Xia, and Brian Ichter.
+\newblock Chain of code: Reasoning with a language model-augmented code emulator.
+\newblock {\em arXiv preprint arXiv:2312.04474}, 2023.
+
+\bibitem[\protect\citeauthoryear{Li \bgroup \em et al.\egroup }{2023c}]{li2023structured}
+Jia Li, Ge~Li, Yongmin Li, and Zhi Jin.
+\newblock Structured chain-of-thought prompting for code generation.
+\newblock {\em arXiv preprint arXiv:2305.06599}, 2023.
+
+\bibitem[\protect\citeauthoryear{Li \bgroup \em et al.\egroup }{2023d}]{li2023chainofknowledge}
+Xingxuan Li, Ruochen Zhao, Yew~Ken Chia, Bosheng Ding, Shafiq Joty, Soujanya Poria, and Lidong Bing.
+\newblock Chain-of-knowledge: Grounding large language models via dynamic knowledge adapting over heterogeneous sources, 2023.
+
+\bibitem[\protect\citeauthoryear{Liu \bgroup \em et al.\egroup }{2023}]{liu2023pre}
+Pengfei Liu, Weizhe Yuan, Jinlan Fu, Zhengbao Jiang, Hiroaki Hayashi, and Graham Neubig.
+\newblock Pre-train, prompt, and predict: A systematic survey of prompting methods in natural language processing.
+\newblock {\em ACM Computing Surveys}, 55(9):1--35, 2023.
+
+\bibitem[\protect\citeauthoryear{Liu \bgroup \em et al.\egroup }{2024}]{liu2024logicofthoughtinjectinglogiccontexts}
+Tongxuan Liu, Wenjiang Xu, Weizhe Huang, Xingyu Wang, Jiaxing Wang, Hailong Yang, and Jing Li.
+\newblock Logic-of-thought: Injecting logic into contexts for full reasoning in large language models, 2024.
+
+\bibitem[\protect\citeauthoryear{Long}{2023}]{long2023large}
+Jieyi Long.
+\newblock Large language model guided tree-of-thought.
+\newblock {\em arXiv preprint arXiv:2305.08291}, 2023.
+
+\bibitem[\protect\citeauthoryear{Madaan \bgroup \em et al.\egroup }{2023}]{madaan2023selfrefine}
+Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Sean Welleck, Bodhisattwa~Prasad Majumder, Shashank Gupta, Amir Yazdanbakhsh, and Peter Clark.
+\newblock Self-refine: Iterative refinement with self-feedback, 2023.
+
+\bibitem[\protect\citeauthoryear{Mekala \bgroup \em et al.\egroup }{2024}]{mekala2024echopromptinstructingmodelrephrase}
+Rajasekhar~Reddy Mekala, Yasaman Razeghi, and Sameer Singh.
+\newblock Echoprompt: Instructing the model to rephrase queries for improved in-context learning, 2024.
+
+\bibitem[\protect\citeauthoryear{Nye \bgroup \em et al.\egroup }{2021}]{nye2021show}
+Maxwell Nye, Anders~Johan Andreassen, Guy Gur-Ari, Henryk Michalewski, Jacob Austin, David Bieber, David Dohan, Aitor Lewkowycz, Maarten Bosma, David Luan, et~al.
+\newblock Show your work: Scratchpads for intermediate computation with language models.
+\newblock {\em arXiv preprint arXiv:2112.00114}, 2021.
+
+\bibitem[\protect\citeauthoryear{Paranjape \bgroup \em et al.\egroup }{2023}]{paranjape2023art}
+Bhargavi Paranjape, Scott Lundberg, Sameer Singh, Hannaneh Hajishirzi, Luke Zettlemoyer, and Marco~Tulio Ribeiro.
+\newblock Art: Automatic multi-step reasoning and tool-use for large language models.
+\newblock {\em arXiv preprint arXiv:2303.09014}, 2023.
+
+\bibitem[\protect\citeauthoryear{Puerto \bgroup \em et al.\egroup }{2024}]{puerto2024codepromptingelicitsconditional}
+Haritz Puerto, Martin Tutek, Somak Aditya, Xiaodan Zhu, and Iryna Gurevych.
+\newblock Code prompting elicits conditional reasoning abilities in text+code llms, 2024.
+
+\bibitem[\protect\citeauthoryear{Radford \bgroup \em et al.\egroup }{2019}]{radford2019language}
+Alec Radford, Jeffrey Wu, Rewon Child, David Luan, Dario Amodei, Ilya Sutskever, et~al.
+\newblock Language models are unsupervised multitask learners.
+\newblock {\em OpenAI blog}, 1(8):9, 2019.
+
+\bibitem[\protect\citeauthoryear{Sahoo \bgroup \em et al.\egroup }{2024}]{sahoo2024comprehensive}
+Pranab Sahoo, Prabhash Meharia, Akash Ghosh, Sriparna Saha, Vinija Jain, and Aman Chadha.
+\newblock A comprehensive survey of hallucination in large language, image, video and audio foundation models.
+\newblock In {\em Findings of the Association for Computational Linguistics: EMNLP 2024}, pages 11709--11724, 2024.
+
+\bibitem[\protect\citeauthoryear{Tonmoy \bgroup \em et al.\egroup }{2024}]{tonmoy2024comprehensive}
+SM~Tonmoy, SM~Zaman, Vinija Jain, Anku Rani, Vipula Rawte, Aman Chadha, and Amitava Das.
+\newblock A comprehensive survey of hallucination mitigation techniques in large language models.
+\newblock {\em arXiv preprint arXiv:2401.01313}, 2024.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup }{2022}]{wang2022self}
+Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed~Chi, Sharan Narang, Aakanksha Chowdhery, and Denny Zhou.
+\newblock Self-consistency improves chain of thought reasoning in language models.
+\newblock {\em arXiv preprint arXiv:2203.11171}, 2022.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup }{2024}]{wang2024chainoftable}
+Zilong Wang, Hao Zhang, Chun-Liang Li, Julian~Martin Eisenschlos, Vincent Perot, Zifeng Wang, Lesly Miculicich, Yasuhisa Fujii, Jingbo Shang, Chen-Yu Lee, and Tomas Pfister.
+\newblock Chain-of-table: Evolving tables in the reasoning chain for table understanding, 2024.
+
+\bibitem[\protect\citeauthoryear{Wei \bgroup \em et al.\egroup }{2022}]{wei2022chain}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Fei Xia, Ed~Chi, Quoc~V Le, Denny Zhou, et~al.
+\newblock Chain-of-thought prompting elicits reasoning in large language models.
+\newblock {\em Advances in Neural Information Processing Systems}, 35:24824--24837, 2022.
+
+\bibitem[\protect\citeauthoryear{Weston and Sukhbaatar}{2023}]{weston2023system}
+Jason Weston and Sainbayar Sukhbaatar.
+\newblock System 2 attention (is something you might need too).
+\newblock {\em arXiv preprint arXiv:2311.11829}, 2023.
+
+\bibitem[\protect\citeauthoryear{Wu \bgroup \em et al.\egroup }{2023}]{wu2023visual}
+Chenfei Wu, Shengming Yin, Weizhen Qi, Xiaodong Wang, Zecheng Tang, and Nan Duan.
+\newblock Visual chatgpt: Talking, drawing and editing with visual foundation models, 2023.
+
+\bibitem[\protect\citeauthoryear{Xu \bgroup \em et al.\egroup }{2025}]{xu2025chaindraftthinkingfaster}
+Silei Xu, Wenhao Xie, Lingxiao Zhao, and Pengcheng He.
+\newblock Chain of draft: Thinking faster by writing less, 2025.
+
+\bibitem[\protect\citeauthoryear{Yang \bgroup \em et al.\egroup }{2023}]{yang2023large}
+Chengrun Yang, Xuezhi Wang, Yifeng Lu, Hanxiao Liu, Quoc~V Le, Denny Zhou, and Xinyun Chen.
+\newblock Large language models as optimizers.
+\newblock {\em arXiv preprint arXiv:2309.03409}, 2023.
+
+\bibitem[\protect\citeauthoryear{Yang \bgroup \em et al.\egroup }{2024}]{yang2024buffer}
+Ling Yang, Zhaochen Yu, Tianjun Zhang, Shiyi Cao, Minkai Xu, Wentao Zhang, Joseph~E Gonzalez, and Bin Cui.
+\newblock Buffer of thoughts: Thought-augmented reasoning with large language models.
+\newblock {\em Advances in Neural Information Processing Systems}, 2024.
+
+\bibitem[\protect\citeauthoryear{Yao \bgroup \em et al.\egroup }{2022}]{yao2022react}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao.
+\newblock React: Synergizing reasoning and acting in language models.
+\newblock {\em arXiv preprint arXiv:2210.03629}, 2022.
+
+\bibitem[\protect\citeauthoryear{Yao \bgroup \em et al.\egroup }{2023a}]{yao2023tree}
+Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas~L Griffiths, Yuan Cao, and Karthik Narasimhan.
+\newblock Tree of thoughts: Deliberate problem solving with large language models.
+\newblock {\em arXiv preprint arXiv:2305.10601}, 2023.
+
+\bibitem[\protect\citeauthoryear{Yao \bgroup \em et al.\egroup }{2023b}]{yao2023beyond}
+Yao Yao, Zuchao Li, and Hai Zhao.
+\newblock Beyond chain-of-thought, effective graph-of-thought reasoning in large language models.
+\newblock {\em arXiv preprint arXiv:2305.16582}, 2023.
+
+\bibitem[\protect\citeauthoryear{Yu \bgroup \em et al.\egroup }{2023}]{yu2023chainofnote}
+Wenhao Yu, Hongming Zhang, Xiaoman Pan, Kaixin Ma, Hongwei Wang, and Dong Yu.
+\newblock Chain-of-note: Enhancing robustness in retrieval-augmented language models, 2023.
+
+\bibitem[\protect\citeauthoryear{Yuan \bgroup \em et al.\egroup }{2024}]{yuan2024instanceadaptivezeroshotchainofthoughtprompting}
+Xiaosong Yuan, Chen Shen, Shaotian Yan, Xiaofeng Zhang, Liang Xie, Wenxiao Wang, Renchu Guan, Ying Wang, and Jieping Ye.
+\newblock Instance-adaptive zero-shot chain-of-thought prompting, 2024.
+
+\bibitem[\protect\citeauthoryear{Zhang \bgroup \em et al.\egroup }{2022}]{zhang2022automatic}
+Zhuosheng Zhang, Aston Zhang, Mu~Li, and Alex Smola.
+\newblock Automatic chain of thought prompting in large language models.
+\newblock {\em arXiv preprint arXiv:2210.03493}, 2022.
+
+\bibitem[\protect\citeauthoryear{Zhang \bgroup \em et al.\egroup }{2024}]{zhang2024narrativeofthoughtimprovingtemporalreasoning}
+Xinliang~Frederick Zhang, Nick Beauchamp, and Lu~Wang.
+\newblock Narrative-of-thought: Improving temporal reasoning of large language models via recounted narratives, 2024.
+
+\bibitem[\protect\citeauthoryear{Zhao \bgroup \em et al.\egroup }{2023}]{zhao2023enhancing}
+Xufeng Zhao, Mengdi Li, Wenhao Lu, Cornelius Weber, Jae~Hee Lee, Kun Chu, and Stefan Wermter.
+\newblock Enhancing zero-shot chain-of-thought reasoning in large language models through logic, 2023.
+
+\bibitem[\protect\citeauthoryear{Zheng \bgroup \em et al.\egroup }{2023}]{zheng2023take}
+Huaixiu~Steven Zheng, Swaroop Mishra, Xinyun Chen, Heng-Tze Cheng, Ed~H Chi, Quoc~V Le, and Denny Zhou.
+\newblock Take a step back: evoking reasoning via abstraction in large language models.
+\newblock {\em arXiv preprint arXiv:2310.06117}, 2023.
+
+\bibitem[\protect\citeauthoryear{Zhou \bgroup \em et al.\egroup }{2022}]{zhou2022large}
+Yongchao Zhou, Andrei~Ioan Muresanu, Ziwen Han, Keiran Paster, Silviu Pitis, Harris Chan, and Jimmy Ba.
+\newblock Large language models are human-level prompt engineers.
+\newblock {\em arXiv preprint arXiv:2211.01910}, 2022.
+
+\bibitem[\protect\citeauthoryear{Zhou \bgroup \em et al.\egroup }{2023}]{zhou2023thread}
+Yucheng Zhou, Xiubo Geng, Tao Shen, Chongyang Tao, Guodong Long, Jian-Guang Lou, and Jianbing Shen.
+\newblock Thread of thought unraveling chaotic contexts.
+\newblock {\em arXiv preprint arXiv:2311.08734}, 2023.
+
+\bibitem[\protect\citeauthoryear{Zhou \bgroup \em et al.\egroup }{2024}]{NEURIPS2024_dfaa29ed}
+Zhanke Zhou, Rong Tao, Jianing Zhu, Yiwen Luo, Zengmao Wang, and Bo~Han.
+\newblock Can language models perform robust reasoning in chain-of-thought prompting with noisy rationales?
+\newblock In A.~Globerson, L.~Mackey, D.~Belgrave, A.~Fan, U.~Paquet, J.~Tomczak, and C.~Zhang, editors, {\em Advances in Neural Information Processing Systems}, volume~37, pages 123846--123910. Curran Associates, Inc., 2024.
+
+\end{thebibliography}

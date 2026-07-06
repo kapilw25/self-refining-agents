@@ -1,0 +1,32 @@
+% Figure — the self-improvement ladder (representative rung: §3.1.5 ASPIRE loop).
+% TODO: add rungs §3.1.1–§3.1.4 above/below; this is a compile-ready starter.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  node distance=6mm and 9mm,
+  box/.style={draw=hidden-draw, rounded corners, fill=secAl, align=center,
+              font=\footnotesize, minimum height=8mm, text width=15mm, inner sep=3pt},
+  core/.style={box, fill=secA},
+  io/.style={draw=none, font=\footnotesize\itshape},
+  ar/.style={-{Stealth[length=2mm]}, darkgray, line width=0.7pt},
+]
+  \node[io] (task) {task};
+  \node[box, fill=secA, right=of task] (actor) {actor\\ agent};
+  \node[box, fill=secB, right=of actor] (eng) {exec.\\ engine (F)};
+  \node[box, fill=secC, right=of eng] (mem) {skill\\ memory (M)};
+  \node[box, fill=secD, right=of mem] (srch) {evol.\\ search (S)};
+  \node[io, right=of srch] (out) {validated skill};
+
+  \draw[ar] (task) -- (actor);
+  \draw[ar] (actor) -- (eng);
+  \draw[ar] (eng) -- (mem);
+  \draw[ar] (mem) -- (srch);
+  \draw[ar] (srch) -- (out);
+  % feedback loops
+  \draw[ar] (eng.south) to[out=-90,in=-90] node[below,font=\scriptsize]{traces} (actor.south);
+  \draw[ar] (mem.north) to[out=90,in=90] node[above,font=\scriptsize]{skills $\rightarrow$ future tasks} (actor.north);
+\end{tikzpicture}
+\caption{The full self-improving loop (\S3.1.5): feedback (F) $+$ memory (M) $+$ search (S)
+combine into one open-ended loop---the ASPIRE cell. VLAs (\S3.2) have no such loop.}
+\label{fig:architectures}
+\end{figure}
