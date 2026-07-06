@@ -212,3 +212,15 @@ a.leaf:hover{background:color-mix(in srgb,var(--h) 22%,var(--surface))}
 .branch.collapsed .leaves{display:none}
 .treebar{display:flex;justify-content:flex-end;margin:0 0 12px}
 .treebar .fbtn{cursor:pointer}
+
+/* ---- the skill stack (§2 · why now) ---- */
+.stack{display:flex;flex-direction:column;gap:8px}
+.layer{padding:12px 14px;border-radius:10px;border:1px solid var(--border-strong);font-size:13.5px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.layer .ln{font-family:var(--font-mono);font-size:11px;font-weight:800;letter-spacing:.04em;flex:none;padding:3px 8px;border-radius:6px;color:#fff}
+.layer.l1{background:color-mix(in srgb,#3b82f6 8%,transparent);border-color:color-mix(in srgb,#3b82f6 42%,transparent)}
+.layer.l1 .ln{background:#3b82f6}
+.layer.l2{background:color-mix(in srgb,#0ea5a2 9%,transparent);border-color:color-mix(in srgb,#0ea5a2 42%,transparent)}
+.layer.l2 .ln{background:#0ea5a2}
+.layer.l3{background:var(--accent-tint);border-color:var(--accent-line)}
+.layer.l3 .ln{background:var(--accent)}
+.tagmini{font-family:var(--font-mono);font-size:10.5px;color:var(--warn);border:1px dashed color-mix(in srgb,var(--warn) 55%,transparent);border-radius:6px;padding:1px 7px;margin-left:auto}

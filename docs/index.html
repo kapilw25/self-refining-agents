@@ -7,7 +7,7 @@
   <meta name="description" content="A survey of robot-learning techniques for Physical AI — vision-language-action policies, code-as-policy, reward synthesis, self-evolving skill libraries, and cross-embodiment transfer — with a canonical taxonomy of ~47 systems, anchored on ASPIRE (NVIDIA GEAR, 2026).">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦾</text></svg>">
   <link rel="stylesheet" href="assets/theme-survey.css?v=2">
-  <link rel="stylesheet" href="assets/site.css?v=2">
+  <link rel="stylesheet" href="assets/site.css?v=3">
   <script src="assets/theme.js?v=2"></script>
 </head>
 <body>
@@ -31,6 +31,18 @@
     <span class="eyebrow">VLA policies · code-as-policy · self-evolving skills — anchor: ASPIRE (2026)</span>
     <h2><span style="color:var(--accent);font-weight:800">Weights or skills??</span> A survey of robot-learning techniques — from action-predicting weights to robots that write their <em>own skills</em>.</h2>
   </section>
+
+  <!-- §2 · why now · the skill stack -->
+  <div class="sec" style="margin-top:14px"><span class="tag">§2 · why now</span><h3>🏬 The App Store for robot skills just arrived — but what does it ship?</h3></div>
+  <div class="figure">
+    <div class="stack">
+      <div class="layer l3"><span class="ln">3 · ADAPT</span> on-device self-improvement after download — <b>§3.1.5</b>, the frontier <span class="tagmini">⚠️ doesn't exist yet</span></div>
+      <div class="layer l2"><span class="ln">2 · DISTRIBUTE</span> skill marketplaces &amp; hubs — <b>Unitree UniStore</b> (May 2026) · model hubs · Open X-Embodiment</div>
+      <div class="layer l1"><span class="ln">1 · BUILD</span> how skills are created — <b>§3.1 code · §3.2 VLA · §3.3 reward · §3.4 libraries</b></div>
+    </div>
+    <div class="loop">↑ UniStore ships layer-1 <b>mocap playback</b> (dances, martial arts) through layer 2 — but the promised value ("adjust grip per fruit so nothing bruises") lives in <b>layer 3</b>, which no shipped skill does today</div>
+  </div>
+  <div class="cap">§2 · The <a href="https://robotsbeat.com/unitree-unistore-robot-app-store-humanoid-g1-h1-ecosystem/" target="_blank" rel="noopener">UniStore</a> app store (24 motions, one-tap across G1/H1/B2/Go2) proves the marketplace — but every skill in it is <b>canned playback</b>, the least-capable point on the map below. This survey charts <b>layer 1</b> (how skills are built) and names the <b>layer-3 gap</b> — the difference between an app store of <em>animations</em> and one of <em>capabilities</em>.</div>
 
   <!-- HERO FIGURE · the taxonomy tree -->
   <div class="sec" style="margin-top:14px"><span class="tag">§3 · the map</span><h3>🌳 A taxonomy of robot-learning techniques</h3></div>
@@ -436,6 +448,22 @@
   <!-- Table 4 · related surveys -->
   <div class="sec"><span class="tag">Table 4</span><h3>📚 Related surveys — the physical-AI landscape</h3></div>
   <div class="scroll"><table class="gt" id="surveys" style="min-width:1080px"></table></div>
+
+  <!-- §7 · open problems -->
+  <div class="sec"><span class="tag">§7 · open problems</span><h3>🧭 The skill economy — open research problems</h3></div>
+  <div class="scroll"><table class="gt">
+    <thead><tr><th>Open problem</th><th>Trigger (UniStore makes it concrete)</th><th>Maps to</th></tr></thead>
+    <tbody>
+      <tr><td class="k">Static → adaptive gap</td><td>downloaded skills replay; they don't perceive or adapt</td><td class="mono">§3.1.2–5</td></tr>
+      <tr><td class="k">Cross-embodiment portability</td><td>"one skill → G1 / H1 / B2 / Go2" — biped <b>and</b> quadruped</td><td class="mono">§3.5</td></tr>
+      <tr><td class="k">Provenance &amp; trust</td><td>crowdsourced skill / mocap uploads from strangers</td><td class="mono">§3.4</td></tr>
+      <tr><td class="k">Safety verification</td><td>"every skill scanned, tested, verified" — how, exactly?</td><td class="mono new">new</td></tr>
+      <tr><td class="k">Skill composition</td><td>can two downloaded skills combine into a third?</td><td class="mono">§3.4</td></tr>
+      <tr><td class="k">Portability standards / skill ontology</td><td>shared preconditions · effects · embodiment profiles</td><td class="mono"><a class="lnk" href="https://arxiv.org/abs/2212.09242" target="_blank" rel="noopener">2212.09242</a></td></tr>
+      <tr><td class="k">Local vs shared libraries</td><td>self-built (ASPIRE) vs marketplace-downloaded (UniStore)</td><td class="mono">§3.4</td></tr>
+    </tbody>
+  </table></div>
+  <div class="cap">§7 · The commercial skill store (§2) surfaces these as <b>live</b> research problems, not hypotheticals — the survey's forward agenda.</div>
 
   <footer>📊 Citations = Semantic Scholar snapshots, 5 Jul 2026 (drift daily · lower than Google Scholar) · years use venue where known, else arXiv · anchor: <a href="https://arxiv.org/abs/2607.00272">ASPIRE (arXiv:2607.00272)</a></footer>
 </div>
