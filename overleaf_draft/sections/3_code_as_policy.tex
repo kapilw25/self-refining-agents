@@ -7,17 +7,23 @@ produces at run time}. Concretely, we ask five questions in sequence: does the a
 write control code at all, (ii) repair that code from execution feedback within a task,
 (iii) remember validated code across tasks, (iv) search a population of programs rather
 than following a single trajectory of repairs, and (v) close all of these into one
-open-ended loop? Each ``yes'' is a rung on the ladder of Figure~\ref{fig:taxonomy_31}, and
+open-ended loop? Each ``yes'' is a rung on the ladder shown in the \S3.1 branch of
+Figure~\ref{fig:taxonomy_main}, and
 the population thins sharply toward the top: of the thirteen zero-shot systems, only a
-handful ever reach the combined feedback--memory--search regime. The novelty of the
-survey is naming this progression and showing that the top rung is nearly empty.
+handful ever reach the combined feedback, memory, and search regime. The purpose of this
+arrangement is to name the progression and to make explicit how sparsely the top rung is
+populated. We use the operational definitions of Table~\ref{tab:defs} throughout: a system
+exhibits feedback, memory, or search only under the conditions stated there.
 
-\input{figures/fig_taxonomy_31}
+\input{tables/tab_definitions}
+
 \input{figures/fig_architectures}
 
 \subsubsection{Zero-shot synthesis}
 \label{ssec:zeroshot}
-The foundational move is to treat the language model as a \emph{program synthesiser} over
+\emph{Membership condition:} a system is on this rung if and only if it emits executable control
+code but closes no execution loop back to code generation, so feedback, memory, and search are
+all absent. The foundational move is to treat the language model as a \emph{program synthesiser} over
 a fixed library of perception and control primitives. \emph{Code-as-Policies}
 \citep{codeaspolicies} showed that an LLM prompted with an API and a natural-language
 instruction can emit executable Python that composes those primitives, recursively
@@ -26,7 +32,7 @@ logic. \emph{ProgPrompt} \citep{progprompt} situates the generated program in th
 by exposing available actions and objects as importable symbols, while \emph{VoxPoser}
 \citep{voxposer} has the model write code that \emph{composes 3D value maps} for a motion
 planner rather than calling fixed skills, loosening the dependence on a hand-authored API.
-Subsequent work broadened the input modality and task horizon---\emph{RoboCodeX}
+Subsequent work broadened the input modality and task horizon; \emph{RoboCodeX}
 \citep{robocodex} conditions on multimodal observations, \emph{Instruct2Act}
 \citep{instruct2act} maps instructions to perception--action code, and video- and
 demonstration-conditioned variants such as \emph{RoboPro} \citep{robopro},
@@ -40,13 +46,15 @@ fails.
 
 \subsubsection{Closed-loop self-repair}
 \label{ssec:selfrepair}
-The second rung adds a within-task feedback loop. \emph{Inner Monologue}
+\emph{Membership condition:} feedback is present but memory and search are absent; the agent
+revises code within a task from an execution-grounded signal yet retains nothing across tasks
+and never compares a population of candidates. The second rung adds a within-task feedback loop. \emph{Inner Monologue}
 \citep{innermonologue} feeds success detectors, scene descriptions and human feedback back
 into the model as language, letting it replan when a step fails. \emph{DoReMi}
 \citep{doremi} detects misalignments between plan and execution and triggers recovery, and
 \emph{REFLECT} \citep{reflect} builds a hierarchical, multimodal summary of past
 interaction that an LLM queries to explain a failure and propose a correction. More recent
-systems push the monitor into the perception loop---\emph{Code-as-Monitor}
+systems push the monitor into the perception loop; \emph{Code-as-Monitor}
 \citep{codeasmonitor} compiles spatio-temporal constraints into vision-language checks, and
 \emph{AHA} \citep{aha} trains a model to reason explicitly about failure modes. The novelty
 of this rung is the closed loop, but it is a \emph{short} loop: corrections are discarded
@@ -54,10 +62,11 @@ at task boundaries, so nothing accumulates.
 
 \subsubsection{Skill-library accumulation}
 \label{ssec:skilllib}
-The third rung makes the loop persistent by writing validated code into a growing library
+\emph{Membership condition:} memory is present; validated code is written to a cross-task store
+and retrieved later, independently of whether within-task feedback is used. The third rung makes the loop persistent by writing validated code into a growing library
 that later tasks retrieve and compose. Because this ``memory'' axis is a full technique
 family in its own right, we catalogue its systems once, in \S\ref{sec:skill}
-(\S3.4.3)---\emph{Voyager} \citep{voyager} is the canonical example, curating an
+(\S3.4.3); \emph{Voyager} \citep{voyager} is the canonical example, curating an
 ever-growing library of verified skill programs with when-to-apply guards, while related
 methods distil language corrections into retrievable knowledge for future tasks~\citep{droc}. The key
 distinction from \S3.1.2 is temporal scope: competence compounds \emph{across} tasks rather
@@ -65,7 +74,8 @@ than being rebuilt each time.
 
 \subsubsection{Evolutionary program search}
 \label{ssec:search}
-The fourth rung replaces a single chain of repairs with population-based search over
+\emph{Membership condition:} search is present; the agent maintains and selects among more than
+one candidate program rather than repairing a single one. The fourth rung replaces a single chain of repairs with population-based search over
 programs. Rather than iteratively debugging one candidate, the agent maintains several,
 scores them by execution, and mutates the best. \emph{CaP-X} \citep{capx} provides an
 interactive gym and benchmark for exactly this style of coding agent, and \emph{RoboEvolve}
@@ -76,16 +86,16 @@ for a better chance of escaping local failures.
 
 \subsubsection{The full self-improving loop}
 \label{ssec:fullloop}
-The top rung combines all three mechanisms---execution feedback (F), a persistent skill
-memory (M), and evolutionary search (S)---into one open-ended loop
-(Figure~\ref{fig:architectures}). \emph{ASPIRE} \citep{aspire} instantiates this with a
-robot execution engine that emits per-primitive multimodal traces, a skill library of
-validated code with guards, and a population search over candidate programs, so that
-experience compounds and transfers across tasks and embodiments. Its real-world sibling
-\emph{ENPIRE} \citep{enpire} closes the same loop on physical hardware, using automatic
-reset, parallel rollouts, and log-driven algorithm revision to drive a coding agent to
-near-perfect success on dexterous tasks. This cell---feedback \emph{and} memory \emph{and}
-search---is what no prior survey isolates, and it is nearly empty; it is the central gap this survey is organised to expose.
+\emph{Membership condition:} all three mechanisms are present in one closed loop, so the rung
+is the conjunction feedback \emph{and} memory \emph{and} search (Figure~\ref{fig:architectures}).
+Only a few very recent systems satisfy it. \emph{ASPIRE} \citep{aspire} pairs a robot execution
+engine that emits per-primitive multimodal traces with a skill library of validated code and a
+population search over candidate programs; \emph{ENPIRE} \citep{enpire} closes an analogous loop
+on physical hardware through automatic reset, parallel rollouts, and log-driven revision; and
+\emph{RoboClaw} \citep{roboclaw} unifies data collection, policy learning, and execution under a
+single controller with self-resetting loops. That this cell is so sparsely populated, rather
+than any particular system within it, is the structural observation the survey is organised to
+make.
 
 Table~\ref{tab:compare_31} makes the funnel explicit, tabulating each system's use of
 feedback (F), memory (M), and search (S).

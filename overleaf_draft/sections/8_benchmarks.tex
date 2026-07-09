@@ -14,10 +14,17 @@ average number of sub-tasks completed in a chain. At the high-realism end,
 photorealistic simulator, scoring both success and efficiency.
 
 Table~\ref{tab:matrix} contrasts one exemplar per camp on the axes that separate them. The
-recurring gap---and a direct motivation for the open problems of \S\ref{sec:open}---is that
+recurring gap, and a direct motivation for the open problems of \S\ref{sec:open}, is that
 these suites measure \emph{one-shot competence}: they report whether a policy succeeds, not
 whether it \emph{improves with experience}. No standard benchmark yet plots held-out success as
 a function of accumulated interaction, which is exactly the quantity the self-improvement ladder
 of \S\ref{sec:code} is designed to raise.
 
 \input{tables/tab_capability_matrix}
+
+\subsection{Synthesis: what each family cannot do}
+\label{sec:synthesis}
+Table~\ref{tab:branch_limits} scores every family on six properties. No family scores well on
+all of them, which is the tension the skill economy (\S\ref{sec:open}) inherits.
+
+\input{tables/tab_branch_limits}

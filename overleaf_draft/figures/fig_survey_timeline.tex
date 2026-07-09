@@ -4,55 +4,55 @@
 \centering
 \resizebox{\columnwidth}{!}{%
 \begin{tikzpicture}[
-  abv/.style={font=\scriptsize, anchor=south, align=center},
-  blw/.style={font=\scriptsize, anchor=north, align=center},
-  stem/.style={gray!55, line width=0.5pt},
+ abv/.style={font=\scriptsize, anchor=south, align=center},
+ blw/.style={font=\scriptsize, anchor=north, align=center},
+ stem/.style={gray!55, line width=0.5pt},
 ]
-  % time axis (arrow = direction of time)
-  \draw[-{Stealth[length=3.2mm]}, line width=1.3pt, gray!65] (-0.4,0) -- (12.4,0);
-  \node[font=\scriptsize\itshape, gray, anchor=west] at (12.1,-0.28) {time};
-  % year ticks + labels (roughly proportional)
-  \foreach \x in {0.3,6,10.9}{\draw[gray!35] (\x,-0.12) -- (\x,0.12);}
-  \node[font=\footnotesize\bfseries,gray!80] at (1.2,-1.2) {2024};
-  \node[font=\footnotesize\bfseries,gray!80] at (6.6,-1.2) {2025};
-  \node[font=\footnotesize\bfseries,gray!80] at (10.1,-1.2) {2026};
-  % legend
-  \filldraw[fill=secD,draw=hidden-draw] (-0.35,1.42) circle (3pt);
-  \node[font=\scriptsize,gray,anchor=west] at (-0.12,1.42) {= published in \emph{ACM Computing Surveys}};
+ % time axis (arrow = direction of time)
+ \draw[-{Stealth[length=3.2mm]}, line width=1.3pt, gray!65] (-0.4,0) -- (12.4,0);
+ \node[font=\scriptsize\itshape, gray, anchor=west] at (12.1,-0.28) {time};
+ % year ticks + labels (roughly proportional)
+ \foreach \x in {0.3,6,10.9}{\draw[gray!35] (\x,-0.12) -- (\x,0.12);}
+ \node[font=\footnotesize\bfseries,gray!80] at (1.2,-1.2) {2024};
+ \node[font=\footnotesize\bfseries,gray!80] at (6.6,-1.2) {2025};
+ \node[font=\footnotesize\bfseries,gray!80] at (10.1,-1.2) {2026};
+ % legend
+ \filldraw[fill=secD,draw=hidden-draw] (-0.35,1.42) circle (3pt);
+ \node[font=\scriptsize,gray,anchor=west] at (-0.12,1.42) {= published in \emph{ACM Computing Surveys}};
 
-  % ---- events (alternating above / below) ----
-  \filldraw[fill=secA,draw=hidden-draw] (0.3,0) circle (3.6pt);
-  \draw[stem] (0.3,0.12) -- (0.3,0.5);  \node[abv] at (0.3,0.53) {\textbf{VLA survey}~\cite{survey_vla}};
+ %, - events (alternating above / below), -
+ \filldraw[fill=secA,draw=hidden-draw] (0.3,0) circle (3.6pt);
+ \draw[stem] (0.3,0.12) -- (0.3,0.5); \node[abv] at (0.3,0.53) {\textbf{VLA survey}~\cite{survey_vla}};
 
-  \filldraw[fill=secA,draw=hidden-draw] (2.1,0) circle (3.6pt);
-  \draw[stem] (2.1,-0.12) -- (2.1,-0.5); \node[blw] at (2.1,-0.53) {\textbf{FM-Manip.}~\cite{survey_fmrobot}};
+ \filldraw[fill=secA,draw=hidden-draw] (2.1,0) circle (3.6pt);
+ \draw[stem] (2.1,-0.12) -- (2.1,-0.5); \node[blw] at (2.1,-0.53) {\textbf{FM-Manip.}~\cite{survey_fmrobot}};
 
-  \filldraw[fill=secD,draw=hidden-draw] (4.4,0) circle (3.6pt);
-  \draw[stem] (4.4,0.12) -- (4.4,0.5);  \node[abv] at (4.4,0.53) {\textbf{World Models}~\cite{survey_worldmodels}};
+ \filldraw[fill=secD,draw=hidden-draw] (4.4,0) circle (3.6pt);
+ \draw[stem] (4.4,0.12) -- (4.4,0.5); \node[abv] at (4.4,0.53) {\textbf{World Models}~\cite{survey_worldmodels}};
 
-  \filldraw[fill=secD,draw=hidden-draw] (5.9,0) circle (3.6pt);
-  \draw[stem] (5.9,-0.12) -- (5.9,-0.5); \node[blw] at (5.9,-0.53) {\textbf{Embodied Intel.}~\cite{survey_embodiedintel}};
+ \filldraw[fill=secD,draw=hidden-draw] (5.9,0) circle (3.6pt);
+ \draw[stem] (5.9,-0.12) -- (5.9,-0.5); \node[blw] at (5.9,-0.53) {\textbf{Embodied Intel.}~\cite{survey_embodiedintel}};
 
-  \filldraw[fill=secA,draw=hidden-draw] (7.4,0) circle (3.6pt);
-  \draw[stem] (7.4,0.12) -- (7.4,0.5);  \node[abv] at (7.4,0.53) {\textbf{Large-VLM VLA}~\cite{survey_vlmvla}};
+ \filldraw[fill=secA,draw=hidden-draw] (7.4,0) circle (3.6pt);
+ \draw[stem] (7.4,0.12) -- (7.4,0.5); \node[abv] at (7.4,0.53) {\textbf{Large-VLM VLA}~\cite{survey_vlmvla}};
 
-  \filldraw[fill=secB,draw=hidden-draw] (8.9,0) circle (3.6pt);
-  \draw[stem] (8.9,-0.12) -- (8.9,-0.5); \node[blw] at (8.9,-0.53) {\textbf{Embodied Learn.}~\cite{survey_embodiedlearn}};
+ \filldraw[fill=secB,draw=hidden-draw] (8.9,0) circle (3.6pt);
+ \draw[stem] (8.9,-0.12) -- (8.9,-0.5); \node[blw] at (8.9,-0.53) {\textbf{Embodied Learn.}~\cite{survey_embodiedlearn}};
 
-  \filldraw[fill=secD,draw=hidden-draw] (10.1,0) circle (3.6pt);
-  \draw[stem] (10.1,0.12) -- (10.1,0.5); \node[abv] at (10.1,0.53) {\textbf{Nav.-FLM}~\cite{survey_navigation}};
+ \filldraw[fill=secD,draw=hidden-draw] (10.1,0) circle (3.6pt);
+ \draw[stem] (10.1,0.12) -- (10.1,0.5); \node[abv] at (10.1,0.53) {\textbf{Nav.-FLM}~\cite{survey_navigation}};
 
-  % Ours — bold red star endpoint
-  \node[star,star points=5,star point ratio=2.4,fill=secE,draw=hidden-draw,minimum size=16pt,inner sep=0] at (11.7,0) {};
-  \draw[secE!70!black,line width=0.6pt] (11.7,0.2) -- (11.7,0.5);
-  \node[abv,text=secE!45!black] at (11.7,0.53) {\textbf{Ours}};
-  \node[blw,text=secE!45!black,font=\scriptsize\itshape] at (11.7,-0.5) {+ self-improve.\\+ economy};
+ % Ours — bold red star endpoint
+ \node[star,star points=5,star point ratio=2.4,fill=secE,draw=hidden-draw,minimum size=16pt,inner sep=0] at (11.7,0) {};
+ \draw[secE!70!black,line width=0.6pt] (11.7,0.2) -- (11.7,0.5);
+ \node[abv,text=secE!45!black] at (11.7,0.53) {\textbf{Ours}};
+ \node[blw,text=secE!45!black,font=\scriptsize\itshape] at (11.7,-0.5) {+ self-improve.\\+ economy};
 \end{tikzpicture}}
 \caption{The closest related surveys as a timeline (2024--2026);
 \textcolor{secD!55!black}{amber} markers denote surveys published in \emph{ACM Computing
 Surveys} (CSUR). Prior surveys cover VLA models, foundation models, world models, and navigation,
 but none organises code-as-policy by \emph{degree of self-improvement}. \textbf{Ours}
-($\star$, 2026) is the first to add the self-improvement axis (\S3.1.5) and the skill economy;
+($\star$, 2026) is organized around the self-improvement axis (\S3.1.5) and the skill economy;
 per-topic coverage is in Table~\ref{tab:survey_compare}.}
 \label{fig:surveys}
 \end{figure}

@@ -12,8 +12,8 @@ The lineage begins with \emph{RT-1}~\citep{rt1}, a transformer trained on large-
 robot data that discretises continuous actions into categorical bins. \emph{RT-2}~\citep{rt2}
 then co-fine-tunes an Internet-pretrained vision-language model on robot trajectories,
 emitting actions as text tokens and inheriting semantic generalisation from web data. Open
-reproductions followed: \emph{Octo}~\citep{octo} and \emph{OpenVLA}~\citep{openvla}---the
-latter a 7B model with a DINOv2/SigLIP vision stack---are trained on the pooled
+reproductions followed: \emph{Octo}~\citep{octo} and \emph{OpenVLA}~\citep{openvla}, the
+latter a 7B model with a DINOv2/SigLIP vision stack, are trained on the pooled
 Open X-Embodiment corpus (\S\ref{sec:transfer}), and \emph{RoboFlamingo}~\citep{roboflamingo}
 adapts a vision-language model into an imitation policy.
 
@@ -30,7 +30,7 @@ At the largest scale, foundation-model efforts target whole platforms:
 \emph{GR00T~N1}~\citep{groot} pairs a slow System-2 vision-language reasoner with a fast
 System-1 diffusion transformer that produces motor actions at high rate for humanoids, and
 \emph{Gemini Robotics}~\citep{geminirobotics} builds a VLA together with an embodied-reasoning
-model on the Gemini backbone. Across all of these, the defining property---and the reason we
-treat them as the \emph{foil} for this survey---is that there is \emph{no loop and no code}:
+model on the Gemini backbone. Across all of these, the defining property, and the reason we
+treat them as the \emph{foil} for this survey, is that there is \emph{no loop and no code}:
 competence is acquired by scaling data and parameters, generalises by interpolation rather
 than search, and cannot be edited, audited, or recombined after training.

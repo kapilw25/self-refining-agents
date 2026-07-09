@@ -2,12 +2,16 @@
 \label{sec:skill}
 
 Where \S\ref{sec:code} asked \emph{how} a code skill improves, this family asks the prior
-question of \emph{how a repertoire of skills is built at all}. Figure~\ref{fig:taxonomy_34}
-organises the answer along one axis---skills learned as latent reinforcement-learning policies
-versus skills stored as retrievable code---and only the code flavour self-improves without
+question of \emph{how a repertoire of skills is built at all}. The \S3.4 branch of
+Figure~\ref{fig:taxonomy_main} organises these systems along one axis, skills learned as latent reinforcement-learning policies
+versus skills stored as retrievable code, and only the code flavour self-improves without
 gradients, which links this family back to \S\ref{sec:code}.
 
-\input{figures/fig_taxonomy_34}
+Before surveying these systems we note that the word ``skill'' is badly overloaded.
+Table~\ref{tab:skill_senses} separates five senses that the literature routinely conflates,
+from a latent policy to a market product, and records which properties each sense affords.
+
+\input{tables/tab_skill_senses}
 
 \subsubsection{Unsupervised and latent skill discovery}
 The oldest lineage learns a diverse set of skills with \emph{no task reward and no code}, by
@@ -27,7 +31,7 @@ prior; and \emph{SkiMo}~\citep{skimo} learns a skill dynamics model so that plan
 directly in skill space.
 
 \subsubsection{LLM and code skill libraries}
-The code flavour---where the self-improving methods of \S\ref{sec:code} live---stores skills as
+The code flavour, where the self-improving methods of \S\ref{sec:code} live, stores skills as
 retrievable programs. \emph{Voyager}~\citep{voyager} curates an ever-growing library of
 verified code skills in Minecraft; \emph{LOTUS}~\citep{lotus} performs continual imitation
 learning through unsupervised skill discovery; \emph{LRLL}~\citep{lrll} bootstraps a composable

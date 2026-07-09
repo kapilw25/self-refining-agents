@@ -1,0 +1,23 @@
+% Table (F7) — what each family CAN (green check) and CANNOT (red cross) do.
+\begin{table*}[t]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}p{0.19\textwidth} *{6}{c} p{0.23\textwidth}@{}}
+\toprule
+\textbf{Family} & \textbf{Gen.} & \textbf{Inspect.} & \textbf{Adapt.} & \textbf{Compos.}
+ & \textbf{Distrib.} & \textbf{Self-impr.} & \textbf{Key limitation} \\
+\midrule
+End-to-end VLA (\S\ref{sec:vla}) & \yy & \nn & \nn & \nn & \pp & \nn & no inspectable reuse or editing \\
+Code-as-policy (\S\ref{sec:code}) & \pp & \yy & \yy & \yy & \pp & \yy & brittle under perception errors \\
+Reward synthesis (\S\ref{sec:reward}) & \pp & \nn & \yy & \nn & \nn & \pp & ships opaque weights, sim-bound \\
+RL skill discovery (\S\ref{sec:skill}) & \pp & \nn & \pp & \pp & \nn & \nn & symbolically un-inspectable \\
+Market skills (\S\ref{sec:open}) & \nn & \nn & \nn & \pp & \yy & \nn & no adaptation or provenance \\
+\bottomrule
+\end{tabular}
+\caption{What each family can (\yy) and cannot (\nn) do (\pp\ partial). Columns:
+\textbf{Gen.}eralization, \textbf{Inspect.}ability, \textbf{Adapt.}ability,
+\textbf{Compos.}ability, \textbf{Distrib.}utability, and run-time \textbf{Self-impr.}ovement.
+No family scores well on all six, the tension the skill economy (\S\ref{sec:open}) inherits.}
+\label{tab:branch_limits}
+\end{table*}

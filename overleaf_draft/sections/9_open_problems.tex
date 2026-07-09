@@ -1,26 +1,26 @@
 \section{The Skill Economy: Open Problems}
 \label{sec:open}
 
-The arrival of a commercial marketplace for robot skills---Unitree's UniStore ships
-one-tap, cross-model motion packages \citep{unistore2026}---turns several research
+The arrival of a commercial marketplace for robot skills, Unitree's UniStore ships
+one-tap, cross-model motion packages \citep{unistore2026}, turns several research
 questions from hypothetical into pressing. We frame them as the open agenda of this survey.
 
 \paragraph{The static-to-adaptive gap.}
 Every skill shipped today is, in effect, replayed: a motion package or a fixed program is
 installed and executed without perceiving whether \emph{this} kitchen, gripper, or object
-differs from the one it was authored for. The techniques of \S\ref{sec:code}---within-task
-repair, persistent memory, and search---are precisely what would let a downloaded skill
+differs from the one it was authored for. The techniques of \S\ref{sec:code}, within-task
+repair, persistent memory, and search, are precisely what would let a downloaded skill
 \emph{adapt} on the target robot. Closing this gap is the difference between a store of
 animations and a store of capabilities, and it is the direct application of the §3.1.5
 loop to a distribution setting where the base skill is given rather than discovered.
 
 \paragraph{Cross-embodiment portability.}
 UniStore advertises a single skill running across the G1 and H1 humanoids and the B2/Go2
-quadrupeds---bodies with different morphologies, action spaces, and dynamics. This is the
+quadrupeds; bodies with different morphologies, action spaces, and dynamics. This is the
 cross-embodiment transfer problem (\S\ref{sec:transfer}) at deployment scale: without a
 shared action interface \citep{openx} or explicit embodiment adaptation, a package tuned
-for one platform has no guarantee of correctness on another. Formal portability---what must
-hold for a skill to be certified on a new body---remains open.
+for one platform has no guarantee of correctness on another. Formal portability, what must
+hold for a skill to be certified on a new body, remains open.
 
 \paragraph{Provenance and trust.}
 A marketplace invites third-party, crowdsourced uploads, including raw motion-capture data
@@ -53,6 +53,6 @@ require.
 Finally, the field must reconcile two notions of ``skill library'' that this survey has kept
 distinct: the \emph{self-built} library a robot grows from its own experience (ASPIRE,
 \S\ref{sec:code}) and the \emph{shared} library a robot downloads from a marketplace
-(UniStore). The interesting regime is the hybrid---an agent that both contributes to and
-draws from a commons---and its incentives, quality control, and feedback dynamics are
+(UniStore). The interesting regime is the hybrid, an agent that both contributes to and
+draws from a commons, and its incentives, quality control, and feedback dynamics are
 entirely unstudied.
