@@ -1,4 +1,4 @@
-% Figure — related surveys as a compact HORIZONTAL timeline (time flows left->right).
+% Figure -- related surveys as a compact HORIZONTAL timeline (time flows left->right).
 % amber marker = published in ACM Computing Surveys; blue/teal = arXiv/MIR; red star = ours.
 \begin{figure}[t]
 \centering
@@ -42,7 +42,7 @@
  \filldraw[fill=secD,draw=hidden-draw] (10.1,0) circle (3.6pt);
  \draw[stem] (10.1,0.12) -- (10.1,0.5); \node[abv] at (10.1,0.53) {\textbf{Nav.-FLM}~\cite{survey_navigation}};
 
- % Ours — bold red star endpoint
+ % Ours -- bold red star endpoint
  \node[star,star points=5,star point ratio=2.4,fill=secE,draw=hidden-draw,minimum size=16pt,inner sep=0] at (11.7,0) {};
  \draw[secE!70!black,line width=0.6pt] (11.7,0.2) -- (11.7,0.5);
  \node[abv,text=secE!45!black] at (11.7,0.53) {\textbf{Ours}};
@@ -52,7 +52,10 @@
 \textcolor{secD!55!black}{amber} markers denote surveys published in \emph{ACM Computing
 Surveys} (CSUR). Prior surveys cover VLA models, foundation models, world models, and navigation,
 but none organises code-as-policy by \emph{degree of self-improvement}. \textbf{Ours}
-($\star$, 2026) is organized around the self-improvement axis (\S3.1.5) and the skill economy;
+($\star$, 2026) is organised around the self-improvement axis (\S3.1.5) and the skill economy;
 per-topic coverage is in Table~\ref{tab:survey_compare}.}
+\Description{A horizontal timeline of related surveys from 2024 to 2026, with amber markers for surveys
+published in ACM Computing Surveys and other markers for arXiv surveys covering vision-language-action
+models, foundation models, world models, and navigation; a red star at 2026 marks the present survey.}
 \label{fig:surveys}
 \end{figure}

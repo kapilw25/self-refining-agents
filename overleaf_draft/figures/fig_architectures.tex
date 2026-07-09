@@ -1,4 +1,4 @@
-% Figure — the self-improvement ladder (representative rung: §3.1.5 ASPIRE loop).
+% Figure -- the self-improvement ladder (the §3.1.5 full self-improving loop).
 \begin{figure}[t]
 \centering
 \begin{tikzpicture}[
@@ -26,6 +26,9 @@
  \draw[ar] (mem.north) to[out=90,in=90] node[above,font=\scriptsize]{skills $\rightarrow$ future tasks} (actor.north);
 \end{tikzpicture}
 \caption{The full self-improving loop (\S3.1.5): feedback (F) $+$ memory (M) $+$ search (S)
-combine into one open-ended loop, the ASPIRE cell. VLAs (\S3.2) have no such loop.}
+combine into one open-ended loop (occupied by ASPIRE, ENPIRE, and RoboClaw). VLAs (\S3.2) have no such loop.}
+\Description{A left-to-right pipeline of five boxes: task, actor agent, execution engine (feedback),
+skill memory, and evolutionary search, producing a validated skill; two return arrows feed execution
+traces back to the actor and store learned skills for future tasks, forming a closed self-improving loop.}
 \label{fig:architectures}
 \end{figure}
