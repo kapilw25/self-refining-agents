@@ -15,6 +15,32 @@ The thesis: two ways to build a generalist robot — **ship weights** (end-to-en
 
 Everything is a **self-contained static site** — no build step, no server. Plain HTML/CSS/vanilla JS with light/dark themes.
 
+## `/survey` — one command, full survey for any new topic
+
+```
+/survey "tactile sensing for dexterous manipulation"   # example topic
+```
+
+Artifacts generated in `survey_<slug>/`:
+
+- `novelty_gap.md` — websearch-confirmed gap no existing survey covers
+- `refs.bib` — 60+ web-verified references (title/author/year/arXiv checked)
+- `figures/` — fig_taxonomy_main (hero grouped-cell taxonomy, 40+ systems), fig_survey_timeline, fig_architectures
+- `tables/` — tab_survey_compare, tab_definitions, tab_compare_main + per-branch, tab_branch_limits, tab_capability_matrix, tab_landscape (200+ works)
+- `sections/` — abstract → conclusion + limitations, future_work, appendix_landscape
+- `main.tex` → `main.pdf`, flattened `main_flat.tex`
+- `audit_report.md` — the exit ticket
+
+**LOOP engineering:** a Stop hook blocks the agent from ending its turn while any gate G1–G8
+fails (novelty → refs → taxonomy → compile → render → eyeball → completeness → audit), feeding
+the failing gates back as its next prompt. Exit requires `audit_report.md` to say
+`ALL AUDITS CLEAN`; any later source edit voids it. Escape: delete `.claude/state/survey_loop.json`.
+
+**AUDIT agents:** each phase ends with a fresh adversarial agent that tries to REFUTE the result
+(hallucinated reference = automatic fail); mistakes are fixed and re-audited until `ACHIEVED`.
+The final fleet is 5 auditors (fabrication / tags / consistency / tone / build), looped until all
+say `CLEAN`.
+
 ## View locally
 
 Open `docs/index.html` directly in a browser, or serve it:
