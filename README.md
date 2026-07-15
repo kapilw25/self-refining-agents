@@ -1,17 +1,26 @@
-# How Robots Learn — A Survey of Robot-Learning Techniques
+# Surveys
 
-A survey and **living catalog** of robot-learning techniques for **Physical AI** — vision-language-action policies, code-as-policy, reward synthesis, self-evolving skill libraries, and cross-embodiment transfer — anchored on [ASPIRE](https://arxiv.org/abs/2607.00272) (NVIDIA GEAR, 2026).
+Interactive companions to a series of survey papers on AI systems. Each survey ships as two artefacts: a **static-site** set of pages under `docs/`, and its **LaTeX source** under `overleaf_draft/`.
 
-The thesis: two ways to build a generalist robot — **ship weights** (end-to-end VLA) vs **ship code + skills**. ASPIRE is the frontier of the second camp, the one system that writes, debugs, and *compounds* its own skills.
+🔗 **Live site:** https://kapilw25.github.io/surveys/
 
-🔗 **Live site:** `https://kapilw25.github.io/surveys/`
+## Projects
+
+| # | Project | Live pages | LaTeX source |
+|---|---|---|---|
+| **P1** | **Weights or Skills?** — robot-learning techniques for **Physical AI** (VLA policies, code-as-policy, reward synthesis, self-evolving skill libraries, cross-embodiment transfer), anchored on [ASPIRE](https://arxiv.org/abs/2607.00272) (NVIDIA GEAR, 2026). *Thesis:* two ways to build a generalist robot — **ship weights** (end-to-end VLA) vs **ship code + skills**. | [`p1_weights_or_skills/`](https://kapilw25.github.io/surveys/p1_weights_or_skills/) | `overleaf_draft/p1_weights_or_skills/` |
+| **P2** | **Cross-Modal Evaluation Validity** — *pass the benchmark, fail reality*: generative, agentic, and embodied AI cheat the same five ways (leakage, saturation, judge-gaming, sim-to-real). One validity-threat taxonomy across all three. | [`p2_eval_validity/`](https://kapilw25.github.io/surveys/p2_eval_validity/) | `overleaf_draft/p2_eval_validity/` *(stub)* |
 
 ## What's inside (`docs/`)
 
-| Page | Contents |
-|---|---|
-| `index.html` | **The survey** — opens with the canonical **taxonomy tree** (~47 physical-AI systems in 6 branches §3.1–§3.6, the hero figure), then the loop, the ship-weights-vs-code thesis table, mechanism taxonomy, a capability matrix (one exemplar per camp), and the related-survey landscape |
-| `catalog.html` | Sortable / filterable catalog of ~47 systems, tagged by domain × mechanism (**F** feedback · **S** search · **M** memory) × year × benchmark |
+- **`index.html`** — portal linking the two projects.
+- **`p1_weights_or_skills/`**
+  - `index.html` — the survey: canonical **taxonomy tree** (~47 physical-AI systems in 6 branches §3.1–§3.6) → the loop → ship-weights-vs-code thesis table → mechanism taxonomy → capability matrix → related-survey landscape.
+  - `catalog.html` — sortable / filterable catalog of ~47 systems, tagged by domain × mechanism (**F** feedback · **S** search · **M** memory) × year × benchmark.
+  - `benchmark.html` — the self-improving-robot benchmark.
+- **`p2_eval_validity/`**
+  - `index.html` — project hub.
+  - `eval_validity_cross_modal.html` — coverage grid (8 validity surveys × 3 AI domains), the five recurring threats, and cross-modal positioning.
 
 Everything is a **self-contained static site** — no build step, no server. Plain HTML/CSS/vanilla JS with light/dark themes.
 
