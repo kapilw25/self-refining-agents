@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Pass the Benchmark, Fail Reality · cross-modal evaluation validity</title>
+<script>(function(){try{var t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root, :root[data-theme="dark"]{
+  --bg:#0b0d16; --rad:#1c1c3e; --ovl:rgba(150,130,255,.03);
+  --panel:#151830; --panel2:#0f1124; --line:#262a48;
+  --ink:#ecebfb; --mut:#9a97c4; --faint:#5a5885;
+  --grid:#8f7bff; --gridsoft:#3c356e;
+  --gap:#f2a541;
+  --ours:#37d69a; --oursbg:#0d2a22; --oursln:#1c5c48;
+  --threat:#ff6f8b; --threatbg:#2a1018; --threatln:#5e2432;
+  --rowlabel-bg:#101227; --head-bg:#12142a;
+  --stripe:rgba(255,255,255,.012); --threat-stripe:rgba(255,111,139,.05);
+  --cell-absent-bg:#0f1122; --cell-absent-bd:#1c2038; --cell-absent-fg:#3c3a60;
+  --cell-partial-bg:rgba(143,123,255,.16); --cell-partial-bd:#3c356e; --cell-partial-fg:#c3b9ff;
+  --cell-full-bg:rgba(143,123,255,.42); --cell-full-bd:#8f7bff; --cell-full-fg:#f2efff;
+  --cell-ours-bg:rgba(55,214,154,.34); --cell-ours-bd:#37d69a; --cell-ours-fg:#eafff6;
+  --cell-t1-bg:rgba(255,111,139,.14); --cell-t1-bd:#5e2432; --cell-t1-fg:#ffb0c0;
+  --cell-t2-bg:rgba(255,111,139,.34); --cell-t2-bd:#ff6f8b; --cell-t2-fg:#ffdbe2;
+  --pillar-a:#0e2620; --pillar-b:#0a1a16;
+  --threat-a:#1f0e14; --threat-b:#15090d;
+  --group-gen-bg:rgba(143,123,255,.08); --group-val-bg:rgba(242,165,65,.07); --group-val-bd:#6b4a1f;
+  --seg-on-fg:#0b0d16;
+}
+:root[data-theme="light"]{
+  --bg:#f2f1fa; --rad:#e2ddfb; --ovl:rgba(120,100,220,.05);
+  --panel:#ffffff; --panel2:#f7f6fd; --line:#dcd9ee;
+  --ink:#1a1830; --mut:#5b5880; --faint:#9491b5;
+  --grid:#6a4fd8; --gridsoft:#c9c0f2;
+  --gap:#b5701a;
+  --ours:#12855d; --oursbg:#e6f7f0; --oursln:#a7dcc7;
+  --threat:#d13a5a; --threatbg:#fdecf0; --threatln:#f2bccb;
+  --rowlabel-bg:#f4f3fb; --head-bg:#f0eefb;
+  --stripe:rgba(40,20,80,.028); --threat-stripe:rgba(209,58,90,.06);
+  --cell-absent-bg:#f0eff7; --cell-absent-bd:#e2e0ee; --cell-absent-fg:#b8b6cf;
+  --cell-partial-bg:rgba(106,79,216,.14); --cell-partial-bd:#b3a6ee; --cell-partial-fg:#5539b0;
+  --cell-full-bg:rgba(106,79,216,.34); --cell-full-bd:#6a4fd8; --cell-full-fg:#2a1d63;
+  --cell-ours-bg:rgba(18,133,93,.26); --cell-ours-bd:#12855d; --cell-ours-fg:#064a34;
+  --cell-t1-bg:rgba(209,58,90,.12); --cell-t1-bd:#eeb0c0; --cell-t1-fg:#a82744;
+  --cell-t2-bg:rgba(209,58,90,.28); --cell-t2-bd:#d13a5a; --cell-t2-fg:#7a172f;
+  --pillar-a:#eafaf3; --pillar-b:#f4fbf8;
+  --threat-a:#fdeef2; --threat-b:#fbe6ec;
+  --group-gen-bg:rgba(106,79,216,.08); --group-val-bg:rgba(181,112,26,.10); --group-val-bd:#e0c08a;
+  --seg-on-fg:#ffffff;
+}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);line-height:1.55;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(1100px 520px at 88% -8%, var(--rad) 0%, transparent 62%),
+    linear-gradient(var(--ovl) 1px,transparent 1px),
+    linear-gradient(90deg,var(--ovl) 1px,transparent 1px);
+  background-size:100% 100%,30px 30px,30px 30px;
+  transition:background-color .3s ease,color .3s ease;}
+.wrap{width:100%;max-width:none;margin:0;padding:22px clamp(18px,3.4vw,52px) 90px}
+
+.topbar{display:flex;justify-content:flex-end;align-items:center;margin-bottom:14px}
+.toggle{display:inline-flex;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--panel)}
+.seg{padding:7px 14px;color:var(--mut);cursor:pointer;background:transparent;border:none;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;transition:background .2s,color .2s}
+.seg.on{background:var(--grid);color:var(--seg-on-fg);font-weight:600}
+.seg:focus-visible{outline:2px solid var(--grid);outline-offset:2px}
+
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--grid)}
+.hero{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spacing:-.025em;line-height:.99;margin:12px 0 10px}
+.hero .big{display:block;font-size:clamp(32px,6.6vw,80px)}
+.hero .pass{color:var(--grid)} .hero .fail{color:var(--threat)}
+.hero .q{display:block;font-weight:500;font-size:clamp(16px,2.5vw,30px);letter-spacing:-.01em;line-height:1.14;margin-top:14px;color:var(--mut)}
+.hero .q b{color:var(--ink);font-weight:600}
+.lede{color:var(--mut);font-size:15px;max-width:800px;margin-top:16px}
+.lede b{color:var(--ink);font-weight:600} .lede .ours{color:var(--ours);font-weight:600}
+.statline{display:flex;gap:22px;flex-wrap:wrap;margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mut)}
+.statline b{color:var(--grid);font-weight:600}
+
+.section-h{display:flex;align-items:baseline;gap:12px;margin:46px 0 6px}
+.section-h .n{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--faint)}
+.section-h h2{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:21px;letter-spacing:-.01em;margin:0}
+.section-h .sub{color:var(--mut);font-size:13px;margin:2px 0 0}
+
+.matrix{margin-top:16px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,var(--panel),var(--panel2));padding:18px 18px 14px;overflow-x:auto}
+.mgrid{display:grid;grid-template-columns:360px repeat(3,minmax(0,1fr));gap:5px;min-width:720px}
+.colhead{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.3;letter-spacing:.03em;color:var(--ink);text-transform:uppercase;padding:0 2px 10px;text-align:center;align-self:end;font-weight:600}
+.colhead small{display:block;color:var(--mut);font-weight:400;font-size:9.5px;margin-top:3px;text-transform:none;letter-spacing:0}
+.rowlabel{font-family:Inter,sans-serif;font-size:12.5px;line-height:1.32;color:var(--ink);padding:9px 11px;display:flex;flex-direction:column;justify-content:center;border-radius:7px;background:var(--rowlabel-bg);border:1px solid var(--line)}
+.rowlabel .id{font-family:'JetBrains Mono',monospace;color:var(--faint);font-size:9.5px;margin-top:4px;letter-spacing:.02em}
+.rowlabel.ours{background:var(--oursbg);border-color:var(--oursln)} .rowlabel.ours .id{color:var(--ours)}
+.rowlabel.threat{background:var(--threatbg);border-color:var(--threatln)} .rowlabel.threat .id{color:var(--threat)}
+.cell{min-height:44px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
+.c0{background:var(--cell-absent-bg);border:1px solid var(--cell-absent-bd);color:var(--cell-absent-fg)}
+.c1{background:var(--cell-partial-bg);border:1px solid var(--cell-partial-bd);color:var(--cell-partial-fg)}
+.c2{background:var(--cell-full-bg);border:1px solid var(--cell-full-bd);color:var(--cell-full-fg)}
+.cg{background:var(--cell-ours-bg);border:1px solid var(--cell-ours-bd);color:var(--cell-ours-fg)}
+.cr1{background:var(--cell-t1-bg);border:1px solid var(--cell-t1-bd);color:var(--cell-t1-fg)}
+.cr2{background:var(--cell-t2-bg);border:1px solid var(--cell-t2-bd);color:var(--cell-t2-fg)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--mut)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:13px;height:13px;border-radius:3px;display:inline-block}
+.sw.full{background:var(--cell-full-bg);border:1px solid var(--cell-full-bd)}
+.sw.partial{background:var(--cell-partial-bg);border:1px solid var(--cell-partial-bd)}
+.sw.absent{background:var(--cell-absent-bg);border:1px solid var(--cell-absent-bd)}
+.sw.threat{background:var(--cell-t2-bg);border:1px solid var(--cell-t2-bd)}
+.sw.ours{background:var(--cell-ours-bg);border:1px solid var(--cell-ours-bd)}
+.readout{margin-top:14px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--mut);border-top:1px dashed var(--line);padding-top:12px}
+.readout b{color:var(--grid)} .readout .o{color:var(--ours)}
+
+.pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}
+.pillar{border:1px solid var(--oursln);border-radius:14px;background:linear-gradient(180deg,var(--pillar-a),var(--pillar-b));padding:15px}
+.pillar .p{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ours);margin-bottom:7px}
+.pillar h3{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;margin:0 0 6px;line-height:1.15}
+.pillar p{color:var(--mut);font-size:11.5px;margin:0}
+
+.threatbox{margin-top:16px;border:1px solid var(--threatln);border-radius:14px;background:linear-gradient(180deg,var(--threat-a),var(--threat-b));padding:17px 18px}
+.threatbox .p{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--threat);margin-bottom:8px}
+.threatbox p{margin:0;color:var(--mut);font-size:13.5px} .threatbox p b{color:var(--ink)} .threatbox p .o{color:var(--ours);font-weight:600}
+.foot{margin-top:32px;color:var(--faint);font-size:11.5px;font-family:'JetBrains Mono',monospace;line-height:1.7;border-top:1px solid var(--line);padding-top:16px}
+
+@media(prefers-reduced-motion: reduce){*{transition:none !important}}
+@media(max-width:760px){.pillars{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.pillars{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <div class="toggle" role="group" aria-label="Theme">
+      <button class="seg" data-t="dark" aria-label="Dark theme">Dark</button>
+      <button class="seg" data-t="light" aria-label="Light theme">Light</button>
+    </div>
+  </div>
+
+  <div class="eyebrow">evaluation validity · generative · agentic · embodied · a cross-modal survey</div>
+  <h1 class="hero">
+    <span class="big"><span class="pass">Pass the Benchmark,</span> <span class="fail">Fail Reality.</span></span>
+    <span class="q">Generative, agentic, and embodied AI all <b>cheat the same way</b> — leakage, saturation, judge-gaming, sim-to-real. <b>No survey has said so together.</b></span>
+  </h1>
+  <p class="lede">Every validity survey is <b>siloed</b> — LLM-text, <i>or</i> agents, <i>or</i> video. Yet the <b>same five threats</b> recur across all three fields. This survey unifies the validity-threat taxonomy <span class="ours">across generative + agentic + embodied AI</span>, anchored on worked examples (FactorJEPA leakage/CI rigor · CITA calibration · WalkIndia dense-scene evidence).</p>
+
+  <div class="statline">
+    <span><b>8</b> validity surveys audited</span>
+    <span><b>3</b> AI domains</span>
+    <span><b>5</b> recurring threats</span>
+    <span><b>0</b> surveys spanning all three</span>
+  </div>
+
+  <div class="section-h"><span class="n">01</span><div><h2>Coverage grid</h2><p class="sub">which domains does each validity survey actually cover? filled = covered, empty = absent.</p></div></div>
+
+  <div class="matrix">
+    <div class="mgrid">
+      <div></div>
+      <div class="colhead">Generative<small>video · world models · image</small></div>
+      <div class="colhead">Agentic<small>LLM agents · RL · tool-use</small></div>
+      <div class="colhead">Embodied<small>robotics · VLA · physical</small></div>
+
+      <div class="rowlabel">Measuring what Matters: Construct Validity in LLM Benchmarks<span class="id">2511.04703 · 445-benchmark review</span></div>
+      <div class="cell c0">·</div><div class="cell c2">●</div><div class="cell c0">·</div>
+
+      <div class="rowlabel">Benchmark Data Contamination of LLMs: A Survey<span class="id">2406.04244 · ACM</span></div>
+      <div class="cell c0">·</div><div class="cell c2">●</div><div class="cell c0">·</div>
+
+      <div class="rowlabel">Benchmarking LLMs Under Data Contamination (Static → Dynamic)<span class="id">2502.17521</span></div>
+      <div class="cell c0">·</div><div class="cell c2">●</div><div class="cell c0">·</div>
+
+      <div class="rowlabel">Evaluation and Benchmarking of LLM Agents: A Survey<span class="id">KDD 2025</span></div>
+      <div class="cell c0">·</div><div class="cell c2">●</div><div class="cell c1">◐</div>
+
+      <div class="rowlabel">A Survey on Trustworthy LLM Agents: Threats & Countermeasures<span class="id">2503.09648</span></div>
+      <div class="cell c0">·</div><div class="cell c2">●</div><div class="cell c1">◐</div>
+
+      <div class="rowlabel">Towards Trustworthy Agentic AI (safety / robustness / eval challenges)<span class="id">2605.23989</span></div>
+      <div class="cell c0">·</div><div class="cell c2">●</div><div class="cell c1">◐</div>
+
+      <div class="rowlabel">A Survey of AI-Generated Video Evaluation (AIGVE)<span class="id">2410.19884</span></div>
+      <div class="cell c2">●</div><div class="cell c0">·</div><div class="cell c0">·</div>
+
+      <div class="rowlabel threat">EvalSafetyGap: Hybrid Survey of LLM Evaluation-Safety Failures ⚠<span class="id">2606.30219 · Jun 2026 · closest competitor</span></div>
+      <div class="cell cr1">△</div><div class="cell cr2">▲</div><div class="cell cr1">△</div>
+
+      <div class="rowlabel threat">Driving-WM validity (WorldLens · DrivingGen) ⚠<span class="id">2512.10958 · 2601.01528 · benchmarks</span></div>
+      <div class="cell cr2">▲</div><div class="cell c0">·</div><div class="cell cr1">△</div>
+
+      <div class="rowlabel ours">OURS — Cross-Modal Evaluation Validity<span class="id">one threat taxonomy · three fields</span></div>
+      <div class="cell cg">★</div><div class="cell cg">★</div><div class="cell cg">★</div>
+    </div>
+
+    <div class="legend">
+      <span><i class="sw full"></i>covered</span>
+      <span><i class="sw partial"></i>partial</span>
+      <span><i class="sw absent"></i>absent</span>
+      <span><i class="sw threat"></i>competitor / not a full survey</span>
+      <span><i class="sw ours"></i>ours</span>
+    </div>
+    <div class="readout">readout: the <b>Agentic (LLM)</b> column is a solid wall · <b>Generative</b> has a couple · <b>Embodied</b> is nearly empty · the only row spanning all three is <span class="o">ours</span> — one validity taxonomy applied across every field.</div>
+  </div>
+
+  <div class="section-h"><span class="n">02</span><div><h2>The five recurring threats</h2><p class="sub">the same bugs appear in every field — that repetition is the contribution</p></div></div>
+  <div class="pillars">
+    <div class="pillar"><div class="p">threat 1</div><h3>Leakage &amp; contamination</h3><p>Train/test overlap inflates every field: MMLU leakage, benchmark memorization, WalkIndia clip-adjacency.</p></div>
+    <div class="pillar"><div class="p">threat 2</div><h3>Construct invalidity</h3><p>The metric doesn't measure the capability — FVD ≠ driving, task-success ≠ reasoning.</p></div>
+    <div class="pillar"><div class="p">threat 3</div><h3>Saturation / Goodhart</h3><p>Static suites overfit; progress decouples from competence as the benchmark is optimized.</p></div>
+    <div class="pillar"><div class="p">threat 4</div><h3>Judge fragility &amp; reward hacking</h3><p>LLM-as-judge is gamed; RL agents exploit rewards; both inflate scores without real gains.</p></div>
+    <div class="pillar"><div class="p">threat 5</div><h3>Sim2real / fidelity-utility gap</h3><p>Looks right, acts wrong — sim doesn't transfer, prediction quality ≠ downstream behavior.</p></div>
+  </div>
+
+  <div class="threatbox">
+    <div class="p">⚠ honest threat · the window is closing</div>
+    <p>This lane is crowding fast. <b>EvalSafetyGap</b> (2606.30219, Jun 2026) already runs a hybrid survey across 8 eval-safety streams (benchmark validity, dynamic eval, judge reliability, reward hacking…), and the <b>construct-validity review</b> (2511.04703) audits 445 LLM benchmarks. So the <b>LLM/safety slice is taken.</b> <span class="o">Your only durable wedge is the cross-modal breadth they lack — generative-video + embodied-physical — plus empirical anchors (FactorJEPA, CITA, WalkIndia) no one else can bring. Move fast, and position against EvalSafetyGap on page one.</span></p>
+  </div>
+
+  <div class="foot">
+    8 validity surveys · siloed by field · agentic(LLM) saturated · generative sparse · embodied nearly empty · 0 span all three<br>
+    ours = one validity-threat taxonomy across generative + agentic + embodied AI — durable only via cross-modal breadth + FactorJEPA/CITA/WalkIndia evidence · and only if shipped before the lane closes.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function sync(){var t=root.getAttribute('data-theme')||'dark';
+    document.querySelectorAll('.seg').forEach(function(s){s.classList.toggle('on',s.getAttribute('data-t')===t);});}
+  function set(t){root.setAttribute('data-theme',t); try{root.style.colorScheme=t;}catch(e){} sync();}
+  document.querySelectorAll('.seg').forEach(function(s){s.addEventListener('click',function(){set(s.getAttribute('data-t'));});});
+  sync();
+})();
+</script>
+</body>
+</html>
