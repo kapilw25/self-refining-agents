@@ -1,0 +1,32 @@
+% Table 7 -- capability matrix: coloured yes/no marks, headers linked to References.
+\begin{table*}[t]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{0.25\textwidth}cccc@{}}
+\toprule
+\textbf{Dimension}
+ & \textcolor{cat-code!50!black}{\textbf{Full loop}}~\cite{aspire,enpire,roboclaw}
+ & \textbf{$\pi_0$}~\cite{pi0}
+ & \textbf{Code-as-Pol.}~\cite{codeaspolicies}
+ & \textbf{Eureka}~\cite{eureka} \\
+ & {\footnotesize\itshape code+skills} & {\footnotesize\itshape VLA weights}
+ & {\footnotesize\itshape code, no mem.} & {\footnotesize\itshape reward} \\
+\midrule
+What it outputs & skill code+lib & action chunks & policy code & reward code \\
+How it improves & F+M+S loop & gradient pretrain & \dm\,one-shot & RL+reflection \\
+Gradient training? & \nn & \yy & \nn & \yy \\
+Persistent skill library? & \yy & \nn & \nn & \nn \\
+Failure feedback signal & exec.\ traces & \dm & \dm & train.\ stats \\
+Search strategy & evolutionary & \dm & \dm & \dm \\
+Real-robot validation & \yy & \yy & \yy & \yy \\
+Continual / open-ended? & \yy & \nn & \nn & \nn \\
+Beyond fixed APIs? & \yy & \yy & \nn & \dm \\
+Interpretable / editable? & \yy & \nn & \yy & \yy \\
+\bottomrule
+\end{tabular}
+\caption{Capability matrix, one representative per camp. Only the full-loop cell (\S3.1.5; e.g.\ ASPIRE,
+ENPIRE, RoboClaw) combines a persistent skill library with feedback- and search-driven
+self-improvement; each other camp lacks at least one axis. \yy~= yes, \nn~= no, \dm~= n/a.}
+\label{tab:matrix}
+\end{table*}

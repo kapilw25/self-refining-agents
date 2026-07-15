@@ -1,0 +1,59 @@
+% Family comparison matrix: 5 families x 6 axes
+% (data needs, task horizon, transfer, interpretability, safety, failure modes).
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.45}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.125\textwidth} >{\raggedright\arraybackslash}p{0.16\textwidth} >{\raggedright\arraybackslash}p{0.16\textwidth} >{\raggedright\arraybackslash}p{0.15\textwidth} >{\raggedright\arraybackslash}p{0.15\textwidth} >{\raggedright\arraybackslash}p{0.155\textwidth}@{}}
+\toprule
+ & \textbf{End-to-end VLA} (\S\ref{sec:vla}) & \textbf{Code-as-policy} (\S\ref{sec:code})
+ & \textbf{Reward synthesis} (\S\ref{sec:reward}) & \textbf{RL skill discovery} (\S\ref{sec:skill})
+ & \textbf{Market skills} (\S\ref{sec:open}) \\
+\midrule
+\textbf{Data needs} &
+\nn\ web-scale teleop corpora: 1M+ episodes, 22 embodiments~\citep{openx} &
+\yy\ few-shot prompts over a pretrained LLM~\citep{codeaspolicies} &
+\pp\ massive \emph{simulated} interaction, no demonstrations~\citep{eureka} &
+\nn\ millions of environment steps per embodiment~\citep{diayn} &
+\yy\ none at deployment; vendor-recorded playback~\citep{unistore2026} \\
+\textbf{Task horizon} &
+\pp\ short reactive chunks; long tasks by chaining~\citep{rt2} &
+\yy\ long: programs compose perception and control primitives~\citep{voxposer} &
+\nn\ one low-level skill per synthesised reward~\citep{eureka} &
+\nn\ temporally-extended primitives, not full tasks~\citep{metra} &
+\pp\ fixed multi-step routines; no branching \\
+\textbf{Transfer} &
+\yy\ cross-task and cross-embodiment via co-training~\citep{openx} &
+\pp\ API-level portability, but bound to the perception stack &
+\pp\ sim-to-real via randomisation search~\citep{dreureka} &
+\pp\ latent skills seed downstream RL~\citep{spirl} &
+\nn\ certified robot models only; no adaptation~\citep{unistore2026} \\
+\textbf{Interpretability} &
+\nn\ opaque weights; behaviour only observable &
+\yy\ readable, editable, diffable programs &
+\pp\ readable reward code; opaque trained policy &
+\nn\ latent skill codes, symbolically uninspectable &
+\nn\ sealed vendor package \\
+\textbf{Safety} &
+\nn\ emergent behaviour is hard to verify pre-deployment &
+\yy\ inspectable before execution; constrained to vetted APIs &
+\nn\ reward hacking; unintended optima~\citep{eureka} &
+\nn\ unconstrained exploration unsafe on hardware &
+\pp\ vendor certification, but no provenance record \\
+\textbf{Failure mode} &
+silent misgrounding under distribution shift &
+brittle when perception mislabels the scene &
+specification gaming that passes in sim only &
+skill collapse into degenerate behaviours &
+context mismatch with no recovery path \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{Family comparison matrix}: the five technique families on six axes (data needs,
+task horizon, transfer, interpretability, safety, characteristic failure mode). Marks grade each
+family on the axis (\yy\ favourable, \pp\ mixed, \nn\ weak); evidence anchors include the
+Open X-Embodiment corpus~\citep{openx} for data and transfer and lifelong suites such as
+LIBERO~\citep{libero} for horizon and reuse. No family is favourable on all six axes, which is
+the tension the skill economy (\S\ref{sec:open}) inherits.}
+\label{tab:branch_limits}
+\end{table*}

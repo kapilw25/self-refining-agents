@@ -1,0 +1,11 @@
+# LaTeX build artifacts (Overleaf / latexmk regenerate these)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.toc
+*.synctex.gz
+# Build artifacts route to no_upload/build/ (see .latexmkrc); its main.pdf is the committed eyeball copy.

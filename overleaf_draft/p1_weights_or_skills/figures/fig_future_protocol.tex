@@ -1,0 +1,76 @@
+% F3 evaluation-protocol figure. SCHEMATIC / ILLUSTRATIVE ONLY: the panels show the axes and the
+% expected/target shape of each measurement, NOT measured results. No data points are real. This
+% makes Table~\ref{tab:future_metrics} concrete (reviewer feedback 3), instantiated on LIBERO-style
+% lifelong learning and Open X-Embodiment-style multi-robot transfer.
+\begin{figure}[t]
+\centering
+\begin{tabular}{@{}c@{\hspace{9mm}}c@{}}
+% ---- (a) success vs interactions ----
+\begin{tikzpicture}[baseline]
+  \draw[->,gray] (0,0)--(3.8,0) node[right,font=\scriptsize]{interactions};
+  \draw[->,gray] (0,0)--(0,2.4);
+  \node[rotate=90,font=\scriptsize,anchor=south,text=gray!60!black] at (-0.2,1.25){held-out success};
+  \fill[secE!12] (0,0.55) .. controls (1.4,0.7) and (2.1,2.0) .. (3.5,2.1) -- (3.5,0.6) -- cycle;
+  \draw[secE!70!black,line width=1.3pt] (0,0.3) .. controls (1.4,0.5) and (2.1,2.0) .. (3.5,2.1);
+  \draw[gray,line width=1pt,dashed] (0,0.55)--(3.5,0.6);
+  \node[secE!55!black,font=\scriptsize,anchor=west] at (1.15,1.75){self-improving};
+  \node[gray!55!black,font=\scriptsize,anchor=west] at (1.3,0.4){static playback};
+  \node[font=\footnotesize\bfseries] at (1.9,2.75){(a) Success vs.\ interactions};
+  \node[font=\scriptsize,text=gray!55!black] at (1.9,-0.42){testbed: LIBERO-100 lifelong};
+\end{tikzpicture}
+&
+% ---- (b) skill-library reuse rate ----
+\begin{tikzpicture}[baseline]
+  \draw[->,gray] (0,0)--(3.8,0) node[right,font=\scriptsize]{tasks encountered};
+  \draw[->,gray] (0,0)--(0,2.4);
+  \node[rotate=90,font=\scriptsize,anchor=south,text=gray!60!black] at (-0.2,1.25){reuse rate};
+  \draw[secC!70!black,line width=1.3pt] (0,0.15) .. controls (1.2,0.4) and (1.8,1.7) .. (3.5,2.05);
+  \node[font=\footnotesize\bfseries] at (1.9,2.75){(b) Skill-library reuse rate};
+  \node[font=\scriptsize,text=gray!55!black] at (1.9,-0.42){testbed: growing code library};
+\end{tikzpicture}
+\\[8mm]
+% ---- (c) cross-embodiment transfer drop ----
+\begin{tikzpicture}[baseline]
+  \draw[->,gray] (0,0)--(3.8,0); \draw[->,gray] (0,0)--(0,2.4);
+  \node[rotate=90,font=\scriptsize,anchor=south,text=gray!60!black] at (-0.2,1.25){success};
+  \fill[cat-vla!55] (0.6,0) rectangle (1.5,2.05);
+  \fill[cat-vla!30] (2.2,0) rectangle (3.1,1.15);
+  \draw[BrickRed,{Stealth}-{Stealth},line width=0.8pt] (1.5,2.05)--(2.2,2.05);
+  \node[BrickRed,font=\scriptsize,above] at (1.85,2.05){drop};
+  \draw[BrickRed,dashed,line width=0.6pt] (1.5,2.05)--(3.1,2.05);
+  \node[font=\scriptsize] at (1.05,-0.22){train emb.};
+  \node[font=\scriptsize] at (2.65,-0.22){unseen emb.};
+  \node[font=\footnotesize\bfseries] at (1.9,2.75){(c) Cross-embodiment transfer drop};
+  \node[font=\scriptsize,text=gray!55!black] at (1.9,-0.62){testbed: Open X-Embodiment};
+\end{tikzpicture}
+&
+% ---- (d) provenance coverage ----
+\begin{tikzpicture}[baseline]
+  \foreach [count=\i] \l/\f in {origin/0.45, {training data}/0.25, {reproducible test}/0.15}{
+    \draw[gray!40] (2.0,{2.05-\i*0.55}) rectangle (3.6,{2.05-\i*0.55+0.32});
+    \fill[cat-skill!60] (2.0,{2.05-\i*0.55}) rectangle ({2.0+1.6*\f},{2.05-\i*0.55+0.32});
+    \node[left=2pt,font=\scriptsize] at (2.0,{2.05-\i*0.55+0.16}) {\l};
+  }
+  \draw[BrickRed,dashed,line width=0.6pt] (3.6,0.15)--(3.6,1.9) node[above,font=\scriptsize,text=BrickRed]{target};
+  \node[font=\footnotesize\bfseries] at (1.9,2.75){(d) Provenance coverage};
+  \node[font=\scriptsize,text=gray!55!black] at (1.9,-0.42){testbed: skill marketplace};
+\end{tikzpicture}
+\end{tabular}
+\caption{\textbf{An actionable evaluation protocol for the future agenda} (\S\ref{sec:future};
+Table~\ref{tab:future_metrics}). The panels are \emph{schematic}: they show the axes and the
+\emph{target} shape of each measurement, not measured results. (a)~held-out success should rise with
+autonomous interaction for a self-improving system while a static playback skill stays flat, on
+LIBERO-style lifelong streams~\citep{libero}; (b)~a growing skill library should raise its reuse
+rate; (c)~the drop in success from a training embodiment to an unseen one quantifies transfer, on
+Open X-Embodiment-style splits~\citep{openx}; (d)~each distributed skill should carry a verifiable
+origin, training-data statement, and reproducible test, a coverage today far below target for
+marketplace skills~\citep{unistore2026}.}
+\Description{Four schematic panels illustrating target measurement shapes, not real data. (a) A
+rising, saturating curve labelled self-improving versus a flat dashed line labelled static playback,
+on axes of held-out success against interactions, with the gap shaded; testbed LIBERO-100 lifelong.
+(b) A rising curve of skill-library reuse rate against tasks encountered. (c) Two bars, a tall
+train-embodiment bar and a shorter unseen-embodiment bar, with a red double arrow marking the drop;
+testbed Open X-Embodiment. (d) Three partially filled bars for origin, training data, and
+reproducible test, all short of a dashed target line; testbed skill marketplace.}
+\label{fig:future_protocol}
+\end{figure}

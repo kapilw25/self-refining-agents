@@ -1,0 +1,30 @@
+% Table -- coverage of related surveys vs. ours.
+\begin{table}[t]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{0.24\textwidth}c c *{6}{c}@{}}
+\toprule
+\textbf{Survey} & \textbf{Venue} & \textbf{Yr}
+ & \tweights{} & \tcode{} & \tskill{} & \treward{}
+ & \textcolor{secE!55!black}{\textbf{Self-impr.}} & \textcolor{cat-bench!45!black}{\textbf{Economy}}\\
+\midrule
+World Models~\cite{survey_worldmodels} & CSUR & 2025 & \pp & \nn & \nn & \nn & \nn & \nn\\
+Embodied Intelligence~\cite{survey_embodiedintel}& CSUR & 2025 & \pp & \nn & \pp & \nn & \nn & \nn\\
+Navigation via FLM~\cite{survey_navigation} & CSUR & 2026 & \pp & \pp & \nn & \nn & \nn & \nn\\
+VLA for Embodied AI~\cite{survey_vla} & arXiv & 2024 & \yy & \nn & \nn & \nn & \nn & \nn\\
+Large-VLM VLA~\cite{survey_vlmvla} & arXiv & 2025 & \yy & \nn & \nn & \pp & \nn & \nn\\
+Embodied Learning~\cite{survey_embodiedlearn} & MIR & 2025 & \pp & \nn & \pp & \pp & \nn & \nn\\
+FM for Manipulation~\cite{survey_fmrobot} & arXiv & 2024 & \yy & \pp & \pp & \pp & \nn & \nn\\
+\midrule
+\textbf{Ours (\emph{Weights or Skills?})} & \dm & 2026 & \yy & \yy & \yy & \yy & \yy & \yy\\
+\bottomrule
+\end{tabular}
+\caption{Topical coverage of the closest related surveys versus ours.
+\yy\ covered, \pp\ partial/mentioned, \nn\ not covered. Columns: \tweights{} (VLA/weights),
+\tcode{} (code-as-policy), \tskill{} (skill libraries), \treward{} (reward synthesis),
+\textbf{Self-impr.}\ (organised by \emph{degree of self-improvement}, incl.\ the \S3.1.5 cell),
+\textbf{Economy} (the robot skill marketplace). Only this survey covers the last two axes.
+CSUR = ACM Computing Surveys; MIR = Machine Intelligence Research.}
+\label{tab:survey_compare}
+\end{table}

@@ -1,0 +1,44 @@
+% Figure -- §3.4 deep-dive: how a skill repertoire is built, Fig2 forest style.
+% Each sub-section has its own colour; leaves use real \citep keys.
+\begin{figure*}[tbp]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{forest}
+[\textbf{\S3.4 Robot skills}\\\textbf{how a repertoire is}\\\textbf{built \& reused}, fill=tx-root, text width=11em
+ [{\textbf{\S3.4.1 Unsupervised / latent discovery} (RL)\\\emph{diverse skills, no reward, no code}}, fill=secA, text width=19em, for descendants={fill=secAl, text width=33em}
+ [\textbf{DIAYN}: diversity is all you need~\citep{diayn}]
+ [\textbf{DADS}: dynamics-aware skills~\citep{dads}]
+ [\textbf{LSD}: Lipschitz skill discovery~\citep{lsd}]
+ [\textbf{CIC}: contrastive intrinsic control~\citep{cic}]
+ [\textbf{METRA}: metric-aware abstraction~\citep{metra}]
+ ]
+ [{\textbf{\S3.4.2 Skill-based / hierarchical RL}\\\emph{learn a skill space, then compose}}, fill=secB, text width=19em, for descendants={fill=secBl, text width=33em}
+ [\textbf{SPiRL}: learned skill priors~\citep{spirl}]
+ [\textbf{OPAL}: offline primitive discovery~\citep{opal}]
+ [\textbf{PARROT}: behavioral priors~\citep{parrot}]
+ [\textbf{SkiMo}: skill-based model-based RL~\citep{skimo}]
+ ]
+ [{\textbf{\S3.4.3 LLM / code skill libraries}\\\emph{skills as retrievable code}}, fill=secF, text width=19em, for descendants={fill=secFl, text width=33em}
+ [\textbf{Voyager}: open-ended embodied agent~\citep{voyager}]
+ [\textbf{LOTUS}: unsupervised skill discovery~\citep{lotus}]
+ [\textbf{LRLL}: lifelong robot library learning~\citep{lrll}]
+ [\textbf{BOSS}: bootstrap your own skills~\citep{boss}]
+ [\textbf{SPRINT}: scalable skill pre-training~\citep{sprint}]
+ [\textbf{Uni-Skill}: self-evolving skill repository~\citep{uniskill}]
+ [\textbf{SkillFlow}: lifelong skill discovery~\citep{skillflow}]
+ ]
+ [{\textbf{\S3.4.4 Open-world LLM-agent libraries}\\\emph{agents build \& reuse from experience}}, fill=secG, text width=19em, for descendants={fill=secGl, text width=33em}
+ [\textbf{GITM}: Ghost in the Minecraft~\citep{gitm}]
+ [\textbf{JARVIS-1}: memory-augmented agent~\citep{jarvis1}]
+ [\textbf{ExpeL}: experiential learner~\citep{expel}]
+ [\textbf{Optimus-1}: hybrid multimodal memory~\citep{optimus1}]
+ [\textbf{Odyssey}: open-world skill library~\citep{odyssey}]
+ ]
+]
+\end{forest}
+}
+\caption{The ``skills'' pole, one colour per sub-section. \S3.4.1--2 build skills as
+\emph{RL policies} (mature, included as landscape); \S3.4.3--4 build them as
+\emph{retrievable code}, where the self-improving code-as-policy methods of \S3.1 live.}
+\label{fig:taxonomy_34}
+\end{figure*}

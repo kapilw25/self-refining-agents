@@ -1,0 +1,24 @@
+\subsection{Sim-to-Real and Cross-Embodiment Transfer}
+\label{sec:transfer}
+
+A skill is only useful if it moves across the simulation-to-reality gap and across robot
+bodies. The enabling artefact is scale: \emph{Open X-Embodiment}~\citep{openx} pools sixty
+datasets from twenty-one institutions into over a million trajectories spanning twenty-two
+embodiments and hundreds of skills, and shows that RT-X models trained on the mixture exhibit
+positive transfer and emergent capabilities across platforms.
+
+Given such data, a single network can control very different bodies.
+\emph{CrossFormer}~\citep{crossformer} trains one transformer on 900K trajectories across
+twenty embodiments, arms, wheeled robots, quadrotors, and quadrupeds, \emph{without} manually
+aligning observation or action spaces, and matches specialist policies tailored to each robot.
+Other work attacks transfer at test time rather than through data:
+\emph{Mirage}~\citep{mirage} achieves \emph{zero-shot} cross-embodiment transfer by
+``cross-painting'', masking the target robot and inpainting the source robot at the same pose
+so the policy sees a familiar body, and bridging the control gap with forward dynamics.
+
+The most suggestive point for this survey is \emph{RoboCat}~\citep{robocat}, a goal-conditioned
+multi-embodiment agent that adapts to a new task from as few as a hundred demonstrations and
+then \emph{generates its own data} for the next training round, forming a rudimentary
+self-improvement loop of the kind \S\ref{sec:code} makes explicit. This is also the marketplace
+question of \S\ref{sec:open}: a skill advertised for the G1, H1, B2, and Go2
+platforms must survive exactly the cross-embodiment gap these methods study.

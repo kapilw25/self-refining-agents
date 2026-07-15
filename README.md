@@ -4,7 +4,7 @@ A survey and **living catalog** of robot-learning techniques for **Physical AI**
 
 The thesis: two ways to build a generalist robot — **ship weights** (end-to-end VLA) vs **ship code + skills**. ASPIRE is the frontier of the second camp, the one system that writes, debugs, and *compounds* its own skills.
 
-🔗 **Live site:** `https://kapilw25.github.io/self-refining-agents/`
+🔗 **Live site:** `https://kapilw25.github.io/surveys/`
 
 ## What's inside (`docs/`)
 

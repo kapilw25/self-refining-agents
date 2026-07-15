@@ -1,0 +1,49 @@
+\section{Introduction}
+\label{sec:intro}
+
+Two paradigms now dominate robot learning. \emph{Vision-language-action} (VLA)
+models predict actions from frozen weights; \emph{code-as-policy} agents instead
+write executable programs and improve them from experience~\citep{codeaspolicies,aspire}.
+This survey is organised around that fault line. Figure~\ref{fig:corpus_collage} poses the question
+with real systems: frozen-weight VLA policies on one side, executable and self-improving
+code-as-policy agents on the other.
+
+\input{figures/fig_corpus_collage}
+
+\paragraph{Why now: the skill stack.}
+The app store for robot skills has arrived; Unitree UniStore ships one-tap,
+cross-model motion downloads~\citep{unistore2026}. But every skill in it is
+\emph{static playback}: the least-capable point in the taxonomy. The skill stack has
+three layers: \textbf{(1) Build} (how skills are created, \S\ref{sec:taxonomy}--\S\ref{sec:techniques}),
+\textbf{(2) Distribute} (marketplaces and hubs), and \textbf{(3) Adapt} (on-device
+self-improvement, \S\ref{sec:code}). UniStore is layer~2 over static layer-1 skills;
+the promised value, ``adjust grip per fruit so nothing bruises'', lives in layer~3,
+which no shipped skill does today.
+
+\paragraph{Scope and contributions.}
+This is a \emph{focused} survey rather than an exhaustive census. We examine 77 systems chosen
+to populate a single analytical taxonomy, and we exclude pure perception, navigation, and
+locomotion work except where it bears directly on how a manipulation skill is authored and
+improved. Our contributions are: (i) a taxonomy organised by \emph{weights vs.\ skills}
+(\S\ref{sec:taxonomy}); (ii) a deep-dive that arranges code-as-policy by \emph{degree of
+self-improvement}, with operational definitions of the feedback, memory, and search mechanisms
+and necessary-and-sufficient conditions for each rung (\S\ref{sec:code}); (iii) a map of the
+``skills'' pole together with an analysis of the five senses in which ``skill'' is used
+(\S\ref{sec:skill}); (iv) a summary of the characteristic strengths and limitations of each
+technique family; and (v) an open-problems agenda for the emerging skill economy
+(\S\ref{sec:open}). To situate these systems within the wider field,
+Appendix~\ref{sec:landscape} (Table~\ref{tab:landscape}) catalogues 225 further representative
+works, compared on six axes and grouped by area, bringing the survey's total coverage to more than
+three hundred works.
+
+\paragraph{Related surveys.}
+Table~\ref{tab:survey_compare} contrasts the topical coverage of the closest surveys with
+ours, and Figure~\ref{fig:surveys} places them on a timeline. Within \emph{ACM Computing
+Surveys} the nearest are on world models, embodied intelligence, and language-model
+navigation, and beyond it a cluster covers vision-language-action models and foundation models
+for manipulation; but none organises code-as-policy by degree of self-improvement or names
+the \S3.1.5 cell.
+\input{tables/tab_survey_compare}
+\input{figures/fig_taxonomy_main}
+\input{figures/fig_survey_timeline}
+\FloatBarrier

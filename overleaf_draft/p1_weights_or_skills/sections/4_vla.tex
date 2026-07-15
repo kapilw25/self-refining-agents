@@ -1,0 +1,36 @@
+\subsection{End-to-End Vision-Language-Action Models}
+\label{sec:vla}
+
+The dominant alternative to writing code is to regress actions directly from pixels and
+language with a single large network, so that competence lives in \emph{frozen weights}
+rather than in an inspectable program. Architecturally these vision-language-action (VLA)
+models share a backbone--action-head decomposition: a vision-language backbone encodes the
+scene and instruction, and a pluggable action head maps that representation to motor
+commands~\citep{openvla,pi0}.
+
+The lineage begins with \emph{RT-1}~\citep{rt1}, a transformer trained on large-scale real
+robot data that discretises continuous actions into categorical bins. \emph{RT-2}~\citep{rt2}
+then co-fine-tunes an Internet-pretrained vision-language model on robot trajectories,
+emitting actions as text tokens and inheriting semantic generalisation from web data. Open
+reproductions followed: \emph{Octo}~\citep{octo} and \emph{OpenVLA}~\citep{openvla}, the
+latter a 7B model with a DINOv2/SigLIP vision stack, are trained on the pooled
+Open X-Embodiment corpus (\S\ref{sec:transfer}), and \emph{RoboFlamingo}~\citep{roboflamingo}
+adapts a vision-language model into an imitation policy.
+
+A second design axis is the \emph{action representation}. Discrete token heads (RT-1/RT-2)
+are simple but coarse; recent systems favour continuous heads. \emph{$\pi_0$}~\citep{pi0}
+attaches a \emph{flow-matching} head to a PaLI-Gemma backbone for smooth, high-frequency
+bimanual control, and \emph{$\pi_{0.5}$}~\citep{pi05} extends it toward open-world
+generalisation; \emph{CogACT}~\citep{cogact} separates a cognition module from a
+diffusion-transformer action module, and \emph{SpatialVLA}~\citep{spatialvla} injects 3D
+spatial encodings. Flow- and diffusion-based heads trade a few extra parameters for far fewer
+inference steps and better high-degree-of-freedom precision.
+
+At the largest scale, foundation-model efforts target whole platforms:
+\emph{GR00T~N1}~\citep{groot} pairs a slow System-2 vision-language reasoner with a fast
+System-1 diffusion transformer that produces motor actions at high rate for humanoids, and
+\emph{Gemini Robotics}~\citep{geminirobotics} builds a VLA together with an embodied-reasoning
+model on the Gemini backbone. Across all of these, the defining property, and the reason we
+treat them as the \emph{foil} for this survey, is that there is \emph{no loop and no code}:
+competence is acquired by scaling data and parameters, generalises by interpolation rather
+than search, and cannot be edited, audited, or recombined after training.

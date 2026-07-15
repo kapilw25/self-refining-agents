@@ -1,0 +1,68 @@
+\section{A Taxonomy of Robot-Learning Techniques}
+\label{sec:taxonomy}
+
+Figure~\ref{fig:taxonomy_main} organises the field into six branches. The dividing
+question is \emph{what ships}: frozen weights (\S\ref{sec:vla}) or executable skills
+(\S\ref{sec:code}). We tag mechanisms by \textbf{F}eedback, \textbf{S}earch, and
+\textbf{M}emory throughout.
+
+Table~\ref{tab:compare_main} compares all systems in the map on what each \emph{ships}, where
+it is evaluated, and whether it improves from its own experience.
+\input{tables/tab_compare_main}
+
+\subsection{Survey methodology: how the corpus was built}
+\label{sec:method}
+
+Figure~\ref{fig:prisma} summarises the corpus construction in the PRISMA~2020
+style~\citep{prisma2020}. The corpus was assembled in two passes over a January~2016 to
+July~2026 window. First, the 77 taxonomy systems were curated by \emph{seeding and
+snowballing}: for each of the six branches we started from its landmark systems and chased
+citations forward and backward until new candidates stopped appearing. Second, the 225-work
+landscape corpus (Table~\ref{tab:landscape}) was gathered by five \emph{structured web-search
+sweeps}, one per area cluster: (i) generalist and vision-language-action policies, imitation
+and diffusion policies; (ii) language-model planning, task-and-motion planning, reward and data
+synthesis; (iii) skill discovery, hierarchical reinforcement learning, and world models;
+(iv) manipulation, dexterity, sim-to-real, locomotion, and benchmarks; and (v) representation
+learning, offline reinforcement learning, navigation, and tactile sensing. Each sweep queried
+the open web with area-specific search strings of the form ``\emph{<system or family name>
+robot learning arXiv}'' and ``\emph{<area> survey/benchmark/dataset}'' over arXiv, the ACM
+Digital Library, IEEE Xplore, Google Scholar, and venue proceedings pages (CoRL, RSS, ICRA,
+IROS, NeurIPS, ICML, ICLR, CVPR).
+
+\emph{Inclusion} required a work to (a) concern how an embodied agent's skill or policy is
+authored, learned, transferred, evaluated, or distributed, and (b) carry verifiable metadata:
+exact title, first author, year, and an arXiv identifier or DOI, each confirmed against the
+source. \emph{Exclusion} removed pure perception, navigation, and locomotion work with no
+bearing on skill authoring (retained only in the landscape appendix where it anchors an area),
+works whose metadata could not be verified, and duplicates, detected by both bibliographic key
+and arXiv identifier. Every reference in this survey passed the verification step; candidates
+that failed it were discarded at harvest time, and we report that their count was not logged
+rather than estimate it. Included systems were then mapped onto the taxonomy of
+Figure~\ref{fig:taxonomy_main} by the mechanism definitions of Table~\ref{tab:defs}.
+
+\input{figures/fig_prisma}
+
+\subsection{The corpus at a glance}
+\label{sec:corpus_gallery}
+
+Figure~\ref{fig:corpus_overview} summarises the whole corpus at a glance, and
+Figure~\ref{fig:corpus_dist} profiles the 225 landscape works (Table~\ref{tab:landscape},
+Appendix~\ref{sec:landscape}) by publication year, evaluation domain, learning signal, and
+embodiment; every count is the exact tally of that table. Figure~\ref{fig:pole_trend} then charts the
+two poles of Figure~\ref{fig:corpus_collage} by year of release, showing both paradigms emerging only
+recently, with code-as-policy the larger and faster-growing pole.
+
+Figures~\ref{fig:robots_canvas} and~\ref{fig:plots_canvas} then give a visual overview of the surveyed
+systems: the real and simulated robots they run on (Figure~\ref{fig:robots_canvas}) and the empirical
+results they report (Figure~\ref{fig:plots_canvas}); the two poles of the opening thesis figure
+(Figure~\ref{fig:corpus_collage}) recur here across every embodiment. Every panel is a live hyperlink
+to its source paper and is cropped from a specific figure of it; Table~\ref{tab:canvas_provenance}
+records the source paper and the figure number for each, so that no image is used without a
+traceable, clickable origin. The figures are vector graphics with the photographs embedded at full
+resolution, so they can be zoomed without pixelation.
+
+\input{figures/fig_corpus_overview}
+\input{figures/fig_corpus_dist}
+\input{figures/fig_pole_trend}
+\input{figures/fig_robots_canvas}
+\input{figures/fig_plots_canvas}

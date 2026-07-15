@@ -1,0 +1,237 @@
+% ============================================================
+% Fig 1 - Taxonomy of Hallucination Mitigation Techniques in LLMs
+% Verbatim forest taxonomy source, extracted from the original
+% arXiv submission (A Comprehensive Survey of Hallucination Mitigation Techniques in LLMs (acl_latex.tex)).
+% Self-contained: compiles standalone on Overleaf with pdfLaTeX.
+% ============================================================
+\documentclass[border=12pt]{standalone}
+\usepackage[svgnames,dvipsnames]{xcolor}
+\usepackage{forest}
+\usepackage{amssymb}
+\usepackage{pifont}
+
+% ---- colours from the original paper ----
+\definecolor{mygreen}{RGB}{0,150,0}
+\definecolor{myred}{RGB}{255,0,0}
+\definecolor{paired-light-blue}{RGB}{198, 219, 239}
+\definecolor{paired-dark-blue}{RGB}{49, 130, 188}
+\definecolor{paired-light-orange}{RGB}{251, 208, 162}
+\definecolor{paired-dark-orange}{RGB}{230, 85, 12}
+\definecolor{paired-light-green}{RGB}{199, 233, 193}
+\definecolor{paired-dark-green}{RGB}{49, 163, 83}
+\definecolor{paired-light-purple}{RGB}{218, 218, 235}
+\definecolor{paired-dark-purple}{RGB}{117, 107, 176}
+\definecolor{paired-light-gray}{RGB}{217, 217, 217}
+\definecolor{paired-dark-gray}{RGB}{99, 99, 99}
+\definecolor{paired-light-pink}{RGB}{222, 158, 214}
+\definecolor{paired-dark-pink}{RGB}{123, 65, 115}
+\definecolor{paired-light-red}{RGB}{231, 150, 156}
+\definecolor{paired-dark-red}{RGB}{131, 60, 56}
+\definecolor{paired-light-yellow}{RGB}{231, 204, 149}
+\definecolor{paired-dark-yellow}{RGB}{141, 109, 49}
+\definecolor{bg1}{HTML}{FF9966}
+\definecolor{bg2}{HTML}{CCE5FF}
+\definecolor{bg3}{HTML}{FFCC99}
+\definecolor{bg4}{HTML}{FFC107}
+\definecolor{bg5}{HTML}{FFCCCC}
+\definecolor{bg6}{HTML}{D5E8D4}
+\definecolor{bg7}{HTML}{eeeeee}
+\definecolor{bg8}{HTML}{cdeb8b}
+\definecolor{bg9}{HTML}{dae8fc}
+\definecolor{bg10}{HTML}{a2e6eb}
+\definecolor{bg31}{HTML}{FFCDD2} % light pink
+\definecolor{bg32}{HTML}{F8BBD0}
+\definecolor{bg33}{HTML}{E1BEE7} % lavender
+\definecolor{bg34}{HTML}{D7CCC8} % light tan
+\definecolor{bg35}{HTML}{B2DFDB} % light teal
+\definecolor{bg36}{HTML}{A5D6A7} % light green
+\definecolor{bg37}{HTML}{FFF9C4} %light yellow
+\definecolor{bg38}{HTML}{FFECB3} % peach
+\definecolor{bg111}{HTML}{CB6843}
+\definecolor{bg112}{HTML}{D77C5C}
+\definecolor{bg113}{HTML}{E28E6E}
+\definecolor{bg114}{HTML}{E89F7D}
+\definecolor{bg115}{HTML}{EDAE8A}
+\definecolor{bg116}{HTML}{F0BA95}
+\definecolor{bg117}{HTML}{F3C29F}
+\definecolor{bg118}{HTML}{F6CCAA}
+\definecolor{bg119}{HTML}{F8D5B3}
+\definecolor{bg120}{HTML}{FADCBD}
+\definecolor{bg121}{HTML}{FCE6C7}
+\definecolor{bg39}{HTML}{FFE0B2} % apricot
+\definecolor{bg40}{HTML}{3CB371} % blush pink
+\definecolor{bg43}{HTML}{ffe5d9}
+\definecolor{bg15}{HTML}{7FFFD4}
+\definecolor{bg17}{HTML}{F0FFFF}
+\definecolor{bg18}{HTML}{F5FFFA}
+\definecolor{bg19}{HTML}{F8F8FF}
+\definecolor{bg20}{HTML}{FFFFFF}
+\definecolor{bg21}{HTML}{E1F5FE}
+\definecolor{bg22}{HTML}{B3E5FC}
+\definecolor{bg23}{HTML}{81D4FA}
+\definecolor{bg24}{HTML}{4FC3F7}
+\definecolor{bg25}{HTML}{29B6F6}
+\definecolor{bg26}{HTML}{03A9F4}
+\definecolor{bg27}{HTML}{039BE5}
+\definecolor{bg28}{HTML}{0288D1}
+\definecolor{bg29}{HTML}{0277BD}
+\definecolor{bg30}{HTML}{01579B}
+\definecolor{bg16}{HTML}{FFCC99} 
+\definecolor{pg51}{HTML}{E8F5E9} % pale green
+\definecolor{pg52}{HTML}{C8E6C9} % honeydew green
+\definecolor{pg53}{HTML}{B9F6CA} % light mint green
+\definecolor{pg54}{HTML}{A9DFBF} % pale sage green
+\definecolor{pg55}{HTML}{BCF5A6} % lemon green
+\definecolor{pg56}{HTML}{BEF1CE} % seashell green
+\definecolor{pg57}{HTML}{CEF6EC} % icy green
+\definecolor{pg58}{HTML}{B7F0B1} % feijoa green
+\definecolor{pg59}{HTML}{B1F2B5} % pastel light green
+\definecolor{pg60}{HTML}{9DF3C4} % greenish cyan
+\definecolor{pg61}{HTML}{DEF7E0} % pale green
+\definecolor{pg62}{HTML}{E8F8DC} % greenish beige
+\definecolor{pg63}{HTML}{EBF7E7} % seafoam green
+\definecolor{pg64}{HTML}{F0FDF4} % pale turquoise
+\definecolor{pg65}{HTML}{F1FEE7} % mint cream
+\definecolor{pg66}{HTML}{F7FFF6} % foam green
+\definecolor{pg67}{HTML}{FCFFE7} % pale spring bud
+\definecolor{pg68}{HTML}{F4FFD2} % light lime green
+\definecolor{pg69}{HTML}{EEFFE2} % tea green
+\definecolor{pg70}{HTML}{E3FDF5} % tropical green
+\definecolor{connect-color}{RGB}{0,0,0}
+\definecolor{middle-color}{RGB}{255,255,255}
+% \definecolor{leaf-color}{RGB}{166,208,153}
+\definecolor{leaf-color}{RGB}{173,216,230}
+% \definecolor{line-color}{RGB}{166,208,153}
+\definecolor{line-color}{RGB}{25,25,112}
+\definecolor{hidden-draw}{RGB}{20,68,106}
+\definecolor{hidden-pink}{RGB}{255,245,247}
+\definecolor{red}{RGB}{255,0,0}
+\definecolor{hidden-draw}{RGB}{0,0,0}
+\definecolor{hidden-pink}{RGB}{255,182,193}
+
+\begin{document}
+    \begin{forest}
+      forked edges,
+      for tree={
+        grow=east,
+        reversed=true,
+        anchor=base west,
+        parent anchor=east,
+        child anchor=west,
+        base=center,
+        font=\large,
+        rectangle,
+        draw=hidden-draw,
+        rounded corners,
+        align=center,
+        text centered,
+        minimum width=5em,
+        edge+={darkgray, line width=1pt},
+        s sep=3pt,
+        inner xsep=2pt,
+        inner ysep=3pt,
+        line width=0.8pt,
+        ver/.style={rotate=90, child anchor=north, parent anchor=south, anchor=center},
+      },
+      where level=1{text width=15em,font=\normalsize,}{},
+      where level=2{text width=14em,font=\normalsize,}{},
+      where level=3{minimum width=10em,font=\normalsize,}{},
+      where level=4{text width=26em,font=\normalsize,}{},
+      where level=5{text width=20em,font=\normalsize,}{},
+      [
+        \textbf{Hallucination Mitigation}\\ \textbf{Techniques in LLMs}, for tree={fill=paired-light-red!70}
+        [
+          \textbf{Prompt Engineering} \S\ref{subsec:Prompt Engineering}, for tree={fill=paired-light-yellow!45}
+          [
+            \textbf{Retrieval Augmented} \\ \textbf{Generation} \S\ref{subsubsec:Retrieval Augmented Generation}, for tree={fill=pg58},text width=13em
+            [
+            \textbf{Before Generation} \S\ref{subsubsubsec:Before generation}, for tree={fill=bg33},text width=13.2em
+            [
+            \textbf{LLM-Augmenter} \cite{peng2023check} \\
+            \textbf{FreshPrompt} \cite{vu2023freshllms}, for tree={fill=bg1}, leaf
+            ]
+            ]
+            [
+            \textbf{During Generation} \S\ref{subsubsubsec:During generation}, for tree={fill=bg33},text width=13.2em
+            [
+            \textbf{Knowledge Retrieval} \cite{varshney2023stitch} \\
+            \textbf{Decompose-and Query framework (D\&Q)} \cite{cao2023step} \\
+            \textbf{EVER} \cite{kang2023ever}, for tree={fill=bg43}, leaf
+            ]
+            ]
+            [
+            \textbf{After Generation} \S\ref{subsubsubsec:After generation}, for tree={fill=bg33},text width=13.2em
+            [
+            \textbf{RARR} \cite{gao2023rarr} \\
+            \textbf{High Entropy Word Spotting and Replacement} \cite{rawte2023troubling}, for tree={fill=bg21}, leaf
+            ]
+            ]
+            [
+            \textbf{End-to-End} \S\ref{subsubsubsec:End-to-End}, for tree={fill=bg33},text width=13.2em
+            [
+            \textbf{Retrieval-Augmented Generation (RAG)} \cite{lewis2021RAG}, for tree = {fill=bg113}, leaf
+            ]
+            ]
+          ]
+          [
+            \textbf{Self Refinement through} \\ \textbf{Feedback and Reasoning} \S\ref{subsubsec:Self-refinement through feedback and reasoning}, for tree={fill=pg58},text width=28em
+            [
+            \textbf{Prompting GPT-3 To Be Reliable} \cite{si2022prompting} \\
+            \textbf{ChatProtect} \cite{mündler2023selfcontradictory} \\
+            \textbf{Self-Reflection Methodology} \cite{ji2023mitigating} \\
+            \textbf{Structured Comparative reasoning} \cite{yan2023basis} \\
+            \textbf{Mind’s Mirror} \cite{liu2023minds} \\
+            \textbf{DRESS} \cite{chen2023dress} \\
+            \textbf{MixAlign} \cite{zhang2023knowledge} \\
+            \textbf{CoVe} \cite{dhuliawala2023chainofverification} \\
+            \textbf{CoNLI} \cite{lei2023chain}, for tree={fill=bg4}, leaf
+            ]
+          ]
+          [
+            \textbf{Prompt Tuning} \S\ref{subsubsec:Prompt Tuning}, for tree={fill=pg58},text width=28em
+            [
+            \textbf{UPRISE} \cite{cheng2023uprise} \\
+            \textbf{SynTra} \cite{jones2023teaching}, for tree={fill=bg5}, leaf
+            ]
+          ]
+        ]
+        [
+          \textbf{Developing Models} \S\ref{subsec:Developing Models}, for tree={fill=bg22}
+          [
+            \textbf{Introducing New Decoding} \\ \textbf{Strategy} \S\ref{subsubsec:Introducing new decoding strategy}, for tree={fill=bg16},text width=28em
+            [
+              \textbf{CAD} \cite{shi2023trusting} \\
+              \textbf{DoLa} \cite{chuang2023dola} \\
+              \textbf{Inference-Time Intervention (ITI)} \cite{li2023inference}, for tree={fill=bg40}, leaf
+            ]
+          ]
+          [
+            \textbf{Utilization of Knowledge} \\ \textbf{Graph} \S\ref{subsubsec:Utilization of Knowledge Graph (KG)},text width=28em, for tree={fill=bg16}
+            [
+              \textbf{RHO} \cite{ji-etal-2023-rho} \\
+              \textbf{FLEEK} \cite{bayat2023fleek}, for tree={fill=bg7}, leaf
+            ]
+          ]
+          [
+            \textbf{Introducing Faithfulness} \\ \textbf{based Loss Function} \S\ref{subsubsec:Introducing faithfulness based loss function},text width=28em, for tree={fill=bg16}
+            [
+              \textbf{THAM Framework} \cite{yoon-etal-2022-information} \\
+              \textbf{Loss Weighting Method} \cite{qiu2023detecting}, for tree={fill=bg8}, leaf
+            ]
+          ]
+          [
+            \textbf{Supervised Finetuning} \S\ref{subsubsec:Supervised fine-tuning (SFT)},text width=28em, for tree={fill=bg16}
+            [
+              \textbf{Knowledge Injection and Teacher-Student Approach} \cite{elaraby2023halo} \\
+              \textbf{HAR} \cite{köksal2023hallucination} \\
+              \textbf{Fine-tuning Language Models for Factuality} \cite{tian2023finetuning} \\
+              \textbf{BEINFO} \cite{razumovskaia2023textitdial} \\
+              \textbf{R-Tuning} \cite{zhang2023r} \\
+              \textbf{TWEAK} \cite{qiu2023think}, for tree={fill=bg10}, leaf
+            ]
+          ]
+        ]
+      ]
+    \end{forest}
+
+\end{document}

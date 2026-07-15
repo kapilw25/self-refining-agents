@@ -1,0 +1,38 @@
+% Future-agenda metrics: metric / definition / testbed / family stressed.
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}p{0.17\textwidth} p{0.30\textwidth} p{0.27\textwidth} p{0.17\textwidth}@{}}
+\toprule
+\textbf{Metric} & \textbf{Definition} & \textbf{Instantiation (testbed)} & \textbf{Family stressed} \\
+\midrule
+Success-vs-interactions curve &
+held-out success rate as a function of accumulated autonomous interactions; report the curve
+and its area, not a single endpoint &
+lifelong task streams in the style of LIBERO-100~\citep{libero}, fixed interaction budget &
+\S\ref{sec:code} full loop; \S\ref{sec:vla} fine-tuning \\
+Skill-library reuse rate &
+fraction of new-task solutions that invoke at least one previously stored skill, and mean
+invocations per stored skill &
+growing code libraries~\citep{voyager} evaluated across LIBERO-style task suites~\citep{libero} &
+\S\ref{sec:skill} libraries; \S\ref{sec:code} memory rung \\
+Cross-embodiment transfer drop &
+difference in success between the training embodiment and an unseen one, at matched task and
+budget &
+held-out-embodiment splits of Open X-Embodiment~\citep{openx} (22 embodiments) &
+\S\ref{sec:vla}; \S\ref{sec:transfer} \\
+Provenance check &
+fraction of distributed skills carrying a verifiable origin, training-data statement, and
+reproducible test record &
+audits of marketplace listings~\citep{unistore2026} against a declared provenance schema &
+market skills (\S\ref{sec:open}) \\
+\bottomrule
+\end{tabular}
+\caption{\textbf{An actionable protocol for the future agenda}: four measurable quantities, their
+definitions, and concrete testbeds. The first two instantiate LIBERO-style lifelong
+learning~\citep{libero}; the third instantiates Open X-Embodiment-style multi-robot
+transfer~\citep{openx}; the fourth targets the skill marketplaces of \S\ref{sec:open}.}
+\label{tab:future_metrics}
+\end{table*}

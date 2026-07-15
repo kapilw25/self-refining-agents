@@ -1,0 +1,79 @@
+% Table 2 -- master comparison of all systems in the main taxonomy (Fig. 1).
+{\footnotesize
+\begin{longtable}{@{}p{0.30\textwidth}cll c c@{}}
+\caption{Detailed comparison of a representative 47 of the 77 systems in the taxonomy
+(Figure~\ref{fig:taxonomy_main}), grouped by family; the \S3.1 and \S3.4 branches are tabulated in
+full in Tables~\ref{tab:compare_31} and~\ref{tab:compare_34}. \textbf{Ships}: \tcode/\tweights/\treward/\tskill/\tpolicy/\tbench.
+\textbf{Eval}: \dreal/\dsim/\dgame. \textbf{Self-impr.}: \yy\ learns from its own experience,
+\pp\ partially, \nn\ no, \dm\ n/a.}\label{tab:compare_main}\\
+\toprule
+\textbf{System} & \textbf{Year} & \textbf{Venue} & \textbf{Ships} & \textbf{Eval} & \textbf{Self-impr.}\\
+\midrule
+\endfirsthead
+\multicolumn{6}{@{}l}{\footnotesize\emph{Table~\ref{tab:compare_main} (continued)}}\\
+\toprule
+\textbf{System} & \textbf{Year} & \textbf{Venue} & \textbf{Ships} & \textbf{Eval} & \textbf{Self-impr.}\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\multicolumn{6}{@{}l}{\textbf{\S3.1 Code-as-policy for robots} \hfill \tcode}\\
+\textbf{Code-as-Policies}~\cite{codeaspolicies} & 2023 & ICRA & \tcode & \dreal & \nn\\
+\textbf{ProgPrompt}~\cite{progprompt} & 2023 & ICRA & \tcode & \dreal & \nn\\
+\textbf{VoxPoser}~\cite{voxposer} & 2023 & CoRL & \tcode & \dreal & \nn\\
+\textbf{RoboCodeX}~\cite{robocodex} & 2024 & ICML & \tcode & \dsim & \nn\\
+\textbf{Instruct2Act}~\cite{instruct2act} & 2023 & arXiv & \tcode & \dsim & \nn\\
+\textbf{RoboPro}~\cite{robopro} & 2025 & arXiv & \tcode & \dreal & \nn\\
+\textbf{RoboCoder}~\cite{robocoder} & 2024 & arXiv & \tcode & \dsim & \nn\\
+\textbf{CaP-X}~\cite{capx} & 2026 & arXiv & \tcode & \dsim & \yy\\
+\textbf{RoboClaw}~\cite{roboclaw} & 2026 & arXiv & \tcode & \dreal & \yy\\
+\textbf{ASPIRE}~\cite{aspire} & 2026 & arXiv & \tcode & \dreal & \yy\\
+\textbf{ENPIRE}~\cite{enpire} & 2026 & arXiv & \tcode & \dreal & \yy\\
+\midrule
+\multicolumn{6}{@{}l}{\textbf{\S3.2 End-to-end VLA / generalist policies} \hfill \tweights}\\
+\textbf{RT-1}~\cite{rt1} & 2023 & RSS & \tweights & \dreal & \nn\\
+\textbf{RT-2}~\cite{rt2} & 2023 & CoRL & \tweights & \dreal & \nn\\
+\textbf{Octo}~\cite{octo} & 2024 & RSS & \tweights & \dreal & \nn\\
+\textbf{OpenVLA}~\cite{openvla} & 2024 & CoRL & \tweights & \dreal & \nn\\
+\textbf{RoboFlamingo}~\cite{roboflamingo} & 2024 & ICLR & \tweights & \dsim & \nn\\
+\textbf{CogACT}~\cite{cogact} & 2024 & arXiv & \tweights & \dreal & \nn\\
+\textbf{SpatialVLA}~\cite{spatialvla} & 2025 & arXiv & \tweights & \dreal & \nn\\
+$\boldsymbol{\pi_0}$~\cite{pi0} & 2024 & arXiv & \tweights & \dreal & \nn\\
+$\boldsymbol{\pi_{0.5}}$~\cite{pi05} & 2025 & arXiv & \tweights & \dreal & \nn\\
+\textbf{GR00T N1}~\cite{groot} & 2025 & arXiv & \tweights & \dreal & \nn\\
+\textbf{Gemini Robotics}~\cite{geminirobotics} & 2025 & arXiv & \tweights & \dreal & \nn\\
+\midrule
+\multicolumn{6}{@{}l}{\textbf{\S3.3 LLM-authored rewards / curricula} \hfill \treward}\\
+\textbf{Eureka}~\cite{eureka} & 2024 & ICLR & \treward & \dsim & \yy\\
+\textbf{DrEureka}~\cite{dreureka} & 2024 & RSS & \treward & \dreal & \yy\\
+\textbf{Text2Reward}~\cite{text2reward} & 2024 & ICLR & \treward & \dsim & \pp\\
+\textbf{Language-to-Rewards}~\cite{l2r} & 2023 & CoRL & \treward & \dreal & \pp\\
+\textbf{Eurekaverse}~\cite{eurekaverse} & 2024 & CoRL & \treward & \dsim & \yy\\
+\textbf{RoboGen}~\cite{robogen} & 2024 & ICML & \treward & \dsim & \yy\\
+\textbf{Auto MC-Reward}~\cite{automcreward} & 2024 & CVPR & \treward & \dgame & \yy\\
+\midrule
+\multicolumn{6}{@{}l}{\textbf{\S3.4 Robot skill libraries \& lifelong learning} \hfill \tskill}\\
+\textbf{Voyager}~\cite{voyager} & 2023 & arXiv & \tskill & \dgame & \yy\\
+\textbf{LOTUS}~\cite{lotus} & 2024 & ICRA & \tskill & \dsim & \yy\\
+\textbf{LRLL}~\cite{lrll} & 2024 & ICRA & \tskill & \dsim & \yy\\
+\textbf{BOSS}~\cite{boss} & 2023 & CoRL & \tskill & \dsim & \yy\\
+\textbf{SPRINT}~\cite{sprint} & 2024 & ICRA & \tskill & \dsim & \pp\\
+\textbf{Uni-Skill}~\cite{uniskill} & 2026 & ICRA & \tskill & \dreal & \yy\\
+\textbf{SkillFlow}~\cite{skillflow} & 2026 & arXiv & \tskill & \dtext & \yy\\
+\midrule
+\multicolumn{6}{@{}l}{\textbf{\S3.5 Sim-to-real \& cross-embodiment transfer} \hfill \tpolicy}\\
+\textbf{Open X-Embodiment}~\cite{openx} & 2024 & ICRA & \tpolicy & \dreal & \nn\\
+\textbf{CrossFormer}~\cite{crossformer} & 2024 & CoRL & \tpolicy & \dreal & \nn\\
+\textbf{RoboCat}~\cite{robocat} & 2023 & TMLR & \tpolicy & \dreal & \yy\\
+\textbf{Mirage}~\cite{mirage} & 2024 & RSS & \tpolicy & \dreal & \nn\\
+\midrule
+\multicolumn{6}{@{}l}{\textbf{\S3.6 Embodied benchmarks \& simulators} \hfill \tbench}\\
+\textbf{LIBERO}~\cite{libero} & 2023 & NeurIPS & \tbench & \dsim & \dm\\
+\textbf{Robosuite}~\cite{robosuite} & 2020 & arXiv & \tbench & \dsim & \dm\\
+\textbf{BEHAVIOR-1K}~\cite{behavior1k} & 2024 & arXiv & \tbench & \dsim & \dm\\
+\textbf{Meta-World}~\cite{metaworld} & 2019 & CoRL & \tbench & \dsim & \dm\\
+\textbf{RLBench}~\cite{rlbench} & 2020 & RA-L & \tbench & \dsim & \dm\\
+\textbf{ManiSkill2}~\cite{maniskill2} & 2023 & ICLR & \tbench & \dsim & \dm\\
+\textbf{CALVIN}~\cite{calvin} & 2022 & RA-L & \tbench & \dsim & \dm\\
+\end{longtable}
+}

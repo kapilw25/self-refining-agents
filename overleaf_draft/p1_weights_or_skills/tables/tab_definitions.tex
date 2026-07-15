@@ -1,0 +1,36 @@
+% Operational definitions of the three self-improvement mechanisms (feedback, memory, search).
+\begin{table*}[t]
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{@{}l p{0.42\textwidth} p{0.30\textwidth}@{}}
+\toprule
+\textbf{Mechanism} & \textbf{Counts (a system has it if and only if\ldots)} & \textbf{Does not count} \\
+\midrule
+\textbf{Feedback (F)} &
+an execution-grounded signal is read and used to revise the code \emph{within} a task: a
+failure detector firing, a sensory or textual summary of what went wrong, or a verifier or
+reward obtained by running the program (a simulated reward qualifies when the agent uses it to
+revise) &
+a fresh human instruction; a fixed pre-trained value function that is never queried at run
+time; a natural-language critique that is not grounded in execution \\
+\textbf{Memory (M)} &
+content written \emph{at run time} is stored across task boundaries and retrieved for later
+tasks: a persistent code-skill library, or a retrievable episodic-text memory of past
+solutions &
+the model's frozen pre-trained weights; a within-task scratchpad discarded at episode end; a
+fixed API library the agent cannot extend \\
+\textbf{Search (S)} &
+more than one candidate program is maintained, scored by execution, and selected or mutated
+among: sampled-program selection, evolutionary mutation, or beam search &
+a single sequential chain of repairs on one candidate (that is Feedback); one-shot sampling
+with no selection; repeated prompting whose candidates are never compared \\
+\bottomrule
+\end{tabular}
+\caption{Operational definitions of the three mechanisms used to place a system on the
+code-as-policy ladder (\S\ref{sec:code}). These resolve the ambiguous boundary cases: a
+failure detector or a grounded critique counts as Feedback, trained weights do not count as
+Memory, and repeated prompting counts as Search only when its candidates are compared and
+selected.}
+\label{tab:defs}
+\end{table*}

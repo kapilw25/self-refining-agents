@@ -1,0 +1,33 @@
+\subsection{Benchmarks and Evaluation}
+\label{sec:bench}
+
+Progress in the families above is measured on a shared set of simulated benchmarks, most of
+which report a single-number success rate. \emph{LIBERO}~\citep{libero} targets lifelong
+manipulation and knowledge transfer across task suites; \emph{Meta-World}~\citep{metaworld}
+offers fifty manipulation tasks for multi-task and meta-reinforcement learning;
+\emph{RLBench}~\citep{rlbench} provides a hundred vision-based tasks with demonstrations; and
+\emph{ManiSkill2}~\citep{maniskill2} adds GPU-parallel simulation over twenty task families.
+\emph{Robosuite}~\citep{robosuite} is the modular MuJoCo framework underlying many of these,
+and \emph{CALVIN}~\citep{calvin} evaluates long-horizon, language-conditioned control by the
+average number of sub-tasks completed in a chain. At the high-realism end,
+\emph{BEHAVIOR-1K}~\citep{behavior1k} specifies a thousand everyday household activities in a
+photorealistic simulator, scoring both success and efficiency.
+
+Table~\ref{tab:matrix} contrasts one exemplar per camp on the axes that separate them. The
+recurring gap, and a direct motivation for the open problems of \S\ref{sec:open}, is that
+these suites measure \emph{one-shot competence}: they report whether a policy succeeds, not
+whether it \emph{improves with experience}. No standard benchmark yet plots held-out success as
+a function of accumulated interaction, which is exactly the quantity the self-improvement ladder
+of \S\ref{sec:code} is designed to raise.
+
+\input{tables/tab_capability_matrix}
+
+\subsection{Synthesis: what each family cannot do}
+\label{sec:synthesis}
+Table~\ref{tab:branch_limits} compares every family on six axes: data needs, task horizon,
+transfer, interpretability, safety, and characteristic failure mode. Reading it column-wise
+profiles a family; reading it row-wise shows that every axis has at least one weak family, and
+no family is favourable on all six, which is the tension the skill economy (\S\ref{sec:open})
+inherits.
+
+\input{tables/tab_branch_limits}

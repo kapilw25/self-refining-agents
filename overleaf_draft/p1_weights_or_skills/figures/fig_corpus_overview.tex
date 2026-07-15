@@ -1,0 +1,43 @@
+% Survey-at-a-glance overview. Every number is real: 77 taxonomy + 225 landscape = 302 systems;
+% 310 refs; 6 branches (S3.1-S3.6); 5 self-improvement rungs (S3.1.1-S3.1.5); 11 landscape areas;
+% span 2016-2026. The per-area bar values are the (N) tallies of tables/tab_landscape.tex.
+\begin{figure}[tp]
+\centering
+\begin{tikzpicture}
+% ---- stat callouts ----
+\foreach [count=\i] \num/\lab in {302/systems, 310/references, 6/branches,
+                                  5/{self-impr.\ rungs}, 11/areas, {2016--26}/span}{
+  \node[draw=hidden-draw, rounded corners=2pt, fill=secA!14, minimum width=1.9cm,
+        minimum height=1.15cm, align=center] at ({\i*2.05-0.4},4.55)
+        {{\large\bfseries\num}\\[1pt]{\scriptsize\lab}};
+}
+% ---- per-area horizontal bar chart ----
+\foreach [count=\i] \l/\v/\c in {{End-to-end / generalist}/28/cat-vla,
+   {Imitation / diffusion}/21/cat-vla, {LLM planning / TAMP}/30/cat-code,
+   {Reward / data generation}/17/cat-rew, {Skill discovery / hier.\ RL}/25/cat-skill,
+   {World / model-based}/24/cat-skill, {Repr.\ / offline RL}/17/cat-trans,
+   {Manipulation / dexterity}/16/cat-trans, {Locomotion / humanoid}/16/cat-bench,
+   {Navigation / tactile}/15/cat-bench, {Datasets / bench.\ / sim.}/16/gray}{
+  \fill[\c!70!black] (4.9,{3.55-\i*0.315}) rectangle ({4.9+\v*0.085},{3.55-\i*0.315+0.24});
+  \node[left=2pt,font=\scriptsize] at (4.9,{3.55-\i*0.315+0.12}) {\l};
+  \node[right=1.5pt,font=\scriptsize] at ({4.9+\v*0.085},{3.55-\i*0.315+0.12}) {\v};
+}
+\node[font=\footnotesize\bfseries] at (6.1,3.75) {Landscape works per area (225 total)};
+\end{tikzpicture}
+\caption{\textbf{The surveyed corpus at a glance.} The survey covers 302 systems (77 placed in the
+taxonomy of Figure~\ref{fig:taxonomy_main} plus 225 landscape works of Table~\ref{tab:landscape} in
+Appendix~\ref{sec:landscape})
+across 6 technique branches, with the code-as-policy branch resolved into 5 self-improvement rungs,
+spanning 2016--2026 and totalling 310 references. The bars give the number of landscape works in
+each of the 11 areas, taken directly from the area tallies of Table~\ref{tab:landscape}. The teal
+and blue bars mark the survey's two poles (Figure~\ref{fig:corpus_collage}): the weights side
+(end-to-end and imitation-learned policies) and the skills side (code-as-policy planning); the
+remaining branches sit off that axis.}
+\Description{An overview figure. Six stat callouts read: 302 systems, 310 references, 6 branches, 5
+self-improvement rungs, 11 areas, span 2016 to 2026. Below, a horizontal bar chart gives landscape
+works per area: End-to-end/generalist 28, Imitation/diffusion 21, LLM planning/TAMP 30,
+Reward/data generation 17, Skill discovery/hierarchical RL 25, World/model-based 24,
+Representation/offline RL 17, Manipulation/dexterity 16, Locomotion/humanoid 16, Navigation/tactile
+15, Datasets/benchmarks/simulators 16.}
+\label{fig:corpus_overview}
+\end{figure}

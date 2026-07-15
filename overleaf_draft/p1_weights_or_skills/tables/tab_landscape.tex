@@ -1,0 +1,292 @@
+% Comparison matrix of 200+ robot-learning works. AUTO-GENERATED; do not hand-edit.
+{\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{longtable}{@{}p{0.27\textwidth} c l l c l c@{}}
+\caption{\textbf{The broader robot-learning landscape: 225 representative works, compared on six axes.} Beyond the 77 systems placed in the taxonomy (Figure~\ref{fig:taxonomy_main}, Tables~\ref{tab:compare_main}--\ref{tab:compare_34}), this table catalogues the wider field, grouped into eleven areas and sub-grouped by family. Columns: \textbf{Year}, \textbf{Ships} (what the method contributes), \textbf{Learn} (primary learning signal: IL, RL, offline-RL, LLM, self-sup., model-based), \textbf{Eval} (\dreal/\dsim/\dgame/offline), \textbf{Embod.} (embodiment), and run-time \textbf{S.I.} (self-improvement: \yy\ yes, \pp\ partial, \nn\ no). A \dm\ marks not-applicable or unverified. Every entry is a real, individually citeable paper.}\label{tab:landscape}\\
+\toprule
+\textbf{System / work} & \textbf{Year} & \textbf{Ships} & \textbf{Learn} & \textbf{Eval} & \textbf{Embod.} & \textbf{S.I.}\\
+\midrule
+\endfirsthead
+\multicolumn{7}{@{}l}{\scriptsize\emph{Table~\ref{tab:landscape} (continued)}}\\
+\toprule
+\textbf{System / work} & \textbf{Year} & \textbf{Ships} & \textbf{Learn} & \textbf{Eval} & \textbf{Embod.} & \textbf{S.I.}\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{End-to-end \& generalist policies}}~\textcolor{gray}{(28)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Vision-language-action}}\\
+\hspace{0.6em}\textbf{3D-VLA}~\cite{vla3d} & 2024 & \textsf{world-model} & \textsf{LLM} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{ECoT}~\cite{ecot} & 2024 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{LLaRA}~\cite{llara} & 2024 & \textsf{policy} & \textsf{LLM} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{ManipLLM}~\cite{manipllm} & 2024 & \textsf{policy} & \textsf{LLM} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{RoboMamba}~\cite{robomamba} & 2024 & \textsf{policy} & \textsf{LLM} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{RoboPoint}~\cite{robopoint} & 2024 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{TinyVLA}~\cite{tinyvla} & 2024 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{TraceVLA}~\cite{tracevla} & 2024 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{DexVLA}~\cite{dexvla} & 2025 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{FAST}~\cite{fast} & 2025 & \textsf{repr} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{OpenVLA-OFT}~\cite{openvlaoft} & 2025 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Generalist / multi-task}}\\
+\hspace{0.6em}\textbf{QT-Opt}~\cite{qtopt} & 2018 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{arm} & \pp\\
+\hspace{0.6em}\textbf{MT-Opt}~\cite{mtopt} & 2021 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{arm} & \pp\\
+\hspace{0.6em}\textbf{Gato}~\cite{gato} & 2022 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{PaLM-E}~\cite{palme} & 2023 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{Q-Transformer}~\cite{qtransformer} & 2023 & \textsf{policy} & \textsf{offline-RL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{UniPi}~\cite{unipi} & 2023 & \textsf{policy} & \textsf{model-based} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{VIMA}~\cite{vima} & 2023 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{GR-2}~\cite{gr2} & 2024 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{LEO}~\cite{leo} & 2024 & \textsf{policy} & \textsf{LLM} & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{Magma}~\cite{magma} & 2025 & \textsf{weights} & \textsf{LLM} & \dsim & \textsf{arm} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Video / action pretraining}}\\
+\hspace{0.6em}\textbf{ATM}~\cite{atm} & 2024 & \textsf{policy} & \textsf{self-sup} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{GR-1}~\cite{gr1} & 2024 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{HPT}~\cite{hpt} & 2024 & \textsf{repr} & \textsf{IL} & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{VPP}~\cite{vpp} & 2024 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Cosmos}~\cite{cosmos} & 2025 & \textsf{world-model} & \textsf{self-sup} & \dm & \dm & \nn\\
+\hspace{0.6em}\textbf{LAPA}~\cite{lapa} & 2025 & \textsf{policy} & \textsf{self-sup} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Seer}~\cite{seer} & 2025 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{Imitation \& diffusion policies}}~\textcolor{gray}{(21)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Imitation learning}}\\
+\hspace{0.6em}\textbf{BC-Z}~\cite{bcz} & 2021 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Implicit BC}~\cite{ibc} & 2021 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{robomimic}~\cite{robomimic} & 2021 & \textsf{bench} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{PerAct}~\cite{peract} & 2022 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{ACT/ALOHA}~\cite{act} & 2023 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{MimicGen}~\cite{mimicgen} & 2023 & \textsf{data} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{RVT}~\cite{rvt} & 2023 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Mobile ALOHA}~\cite{mobilealoha} & 2024 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{RoboAgent}~\cite{roboagent} & 2024 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{RVT-2}~\cite{rvt2} & 2024 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{UMI}~\cite{umi} & 2024 & \textsf{data} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Diffusion policies}}\\
+\hspace{0.6em}\textbf{Diffuser}~\cite{diffuser} & 2022 & \textsf{plan} & \textsf{model-based} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{BESO}~\cite{beso} & 2023 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Decision Diffuser}~\cite{decisiondiffuser} & 2023 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{Diffusion Policy}~\cite{diffusionpolicy} & 2023 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{3D Diffuser Actor}~\cite{diffuseractor3d} & 2024 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{DP3}~\cite{dp3} & 2024 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Equivariant Diffusion Policy}~\cite{equidiff} & 2024 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{MDT}~\cite{mdt} & 2024 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{RDT-1B}~\cite{rdt1b} & 2024 & \textsf{weights} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{SuSIE}~\cite{susie} & 2024 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{LLM/VLM planning \& task-and-motion}}~\textcolor{gray}{(30)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{LLM task planning}}\\
+\hspace{0.6em}\textbf{COWP}~\cite{cowp} & 2022 & \textsf{plan} & \textsf{LLM} & \dsim & \textsf{mobile} & \pp\\
+\hspace{0.6em}\textbf{ReAct}~\cite{react} & 2022 & \textsf{plan} & \textsf{LLM} & \dgame & \dm & \pp\\
+\hspace{0.6em}\textbf{SayCan}~\cite{saycan} & 2022 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{Socratic Models}~\cite{socraticmodels} & 2022 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Zero-Shot Planners}~\cite{zeroshotplanners} & 2022 & \textsf{plan} & \textsf{LLM} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{DEPS}~\cite{deps} & 2023 & \textsf{plan} & \textsf{LLM} & \dgame & \dm & \pp\\
+\hspace{0.6em}\textbf{GLAM}~\cite{glam} & 2023 & \textsf{policy} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{Grounded Decoding}~\cite{grounddecoding} & 2023 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{ISR-LLM}~\cite{isrllm} & 2023 & \textsf{plan} & \textsf{LLM} & \dsim & \dm & \pp\\
+\hspace{0.6em}\textbf{ITP}~\cite{interactivetaskplanning} & 2023 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{arm} & \pp\\
+\hspace{0.6em}\textbf{KnowNo}~\cite{knowno} & 2023 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{LLM-Planner}~\cite{llmplanner} & 2023 & \textsf{plan} & \textsf{LLM} & \dsim & \textsf{mobile} & \pp\\
+\hspace{0.6em}\textbf{Reflexion}~\cite{reflexion} & 2023 & \textsf{plan} & \textsf{LLM} & \dgame & \dm & \yy\\
+\hspace{0.6em}\textbf{RoCo}~\cite{roco} & 2023 & \textsf{plan} & \textsf{LLM} & \dsim & \textsf{multi} & \pp\\
+\hspace{0.6em}\textbf{SayPlan}~\cite{sayplan} & 2023 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{mobile} & \pp\\
+\hspace{0.6em}\textbf{Self-Refine}~\cite{selfrefine} & 2023 & \textsf{plan} & \textsf{LLM} & \dm & \dm & \yy\\
+\hspace{0.6em}\textbf{SMART-LLM}~\cite{smartllm} & 2023 & \textsf{plan} & \textsf{LLM} & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{Tree-Planner}~\cite{treeplanner} & 2023 & \textsf{plan} & \textsf{LLM} & \dsim & \dm & \pp\\
+\hspace{0.6em}\textbf{ReAd}~\cite{readmarl} & 2024 & \textsf{plan} & \textsf{LLM} & \dsim & \textsf{multi} & \pp\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{LLM task-and-motion}}\\
+\hspace{0.6em}\textbf{AutoTAMP}~\cite{autotamp} & 2023 & \textsf{plan} & \textsf{LLM} & \dsim & \dm & \pp\\
+\hspace{0.6em}\textbf{Lang2LTL}~\cite{lang2ltl} & 2023 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{LLM+P}~\cite{llmp} & 2023 & \textsf{plan} & \textsf{LLM} & \dm & \dm & \nn\\
+\hspace{0.6em}\textbf{LLM-GROP}~\cite{llmgrop} & 2023 & \textsf{plan} & \textsf{LLM} & \dsim & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{NL2TL}~\cite{nl2tl} & 2023 & \textsf{plan} & \textsf{LLM} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{DELTA}~\cite{delta} & 2024 & \textsf{plan} & \textsf{LLM} & \dsim & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{LLM3}~\cite{llm3} & 2024 & \textsf{plan} & \textsf{LLM} & \dsim & \textsf{arm} & \pp\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Code / prompt as policy}}\\
+\hspace{0.6em}\textbf{LM Traj Generators}~\cite{zeroshottraj} & 2023 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{arm} & \pp\\
+\hspace{0.6em}\textbf{MOKA}~\cite{moka} & 2024 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{PIVOT}~\cite{pivot} & 2024 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{mobile} & \pp\\
+\hspace{0.6em}\textbf{ReKep}~\cite{rekep} & 2024 & \textsf{code} & \textsf{LLM} & \dreal & \textsf{arm} & \pp\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{LLM reward synthesis \& data generation}}~\textcolor{gray}{(17)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{LLM reward synthesis}}\\
+\hspace{0.6em}\textbf{ELLM}~\cite{ellm} & 2023 & \textsf{reward} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{LAMP}~\cite{lamp} & 2023 & \textsf{reward} & \textsf{RL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Motif}~\cite{motif} & 2023 & \textsf{reward} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{Read and Reap}~\cite{readreap} & 2023 & \textsf{reward} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{VLM-RM}~\cite{vlmrm} & 2023 & \textsf{reward} & \textsf{RL} & \dsim & \textsf{humanoid} & \nn\\
+\hspace{0.6em}\textbf{Code as Reward}~\cite{codeasreward} & 2024 & \textsf{reward} & \textsf{RL} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{RL-VLM-F}~\cite{rlvlmf} & 2024 & \textsf{reward} & \textsf{RL} & \dsim & \textsf{arm} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Generative data / augmentation}}\\
+\hspace{0.6em}\textbf{CACTI}~\cite{cacti} & 2022 & \textsf{data} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{DIAL}~\cite{dial} & 2022 & \textsf{data} & \textsf{IL} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{GenAug}~\cite{genaug} & 2023 & \textsf{data} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{GenSim}~\cite{gensim} & 2023 & \textsf{data} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{ROSIE}~\cite{rosie} & 2023 & \textsf{data} & \textsf{IL} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{Scaling Up Distilling Down}~\cite{scalingup} & 2023 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{BBSEA}~\cite{bbsea} & 2024 & \textsf{skill} & \textsf{IL} & \dsim & \textsf{arm} & \pp\\
+\hspace{0.6em}\textbf{DexMimicGen}~\cite{dexmimicgen} & 2024 & \textsf{data} & \textsf{IL} & \dsim & \textsf{humanoid} & \nn\\
+\hspace{0.6em}\textbf{GenSim2}~\cite{gensim2} & 2024 & \textsf{data} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{RoboDreamer}~\cite{robodreamer} & 2024 & \textsf{world-model} & \textsf{model-based} & \dm & \textsf{arm} & \nn\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{Unsupervised skill discovery \& hierarchical RL}}~\textcolor{gray}{(25)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Unsupervised skill discovery}}\\
+\hspace{0.6em}\textbf{VIC}~\cite{vic} & 2016 & \textsf{skill} & \textsf{RL} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{Eigenoption}~\cite{eigenoption} & 2018 & \textsf{skill} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{VALOR}~\cite{valor} & 2018 & \textsf{skill} & \textsf{RL} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{EDL}~\cite{edl} & 2020 & \textsf{skill} & \textsf{RL} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{VISR}~\cite{visr} & 2020 & \textsf{skill} & \textsf{RL} & \dgame & \dm & \pp\\
+\hspace{0.6em}\textbf{APS}~\cite{aps} & 2021 & \textsf{skill} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{APT}~\cite{apt} & 2021 & \textsf{skill} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{ProtoRL}~\cite{protorl} & 2021 & \textsf{repr} & \textsf{self-sup} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{WURL}~\cite{wurl} & 2022 & \textsf{skill} & \textsf{RL} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{BeCL}~\cite{becl} & 2023 & \textsf{skill} & \textsf{RL} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{Choreographer}~\cite{choreographer} & 2023 & \textsf{skill} & \textsf{model-based} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{CSD}~\cite{csd} & 2023 & \textsf{skill} & \textsf{RL} & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{DGPO}~\cite{dgpo} & 2024 & \textsf{skill} & \textsf{RL} & \dsim & \dm & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Hierarchical / option RL}}\\
+\hspace{0.6em}\textbf{h-DQN}~\cite{hdqn} & 2016 & \textsf{policy} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{FeUdal Networks}~\cite{feudalnet} & 2017 & \textsf{policy} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{Option-Critic}~\cite{optioncritic} & 2017 & \textsf{skill} & \textsf{RL} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{SNN4HRL}~\cite{snn4hrl} & 2017 & \textsf{skill} & \textsf{RL} & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{HIRO}~\cite{hiro} & 2018 & \textsf{policy} & \textsf{RL} & \dsim & \textsf{legged} & \nn\\
+\hspace{0.6em}\textbf{MLSH}~\cite{mlsh} & 2018 & \textsf{skill} & \textsf{RL} & \dsim & \textsf{multi} & \pp\\
+\hspace{0.6em}\textbf{HAC}~\cite{hac} & 2019 & \textsf{policy} & \textsf{RL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{MCP}~\cite{mcp} & 2019 & \textsf{skill} & \textsf{RL} & \dsim & \textsf{humanoid} & \nn\\
+\hspace{0.6em}\textbf{NPMP}~\cite{npmp} & 2019 & \textsf{skill} & \textsf{IL} & \dsim & \textsf{humanoid} & \nn\\
+\hspace{0.6em}\textbf{Relay Policy Learning}~\cite{relaypolicy} & 2019 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{HIDIO}~\cite{hidio} & 2021 & \textsf{skill} & \textsf{RL} & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{Director}~\cite{director} & 2022 & \textsf{policy} & \textsf{model-based} & \dsim & \dm & \nn\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{World models \& model-based RL}}~\textcolor{gray}{(24)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{World models}}\\
+\hspace{0.6em}\textbf{World Models}~\cite{worldmodels} & 2018 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{PlaNet}~\cite{planet} & 2019 & \textsf{world-model} & \textsf{model-based} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{Dreamer}~\cite{dreamer} & 2020 & \textsf{world-model} & \textsf{model-based} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{DreamerV2}~\cite{dreamerv2} & 2021 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{DayDreamer}~\cite{daydreamer} & 2022 & \textsf{world-model} & \textsf{model-based} & \dreal & \textsf{multi} & \yy\\
+\hspace{0.6em}\textbf{Iso-Dream}~\cite{isodream} & 2022 & \textsf{world-model} & \textsf{model-based} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{MWM}~\cite{mwm} & 2022 & \textsf{world-model} & \textsf{model-based} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{TransDreamer}~\cite{transdreamer} & 2022 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{DreamerV3}~\cite{dreamerv3} & 2023 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{IRIS}~\cite{iris} & 2023 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{STORM}~\cite{storm} & 2023 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{SWIM}~\cite{swim} & 2023 & \textsf{world-model} & \textsf{model-based} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{TWM}~\cite{twm} & 2023 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{DIAMOND}~\cite{diamond} & 2024 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{Genie}~\cite{genie} & 2024 & \textsf{world-model} & \textsf{self-sup} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{UniSim}~\cite{unisim} & 2024 & \textsf{world-model} & \textsf{self-sup} & \dreal & \textsf{arm} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Model-based RL}}\\
+\hspace{0.6em}\textbf{PETS}~\cite{pets} & 2018 & \textsf{world-model} & \textsf{model-based} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{MBPO}~\cite{mbpo} & 2019 & \textsf{policy} & \textsf{model-based} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{MuZero}~\cite{muzero} & 2020 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{SimPLe}~\cite{simple} & 2020 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{SLAC}~\cite{slac} & 2020 & \textsf{repr} & \textsf{RL} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{EfficientZero}~\cite{efficientzero} & 2021 & \textsf{world-model} & \textsf{model-based} & \dgame & \dm & \nn\\
+\hspace{0.6em}\textbf{TD-MPC}~\cite{tdmpc} & 2022 & \textsf{world-model} & \textsf{model-based} & \dsim & \dm & \nn\\
+\hspace{0.6em}\textbf{TD-MPC2}~\cite{tdmpc2} & 2024 & \textsf{world-model} & \textsf{model-based} & \dsim & \textsf{multi} & \nn\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{Representation learning \& offline RL}}~\textcolor{gray}{(17)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Visual representation learning}}\\
+\hspace{0.6em}\textbf{MVP}~\cite{mvp} & 2022 & \textsf{repr} & \textsf{self-sup} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{PVR}~\cite{pvr} & 2022 & \textsf{repr} & \textsf{self-sup} & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{R3M}~\cite{r3m} & 2022 & \textsf{repr} & \textsf{self-sup} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{LIV}~\cite{liv} & 2023 & \textsf{reward} & \textsf{self-sup} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{VC-1}~\cite{vc1} & 2023 & \textsf{repr} & \textsf{self-sup} & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{VIP}~\cite{vip} & 2023 & \textsf{reward} & \textsf{self-sup} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Voltron}~\cite{voltron} & 2023 & \textsf{repr} & \textsf{self-sup} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Theia}~\cite{theia} & 2024 & \textsf{repr} & \textsf{self-sup} & \dsim & \textsf{arm} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Offline RL}}\\
+\hspace{0.6em}\textbf{BCQ}~\cite{bcq} & 2019 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{AWAC}~\cite{awac} & 2020 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \pp\\
+\hspace{0.6em}\textbf{CQL}~\cite{cql} & 2020 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{Decision Transformer}~\cite{decisiontransformer} & 2021 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{TD3+BC}~\cite{td3bc} & 2021 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{Trajectory Transformer}~\cite{trajectorytransformer} & 2021 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{IQL}~\cite{iql} & 2022 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{Cal-QL}~\cite{calql} & 2023 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \pp\\
+\hspace{0.6em}\textbf{Diffusion-QL}~\cite{diffusionql} & 2023 & \textsf{policy} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{Manipulation, dexterity \& sim-to-real}}~\textcolor{gray}{(16)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Manipulation / grasping}}\\
+\hspace{0.6em}\textbf{Dex-Net 2.0}~\cite{dexnet2} & 2017 & \textsf{policy} & \dm & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{GraspNet-1Billion}~\cite{graspnet1b} & 2020 & \textsf{bench} & \dm & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Transporter Nets}~\cite{transporter} & 2020 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{CLIPort}~\cite{cliport} & 2021 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Contact-GraspNet}~\cite{contactgraspnet} & 2021 & \textsf{code} & \dm & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{AnyGrasp}~\cite{anygrasp} & 2023 & \textsf{code} & \dm & \dreal & \textsf{arm} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Dexterous / in-hand}}\\
+\hspace{0.6em}\textbf{Dactyl}~\cite{dactyl} & 2018 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{hand} & \pp\\
+\hspace{0.6em}\textbf{DAPG}~\cite{dapg} & 2018 & \textsf{policy} & \textsf{RL} & \dsim & \textsf{hand} & \nn\\
+\hspace{0.6em}\textbf{Rubiks Cube Hand}~\cite{rubikscube} & 2019 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{hand} & \pp\\
+\hspace{0.6em}\textbf{DexPilot}~\cite{dexpilot} & 2020 & \textsf{code} & \dm & \dreal & \textsf{hand} & \nn\\
+\hspace{0.6em}\textbf{Visual Dexterity}~\cite{visualdexterity} & 2023 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{hand} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Sim-to-real transfer}}\\
+\hspace{0.6em}\textbf{CAD2RL}~\cite{cad2rl} & 2017 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{Domain Randomization}~\cite{domainrand} & 2017 & \textsf{code} & \dm & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Dynamics Randomization}~\cite{dynrand} & 2018 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{arm} & \pp\\
+\hspace{0.6em}\textbf{RCAN}~\cite{rcan} & 2019 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{SimOpt}~\cite{simopt} & 2019 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{arm} & \pp\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{Locomotion \& humanoid control}}~\textcolor{gray}{(16)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Legged locomotion}}\\
+\hspace{0.6em}\textbf{ANYmal}~\cite{anymal} & 2019 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{legged} & \nn\\
+\hspace{0.6em}\textbf{Quadruped Terrain}~\cite{quadterrain} & 2020 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{legged} & \pp\\
+\hspace{0.6em}\textbf{Legged Gym}~\cite{walkminutes} & 2021 & \textsf{code} & \textsf{RL} & \dreal & \textsf{legged} & \nn\\
+\hspace{0.6em}\textbf{RMA}~\cite{rma} & 2021 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{legged} & \pp\\
+\hspace{0.6em}\textbf{Egocentric Locomotion}~\cite{egoloco} & 2022 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{legged} & \pp\\
+\hspace{0.6em}\textbf{Perceptive Locomotion}~\cite{perceptiveloco} & 2022 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{legged} & \pp\\
+\hspace{0.6em}\textbf{Walk These Ways}~\cite{walktheseways} & 2022 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{legged} & \nn\\
+\hspace{0.6em}\textbf{Extreme Parkour}~\cite{extremeparkour} & 2024 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{legged} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Humanoid control}}\\
+\hspace{0.6em}\textbf{ExBody}~\cite{exbody} & 2024 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{humanoid} & \nn\\
+\hspace{0.6em}\textbf{H2O}~\cite{h2o} & 2024 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{humanoid} & \nn\\
+\hspace{0.6em}\textbf{Humanoid Locomotion}~\cite{humanoidloco} & 2024 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{humanoid} & \pp\\
+\hspace{0.6em}\textbf{Humanoid Parkour}~\cite{humanoidparkour} & 2024 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{humanoid} & \nn\\
+\hspace{0.6em}\textbf{HumanPlus}~\cite{humanplus} & 2024 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{humanoid} & \nn\\
+\hspace{0.6em}\textbf{OmniH2O}~\cite{omnih2o} & 2024 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{humanoid} & \nn\\
+\hspace{0.6em}\textbf{ASAP}~\cite{asap} & 2025 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{humanoid} & \pp\\
+\hspace{0.6em}\textbf{HOVER}~\cite{hover} & 2025 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{humanoid} & \nn\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{Navigation, tactile \& affordance}}~\textcolor{gray}{(15)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Visual / language navigation}}\\
+\hspace{0.6em}\textbf{LM-Nav}~\cite{lmnav} & 2022 & \textsf{plan} & \textsf{LLM} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{ViKiNG}~\cite{viking} & 2022 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{CoW}~\cite{cow} & 2023 & \textsf{bench} & \dm & \dsim & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{GNM}~\cite{gnm} & 2023 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{ViNT}~\cite{vint} & 2023 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{NoMaD}~\cite{nomad} & 2024 & \textsf{policy} & \textsf{IL} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{VLFM}~\cite{vlfm} & 2024 & \textsf{policy} & \textsf{LLM} & \dsim & \textsf{mobile} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Tactile \& affordance}}\\
+\hspace{0.6em}\textbf{DIGIT}~\cite{digit} & 2020 & \dm & \dm & \dreal & \textsf{hand} & \nn\\
+\hspace{0.6em}\textbf{Where2Act}~\cite{where2act} & 2021 & \textsf{repr} & \textsf{self-sup} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{FlowBot3D}~\cite{flowbot3d} & 2022 & \textsf{policy} & \textsf{self-sup} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{HULC}~\cite{hulc} & 2022 & \textsf{policy} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{VAT-Mart}~\cite{vatmart} & 2022 & \textsf{plan} & \textsf{RL} & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{See-to-Touch}~\cite{seetotouch} & 2023 & \textsf{policy} & \textsf{RL} & \dreal & \textsf{hand} & \pp\\
+\hspace{0.6em}\textbf{T-DEX}~\cite{tdex} & 2023 & \textsf{repr} & \textsf{self-sup} & \dreal & \textsf{hand} & \nn\\
+\hspace{0.6em}\textbf{VRB}~\cite{vrb} & 2023 & \textsf{repr} & \textsf{self-sup} & \dreal & \textsf{arm} & \nn\\
+\addlinespace[2pt]
+\multicolumn{7}{@{}l}{\rule{0pt}{2.6ex}\textbf{\textsf{Datasets, benchmarks \& simulators}}~\textcolor{gray}{(16)}}\\[1pt]
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Datasets}}\\
+\hspace{0.6em}\textbf{RoboNet}~\cite{robonet} & 2019 & \textsf{data} & \textsf{model-based} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{Ego4D}~\cite{ego4d} & 2022 & \textsf{data} & \dm & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{BridgeData V2}~\cite{bridgev2} & 2023 & \textsf{data} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{DobbE}~\cite{dobbe} & 2023 & \textsf{data} & \textsf{IL} & \dreal & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{RH20T}~\cite{rh20t} & 2023 & \textsf{data} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{DROID}~\cite{droid} & 2024 & \textsf{data} & \textsf{IL} & \dreal & \textsf{arm} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Benchmarks}}\\
+\hspace{0.6em}\textbf{D4RL}~\cite{d4rl} & 2020 & \textsf{bench} & \textsf{offline-RL} & \textcolor{gray!70}{\textsf{offline}} & \dm & \nn\\
+\hspace{0.6em}\textbf{ManiSkill}~\cite{maniskill} & 2021 & \textsf{bench} & \textsf{IL} & \dsim & \textsf{arm} & \nn\\
+\multicolumn{7}{@{}l}{\hspace{0.6em}\emph{Simulators}}\\
+\hspace{0.6em}\textbf{AI2-THOR}~\cite{ai2thor} & 2017 & \textsf{code} & \dm & \dsim & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{Habitat}~\cite{habitat} & 2019 & \textsf{code} & \dm & \dsim & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{SAPIEN}~\cite{sapien} & 2020 & \textsf{code} & \dm & \dsim & \textsf{arm} & \nn\\
+\hspace{0.6em}\textbf{ThreeDWorld}~\cite{tdw} & 2020 & \textsf{code} & \dm & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{iGibson}~\cite{igibson} & 2021 & \textsf{code} & \dm & \dsim & \textsf{mobile} & \nn\\
+\hspace{0.6em}\textbf{Isaac Gym}~\cite{isaacgym} & 2021 & \textsf{code} & \dm & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{Isaac Lab Orbit}~\cite{orbit} & 2023 & \textsf{code} & \dm & \dsim & \textsf{multi} & \nn\\
+\hspace{0.6em}\textbf{RoboCasa}~\cite{robocasa} & 2024 & \textsf{bench} & \textsf{IL} & \dsim & \textsf{mobile} & \nn\\
+\addlinespace[2pt]
+\end{longtable}
+}
