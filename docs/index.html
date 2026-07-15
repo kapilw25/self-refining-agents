@@ -3,488 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>How Robots Learn — A Survey of Robot-Learning Techniques</title>
-  <meta name="description" content="A survey of robot-learning techniques for Physical AI — vision-language-action policies, code-as-policy, reward synthesis, self-evolving skill libraries, and cross-embodiment transfer — with a canonical taxonomy of ~47 systems, anchored on ASPIRE (NVIDIA GEAR, 2026).">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦾</text></svg>">
+  <title>Surveys — kapilw25</title>
+  <meta name="description" content="Survey projects by kapilw25: (1) Weights or Skills — robot-learning techniques for Physical AI; (2) Cross-Modal Evaluation Validity — generative, agentic, and embodied AI.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
   <link rel="stylesheet" href="assets/theme-survey.css?v=2">
   <link rel="stylesheet" href="assets/site.css?v=3">
   <script src="assets/theme.js?v=2"></script>
+  <style>
+    .projgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:26px}
+    @media(max-width:760px){.projgrid{grid-template-columns:1fr}}
+    .proj{display:block;text-decoration:none;color:inherit;border:1px solid var(--border);border-radius:16px;
+      background:var(--surface-2);padding:22px 22px 18px;transition:border-color .2s,transform .2s}
+    .proj:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .proj h3{font-size:22px;letter-spacing:-.02em;margin:8px 0 8px;line-height:1.12}
+    .proj p{color:var(--dim);font-size:14px;margin:0 0 14px;max-width:52ch}
+    .proj .num{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+    .proj .go{font-family:var(--font-mono);font-size:12px;color:var(--accent);margin:14px 0 0}
+    .sitefoot{margin-top:44px;color:var(--faint);font-family:var(--font-mono);font-size:12px;border-top:1px solid var(--border);padding-top:16px}
+  </style>
 </head>
 <body>
 <header>
   <div class="bar">
     <div class="brand">
-      <span class="eyebrow">Robot Learning · A Survey</span>
-      <h1>How robots learn</h1>
+      <span class="eyebrow">kapilw25 · surveys</span>
+      <h1>Surveys</h1>
     </div>
     <nav class="nav">
-      <a href="index.html" aria-current="page">Survey</a>
-      <a href="catalog.html">Catalog</a>
-      <a href="benchmark.html">Benchmark</a>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="p1_weights_or_skills/">Weights or Skills</a>
+      <a href="p2_eval_validity/">Eval Validity</a>
       <button class="toggle" id="themeBtn" aria-label="Toggle color theme"><span class="dot"></span><span id="themeLabel">Theme</span></button>
     </nav>
   </div>
 </header>
 
 <div class="wrap">
-  <section class="hero" style="padding-bottom:22px">
-    <span class="eyebrow">VLA policies · code-as-policy · self-evolving skills — anchor: ASPIRE (2026)</span>
-    <h2><span style="color:var(--accent);font-weight:800">Weights or skills??</span> A survey of robot-learning techniques — from action-predicting weights to robots that write their <em>own skills</em>.</h2>
-    <div style="margin-top:18px;display:flex;flex-wrap:wrap;gap:6px 18px;font-size:15px;font-weight:550">
-      <span><b>Gaytri Jena</b><sup style="color:var(--accent)">1</sup></span>
-      <span>Kapil Wanaskar<sup style="color:var(--accent)">2</sup></span>
-      <span>Vinija Jain<sup style="color:var(--accent)">3</sup></span>
-      <span>Aman Chadha<sup style="color:var(--accent)">4</sup></span>
-      <span>Vasu Sharma<sup style="color:var(--accent)">5</sup></span>
-      <span>Amitava Das<sup style="color:var(--accent)">6</sup></span>
-    </div>
-    <div style="font-size:12.5px;color:var(--faint);margin-top:7px;line-height:1.65">
-      <sup style="color:var(--accent)">1</sup>UC Berkeley, USA &nbsp;&nbsp;
-      <sup style="color:var(--accent)">2</sup>Canva Research, USA &nbsp;&nbsp;
-      <sup style="color:var(--accent)">3</sup>Google, USA &nbsp;&nbsp;
-      <sup style="color:var(--accent)">4</sup>Google DeepMind, USA &nbsp;&nbsp;
-      <sup style="color:var(--accent)">5</sup>PocketFM, USA &nbsp;&nbsp;
-      <sup style="color:var(--accent)">6</sup>Pragya Lab, BITS Pilani Goa, India
-    </div>
+  <section class="hero" style="padding-bottom:20px">
+    <span class="eyebrow">two survey projects · one place</span>
+    <h2>Survey projects</h2>
+    <p>Interactive companions to two survey papers. Pick a project to open its pages.</p>
   </section>
 
-  <!-- §2 · why now · the skill stack -->
-  <div class="sec" style="margin-top:14px"><span class="tag">§2 · why now</span><h3>🏬 The App Store for robot skills just arrived — but what does it ship?</h3></div>
-  <div class="figure">
-    <div class="stack">
-      <div class="layer l3"><span class="ln">3 · ADAPT</span> on-device self-improvement after download — <b>§3.1.5</b>, the frontier <span class="tagmini">⚠️ doesn't exist yet</span></div>
-      <div class="layer l2"><span class="ln">2 · DISTRIBUTE</span> skill marketplaces &amp; hubs — <b>Unitree UniStore</b> (May 2026) · model hubs · Open X-Embodiment</div>
-      <div class="layer l1"><span class="ln">1 · BUILD</span> how skills are created — <b>§3.1 code · §3.2 VLA · §3.3 reward · §3.4 libraries</b></div>
-    </div>
-    <div class="loop">↑ UniStore ships layer-1 <b>mocap playback</b> (dances, martial arts) through layer 2 — but the promised value ("adjust grip per fruit so nothing bruises") lives in <b>layer 3</b>, which no shipped skill does today</div>
-  </div>
-  <div class="cap">§2 · The <a href="https://robotsbeat.com/unitree-unistore-robot-app-store-humanoid-g1-h1-ecosystem/" target="_blank" rel="noopener">UniStore</a> app store (24 motions, one-tap across G1/H1/B2/Go2) proves the marketplace — but every skill in it is <b>canned playback</b>, the least-capable point on the map below. This survey charts <b>layer 1</b> (how skills are built) and names the <b>layer-3 gap</b> — the difference between an app store of <em>animations</em> and one of <em>capabilities</em>.</div>
+  <section class="projgrid">
+    <a class="proj" href="p1_weights_or_skills/">
+      <span class="num">Phase 1</span>
+      <h3>Weights or Skills?</h3>
+      <p>A survey of robot-learning techniques for Physical AI — from action-predicting weights (VLA) to robots that write their own skills (code-as-policy). Taxonomy, catalog, and a self-improving-robot benchmark.</p>
+      <div class="tags"><span class="pill">taxonomy</span><span class="pill">catalog</span><span class="pill">benchmark</span></div>
+      <p class="go">Open project →</p>
+    </a>
+    <a class="proj" href="p2_eval_validity/">
+      <span class="num">Phase 2</span>
+      <h3>Cross-Modal Evaluation Validity</h3>
+      <p>Pass the benchmark, fail reality — generative, agentic, and embodied AI cheat the same five ways (leakage, saturation, judge-gaming, sim-to-real). One validity-threat taxonomy across all three fields.</p>
+      <div class="tags"><span class="pill">generative</span><span class="pill">agentic</span><span class="pill">embodied</span></div>
+      <p class="go">Open project →</p>
+    </a>
+  </section>
 
-  <!-- HERO FIGURE · the taxonomy tree -->
-  <div class="sec" style="margin-top:14px"><span class="tag">§3 · the map</span><h3>🌳 A taxonomy of robot-learning techniques</h3></div>
-  <div class="figure">
-    <div class="tree">
-      <div class="root">🦾 Robot-learning techniques for Physical AI</div>
-      <div class="branches">
-
-        <div class="branch">
-          <div class="bnode d1">🤖 Code-as-policy for robots<span class="sn">§3.1</span><small>write &amp; debug executable control programs — ASPIRE's home</small></div>
-          <div class="leaves d1">
-            <a class="leaf" href="https://arxiv.org/abs/2209.07753" target="_blank" rel="noopener"><b>Code-as-Policies</b> — LM programs for control <span class="ct">[Liang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2209.11302" target="_blank" rel="noopener"><b>ProgPrompt</b> — situated task-plan programs <span class="ct">[Singh et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2307.05973" target="_blank" rel="noopener"><b>VoxPoser</b> — composable 3D value maps <span class="ct">[Huang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2402.16117" target="_blank" rel="noopener"><b>RoboCodeX</b> — multimodal behavior code <span class="ct">[Mu et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2305.11176" target="_blank" rel="noopener"><b>Instruct2Act</b> — instructions → action code <span class="ct">[Huang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2501.04268" target="_blank" rel="noopener"><b>RoboPro</b> — video-instructed policy code <span class="ct">[Robotic Programmer, 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2406.03757" target="_blank" rel="noopener"><b>RoboCoder</b> — basic skills → general tasks <span class="ct">[Li et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2603.22435" target="_blank" rel="noopener"><b>CaP-X</b> — benchmarking robot coding agents <span class="ct">[Fu et al., 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2603.11558" target="_blank" rel="noopener"><b>RoboClaw</b> — scalable long-horizon agent <span class="ct">[Li et al., 2026]</span></a>
-            <a class="leaf anchor" href="https://arxiv.org/abs/2607.00272" target="_blank" rel="noopener"><b>ASPIRE ★</b> — agentic skill discovery + self-improvement <span class="ct">[Lu et al., 2026]</span></a>
-            <a class="leaf" href="https://research.nvidia.com/labs/gear/enpire/" target="_blank" rel="noopener"><b>ENPIRE</b> — real-world policy self-improvement <span class="ct">[NVIDIA GEAR, 2026]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d2">🧠 End-to-end VLA / generalist policies<span class="sn">§3.2</span><small>the foil — ship weights, not code</small></div>
-          <div class="leaves d2">
-            <a class="leaf" href="https://arxiv.org/abs/2212.06817" target="_blank" rel="noopener"><b>RT-1</b> — robotics transformer at scale <span class="ct">[Brohan et al., 2022]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2307.15818" target="_blank" rel="noopener"><b>RT-2</b> — web knowledge → control <span class="ct">[Brohan et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2405.12213" target="_blank" rel="noopener"><b>Octo</b> — open generalist policy <span class="ct">[Octo Model Team, 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2406.09246" target="_blank" rel="noopener"><b>OpenVLA</b> — open-source VLA <span class="ct">[Kim et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2311.01378" target="_blank" rel="noopener"><b>RoboFlamingo</b> — VLM robot imitator <span class="ct">[Li et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2411.19650" target="_blank" rel="noopener"><b>CogACT</b> — cognition + action VLA <span class="ct">[Li et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2501.15830" target="_blank" rel="noopener"><b>SpatialVLA</b> — spatial-enhanced VLA <span class="ct">[Qu et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2410.24164" target="_blank" rel="noopener"><b>π0</b> — VLA flow model <span class="ct">[Black et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2504.16054" target="_blank" rel="noopener"><b>π0.5</b> — open-world generalization <span class="ct">[Physical Intelligence, 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2503.14734" target="_blank" rel="noopener"><b>GR00T N1</b> — humanoid foundation model <span class="ct">[NVIDIA, 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2503.20020" target="_blank" rel="noopener"><b>Gemini Robotics</b> — AI in the physical world <span class="ct">[DeepMind, 2025]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d3">🎁 LLM-authored rewards / curricula / sim<span class="sn">§3.3</span><small>code that trains policies</small></div>
-          <div class="leaves d3">
-            <a class="leaf" href="https://arxiv.org/abs/2310.12931" target="_blank" rel="noopener"><b>Eureka</b> — human-level reward design <span class="ct">[Ma et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2406.01967" target="_blank" rel="noopener"><b>DrEureka</b> — LM-guided sim-to-real <span class="ct">[Ma et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2309.11489" target="_blank" rel="noopener"><b>Text2Reward</b> — dense reward shaping <span class="ct">[Xie et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2306.08647" target="_blank" rel="noopener"><b>Language-to-Rewards</b> — reward synthesis <span class="ct">[Yu et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2411.01775" target="_blank" rel="noopener"><b>Eurekaverse</b> — environment curriculum gen <span class="ct">[Liang et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2311.01455" target="_blank" rel="noopener"><b>RoboGen</b> — generative task/skill learning <span class="ct">[Wang et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2312.09238" target="_blank" rel="noopener"><b>Auto MC-Reward</b> — automated dense rewards <span class="ct">[Li et al., 2024]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d4">📚 Robot skill libraries &amp; lifelong learning<span class="sn">§3.4</span><small>accumulate &amp; reuse skills over a lifetime</small></div>
-          <div class="leaves d4">
-            <a class="leaf" href="https://arxiv.org/abs/2305.16291" target="_blank" rel="noopener"><b>Voyager</b> — open-ended embodied agent <span class="ct">[Wang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2311.02058" target="_blank" rel="noopener"><b>LOTUS</b> — unsupervised skill discovery <span class="ct">[Wan et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2406.18746" target="_blank" rel="noopener"><b>LRLL</b> — lifelong robot library learning <span class="ct">[Tziafas &amp; Kasaei, 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2310.10021" target="_blank" rel="noopener"><b>BOSS</b> — bootstrap your own skills <span class="ct">[Zhang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2306.11886" target="_blank" rel="noopener"><b>SPRINT</b> — scalable skill pre-training <span class="ct">[Zhang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2603.02623" target="_blank" rel="noopener"><b>Uni-Skill</b> — self-evolving skill repository <span class="ct">[Xie et al., 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2604.17308" target="_blank" rel="noopener"><b>SkillFlow</b> — lifelong skill discovery <span class="ct">[Zhang et al., 2026]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d5">🌉 Sim-to-real &amp; cross-embodiment transfer<span class="sn">§3.5</span><small>the physical-AI axis ASPIRE advances</small></div>
-          <div class="leaves d5">
-            <a class="leaf" href="https://arxiv.org/abs/2310.08864" target="_blank" rel="noopener"><b>Open X-Embodiment</b> — RT-X cross-embodiment <span class="ct">[Collaboration, 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2408.11812" target="_blank" rel="noopener"><b>CrossFormer</b> — one policy, many embodiments <span class="ct">[Doshi et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2306.11706" target="_blank" rel="noopener"><b>RoboCat</b> — self-improving generalist agent <span class="ct">[Bousmalis et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2402.19249" target="_blank" rel="noopener"><b>Mirage</b> — zero-shot cross-embodiment transfer <span class="ct">[Chen et al., 2024]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d6">🕹️ Embodied benchmarks &amp; simulators<span class="sn">§3.6</span><small>where these systems are measured</small></div>
-          <div class="leaves d6">
-            <a class="leaf" href="https://arxiv.org/abs/2306.03310" target="_blank" rel="noopener"><b>LIBERO</b> — lifelong manipulation benchmark <span class="ct">[Liu et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2009.12293" target="_blank" rel="noopener"><b>Robosuite</b> — modular sim framework <span class="ct">[Zhu et al., 2020]</span></a>
-            <span class="leaf"><b>BEHAVIOR-1K</b> — 1,000 household activities <span class="ct">[Li et al., 2024]</span></span>
-            <a class="leaf" href="https://arxiv.org/abs/1910.10897" target="_blank" rel="noopener"><b>Meta-World</b> — 50-task multi-task RL <span class="ct">[Yu et al., 2020]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/1909.12271" target="_blank" rel="noopener"><b>RLBench</b> — 100-task robot learning <span class="ct">[James et al., 2020]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2302.04659" target="_blank" rel="noopener"><b>ManiSkill2</b> — generalizable manipulation <span class="ct">[Gu et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2112.03227" target="_blank" rel="noopener"><b>CALVIN</b> — long-horizon language tasks <span class="ct">[Mees et al., 2022]</span></a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="treekey">
-      <span class="d1"><i></i>code-as-policy</span><span class="d2"><i></i>VLA (foil)</span><span class="d3"><i></i>rewards/curricula</span>
-      <span class="d4"><i></i>skill libraries</span><span class="d5"><i></i>transfer</span><span class="d6"><i></i>benchmarks</span>
-    </div>
-  </div>
-  <div class="cap">The map — ~47 physical-AI systems. The fight: <b>§3.2 ship weights</b> (end-to-end VLA) vs <b>§3.1 ship code + skills</b>. <b>ASPIRE ★</b> is the frontier of the code-and-skills camp — the only system that writes, debugs, and <em>compounds</em> its own skills. Each leaf: method — descriptor [first-author et&nbsp;al., year]. Full sortable list → <a class="lnk" href="catalog.html">the catalog</a>.</div>
-
-  <!-- §3.1 DEEP DIVE · the gap, expanded -->
-  <div class="sec"><span class="tag">§3.1 · in depth</span><h3>🔬 The gap, expanded — code-as-policy by self-improvement</h3></div>
-  <div class="figure">
-    <div class="tree">
-      <div class="root">🤖 §3.1 Code-as-policy for robots — ordered by <b>how much a system improves itself</b></div>
-      <div class="branches">
-
-        <div class="branch">
-          <div class="bnode d1">§3.1.1 · Zero-shot synthesis<span class="sn">n=13</span><small>write code once · no learning from execution</small></div>
-          <div class="leaves d1">
-            <a class="leaf" href="https://arxiv.org/abs/2209.07753" target="_blank" rel="noopener"><b>Code-as-Policies</b> <span class="ct">[Liang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2209.11302" target="_blank" rel="noopener"><b>ProgPrompt</b> <span class="ct">[Singh et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2307.05973" target="_blank" rel="noopener"><b>VoxPoser</b> <span class="ct">[Huang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2305.11176" target="_blank" rel="noopener"><b>Instruct2Act</b> <span class="ct">[Huang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2306.17582" target="_blank" rel="noopener"><b>ChatGPT for Robotics</b> <span class="ct">[Vemprala et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2305.05658" target="_blank" rel="noopener"><b>TidyBot</b> <span class="ct">[Wu et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2402.16117" target="_blank" rel="noopener"><b>RoboCodeX</b> <span class="ct">[Mu et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2402.14623" target="_blank" rel="noopener"><b>RoboScript</b> <span class="ct">[Chen et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2303.12153" target="_blank" rel="noopener"><b>Text2Motion</b> <span class="ct">[Lin et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2305.16744" target="_blank" rel="noopener"><b>Demo2Code</b> <span class="ct">[Wang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2306.17840" target="_blank" rel="noopener"><b>Statler</b> <span class="ct">[Yoneda et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2309.09969" target="_blank" rel="noopener"><b>Prompt2Walk</b> <span class="ct">[Wang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2501.04268" target="_blank" rel="noopener"><b>RoboPro</b> <span class="ct">[Robotic Programmer, 2025]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d3">§3.1.2 · Closed-loop self-repair<span class="sn">n=6</span><small>detect &amp; fix failures within a task, from feedback</small></div>
-          <div class="leaves d3">
-            <a class="leaf" href="https://arxiv.org/abs/2207.05608" target="_blank" rel="noopener"><b>Inner Monologue</b> <span class="ct">[Huang et al., 2022]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2307.00329" target="_blank" rel="noopener"><b>DoReMi</b> <span class="ct">[Guo et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2306.15724" target="_blank" rel="noopener"><b>REFLECT</b> <span class="ct">[Liu et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2412.04455" target="_blank" rel="noopener"><b>Code-as-Monitor</b> <span class="ct">[Zhou et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2410.00371" target="_blank" rel="noopener"><b>AHA</b> <span class="ct">[Duan et al., 2025]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2402.06529" target="_blank" rel="noopener"><b>Introspective Planning</b> <span class="ct">[Liang et al., 2024]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d4">§3.1.3 · Skill-library accumulation<span class="sn">n=5</span><small>the memory step — code libraries catalogued in §3.4.3</small></div>
-          <div class="leaves d4">
-            <span class="leaf">📚 code skill libraries → cataloged once in <b>§3.4.3</b> (Voyager · LRLL · RoboCoder · Uni-Skill · DROC)</span>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d5">§3.1.4 · Evolutionary program search<span class="sn">n=3</span><small>search a population of programs, not one repair</small></div>
-          <div class="leaves d5">
-            <a class="leaf" href="https://arxiv.org/abs/2603.22435" target="_blank" rel="noopener"><b>CaP-X</b> <span class="ct">[Fu et al., 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2601.06845" target="_blank" rel="noopener"><b>Code Evolution for Control</b> <span class="ct">[Guo et al., 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2605.13775" target="_blank" rel="noopener"><b>RoboEvolve</b> <span class="ct">[Chen et al., 2026]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d2">§3.1.5 · Full self-improving loop<span class="sn">n=3</span><small><b style="color:var(--accent)">◀ the gap</b> · feedback + memory + search, together</small></div>
-          <div class="leaves d2">
-            <a class="leaf anchor" href="https://arxiv.org/abs/2607.00272" target="_blank" rel="noopener"><b>ASPIRE ★</b> <span class="ct">[Lu et al., 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2606.19980" target="_blank" rel="noopener"><b>ENPIRE</b> <span class="ct">[NVIDIA GEAR, 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2603.11558" target="_blank" rel="noopener"><b>RoboClaw</b> <span class="ct">[Li et al., 2026]</span></a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-  <div class="cap">Figure · The funnel <b>13 → 6 → 5 → 3 → 3</b>. As you demand more self-improvement (write once → repair → remember → search → all three), the occupants thin out fast. <b>§3.1.5</b> — the cell where <b>feedback + memory + search</b> combine into one open-ended loop — is nearly empty, and only <b>ASPIRE ★</b> was built for it end-to-end. <b>This is the un-surveyed gap the survey claims</b> — no existing survey organizes code-as-policy by self-improvement, or names this cell.</div>
-
-  <!-- §3.4 DEEP DIVE · the skills pole -->
-  <div class="sec"><span class="tag">§3.4 · in depth</span><h3>📚 The other pole — how a skill repertoire is built</h3></div>
-  <div class="figure">
-    <div class="tree">
-      <div class="root">📚 §3.4 Robot skills — <b>how a repertoire is built &amp; reused</b> (RL flavor vs code flavor)</div>
-      <div class="branches">
-
-        <div class="branch">
-          <div class="bnode d1">§3.4.1 · Unsupervised / latent discovery<span class="sn">RL</span><small>discover diverse skills with no reward, no code</small></div>
-          <div class="leaves d1">
-            <a class="leaf" href="https://arxiv.org/abs/1802.06070" target="_blank" rel="noopener"><b>DIAYN</b> — diversity is all you need <span class="ct">[Eysenbach et al., 2019]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/1907.01657" target="_blank" rel="noopener"><b>DADS</b> — dynamics-aware skills <span class="ct">[Sharma et al., 2020]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2202.00914" target="_blank" rel="noopener"><b>LSD</b> — Lipschitz skill discovery <span class="ct">[Park et al., 2022]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2202.00161" target="_blank" rel="noopener"><b>CIC</b> — contrastive intrinsic control <span class="ct">[Laskin et al., 2022]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2310.08887" target="_blank" rel="noopener"><b>METRA</b> — metric-aware abstraction <span class="ct">[Park et al., 2024]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d3">§3.4.2 · Skill-based / hierarchical RL<span class="sn">RL</span><small>learn a skill space from offline data, then compose</small></div>
-          <div class="leaves d3">
-            <a class="leaf" href="https://arxiv.org/abs/2010.11944" target="_blank" rel="noopener"><b>SPiRL</b> — learned skill priors <span class="ct">[Pertsch et al., 2020]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2010.13611" target="_blank" rel="noopener"><b>OPAL</b> — offline primitive discovery <span class="ct">[Ajay et al., 2021]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2011.10024" target="_blank" rel="noopener"><b>PARROT</b> — behavioral priors <span class="ct">[Singh et al., 2021]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2207.07560" target="_blank" rel="noopener"><b>SkiMo</b> — skill-based model-based RL <span class="ct">[Shi et al., 2022]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d4">§3.4.3 · LLM / code skill libraries<span class="sn">code</span><small>skills as retrievable code — ASPIRE's §3.1 lives here</small></div>
-          <div class="leaves d4">
-            <a class="leaf" href="https://arxiv.org/abs/2305.16291" target="_blank" rel="noopener"><b>Voyager</b> — open-ended embodied agent <span class="ct">[Wang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2311.02058" target="_blank" rel="noopener"><b>LOTUS</b> — unsupervised skill discovery <span class="ct">[Wan et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2406.18746" target="_blank" rel="noopener"><b>LRLL</b> — lifelong robot library learning <span class="ct">[Tziafas &amp; Kasaei, 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2310.10021" target="_blank" rel="noopener"><b>BOSS</b> — bootstrap your own skills <span class="ct">[Zhang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2306.11886" target="_blank" rel="noopener"><b>SPRINT</b> — scalable skill pre-training <span class="ct">[Zhang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2603.02623" target="_blank" rel="noopener"><b>Uni-Skill</b> — self-evolving skill repository <span class="ct">[Xie et al., 2026]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2604.17308" target="_blank" rel="noopener"><b>SkillFlow</b> — lifelong skill discovery <span class="ct">[Zhang et al., 2026]</span></a>
-          </div>
-        </div>
-
-        <div class="branch">
-          <div class="bnode d5">§3.4.4 · Open-world LLM-agent skill libraries<span class="sn">agent</span><small>agents that build &amp; reuse a skill library from experience</small></div>
-          <div class="leaves d5">
-            <a class="leaf" href="https://arxiv.org/abs/2305.17144" target="_blank" rel="noopener"><b>GITM</b> — Ghost in the Minecraft <span class="ct">[Zhu et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2311.05997" target="_blank" rel="noopener"><b>JARVIS-1</b> — memory-augmented agent <span class="ct">[Wang et al., 2023]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2308.10144" target="_blank" rel="noopener"><b>ExpeL</b> — experiential learner <span class="ct">[Zhao et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2408.03615" target="_blank" rel="noopener"><b>Optimus-1</b> — hybrid multimodal memory <span class="ct">[Li et al., 2024]</span></a>
-            <a class="leaf" href="https://arxiv.org/abs/2407.15325" target="_blank" rel="noopener"><b>Odyssey</b> — open-world skill library <span class="ct">[Liu et al., 2024]</span></a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-    <div class="treekey">
-      <span class="d1"><i></i>latent discovery (RL)</span><span class="d3"><i></i>skill-based RL</span><span class="d4"><i></i>code libraries</span><span class="d5"><i></i>LLM-agent libraries</span>
-    </div>
-  </div>
-  <div class="cap">Figure · The <b>"skills"</b> pole. §3.4.1–2 build skills as <b>RL policies</b> (latent / hierarchical — a mature, well-surveyed area, included here as <b>landscape</b>); §3.4.3–4 build them as <b>retrievable code</b>, where ASPIRE's self-improving §3.1 lives. So "weights or skills??" has a second twist: <b>skills themselves come in an RL flavor and a code flavor</b> — and only the code flavor self-improves without gradients.</div>
-
-  <div class="cap" style="margin-top:18px"><b>🌱 Origins (outside the taxonomy):</b> the <b>write → execute → refine → remember</b> loop is borrowed from non-physical software-engineering agents (<a class="lnk" href="https://arxiv.org/abs/2405.15793" target="_blank" rel="noopener">SWE-agent</a>, <a class="lnk" href="https://arxiv.org/abs/2407.16741" target="_blank" rel="noopener">OpenHands</a>, <a class="lnk" href="https://arxiv.org/abs/2303.11366" target="_blank" rel="noopener">Reflexion</a>) and LLM program search (<a class="lnk" href="https://www.nature.com/articles/s41586-023-06924-6" target="_blank" rel="noopener">FunSearch</a>, <a class="lnk" href="https://arxiv.org/abs/2506.13131" target="_blank" rel="noopener">AlphaEvolve</a>) — inspiration only, not physical-AI systems.</div>
-
-  <!-- §4 · Architectures — the self-improvement ladder -->
-  <div class="sec"><span class="tag">§4 · architectures</span><h3>🏗️ The self-improvement ladder — high-level architecture per sub-section</h3></div>
-  <div class="figure">
-
-    <div class="archblk">
-      <div class="archh"><b>§3.1.1</b> Zero-shot synthesis<span class="arefs">Code-as-Policies · ProgPrompt</span></div>
-      <div class="archrow">
-        <span class="abox">📝 instruction + API</span><span class="aarr">→</span>
-        <span class="abox core">🧠 LLM</span><span class="aarr">→</span>
-        <span class="abox">🐍 policy code</span><span class="aarr">→</span>
-        <span class="abox">🤖 execute</span>
-        <span class="afb none">— open loop · no learning from execution</span>
-      </div>
-    </div>
-
-    <div class="archblk">
-      <div class="archh"><b>§3.1.2</b> Closed-loop self-repair<span class="arefs">REFLECT · DoReMi · Inner Monologue</span></div>
-      <div class="archrow">
-        <span class="abox">📝 instruction</span><span class="aarr">→</span>
-        <span class="abox core">🧠 LLM</span><span class="aarr">→</span>
-        <span class="abox">🐍 program</span><span class="aarr">→</span>
-        <span class="abox">🤖 execute</span><span class="aarr">→</span>
-        <span class="abox">👀 failure detector</span>
-        <span class="afb">↺ one loop · failure explanation → LLM revises</span>
-      </div>
-    </div>
-
-    <div class="archblk">
-      <div class="archh"><b>§3.1.3</b> Skill-library accumulation<span class="arefs">Voyager · LRLL · Uni-Skill</span></div>
-      <div class="archrow">
-        <span class="abox">🎯 task</span><span class="aarr">→</span>
-        <span class="abox mem">📚 retrieve ⟵ library</span><span class="aarr">→</span>
-        <span class="abox core">🧠 LLM writes skill</span><span class="aarr">→</span>
-        <span class="abox">✅ verify</span>
-        <span class="afb">↺ memory loop · verified skill → library → future tasks</span>
-      </div>
-    </div>
-
-    <div class="archblk">
-      <div class="archh"><b>§3.1.4</b> Evolutionary program search<span class="arefs">FunSearch · CaP-X · Code Evolution</span></div>
-      <div class="archrow">
-        <span class="abox">🌱 seed programs</span><span class="aarr">→</span>
-        <span class="abox">🏅 execute + score</span><span class="aarr">→</span>
-        <span class="abox">✂️ select top-K</span><span class="aarr">→</span>
-        <span class="abox core">🧬 LLM mutates</span>
-        <span class="afb">↺ population loop · mutated programs → next generation</span>
-      </div>
-    </div>
-
-    <div class="archblk">
-      <div class="archh"><b>§3.1.5</b> Full self-improving loop<span class="arefs">★ ASPIRE · ENPIRE · RoboClaw</span></div>
-      <div class="archrow">
-        <span class="abox">🎯 task</span><span class="aarr">→</span>
-        <span class="abox core">🤖 actor agent</span><span class="aarr">→</span>
-        <span class="abox">🔬 execution engine (F)</span><span class="aarr">→</span>
-        <span class="abox mem">📚 skill memory (M)</span><span class="aarr">→</span>
-        <span class="abox core">🧬 evolutionary search (S)</span><span class="aarr">→</span>
-        <span class="abox">✅ validated skill</span>
-        <span class="afb">↺ all three loops · traces → actor · skills → library → every future task &amp; embodiment</span>
-      </div>
-    </div>
-
-    <div class="archblk" style="border-top-style:dashed">
-      <div class="archh" style="color:var(--faint);font-weight:400">— the foils (already-surveyed context) —</div>
-    </div>
-
-    <div class="archblk" style="border-top:none;padding-top:0">
-      <div class="archh"><b>§3.2</b> End-to-end VLA (the foil)<span class="arefs">OpenVLA · RT-2 · π0</span></div>
-      <div class="archrow">
-        <span class="abox">🖼️ image</span><span class="aarr">+</span>
-        <span class="abox">🗣️ language</span><span class="aarr">→</span>
-        <span class="abox core">🧠 VLM / LLM backbone</span><span class="aarr">→</span>
-        <span class="abox">🎛️ action head</span><span class="aarr">→</span>
-        <span class="abox">🤖 actions</span>
-        <span class="afb none">— frozen weights · no loop, no code</span>
-      </div>
-    </div>
-
-    <div class="archblk">
-      <div class="archh"><b>§3.3</b> Reward / curriculum synthesis<span class="arefs">Eureka · DrEureka · Text2Reward</span></div>
-      <div class="archrow">
-        <span class="abox">⚙️ env code + task</span><span class="aarr">→</span>
-        <span class="abox core">🧠 LLM</span><span class="aarr">→</span>
-        <span class="abox">🎁 reward code</span><span class="aarr">→</span>
-        <span class="abox">🎢 RL training</span><span class="aarr">→</span>
-        <span class="abox">📼 policy</span>
-        <span class="afb">↺ reward reflection (training stats) → LLM revises</span>
-      </div>
-    </div>
-
-    <div class="archblk">
-      <div class="archh"><b>§3.5</b> Sim-to-real &amp; cross-embodiment<span class="arefs">Open X-Embodiment · CrossFormer</span></div>
-      <div class="archrow">
-        <span class="abox">🗂️ 22 embodiments' data</span><span class="aarr">→</span>
-        <span class="abox core">📼 single shared policy</span><span class="aarr">→</span>
-        <span class="abox">🤖 deploy on new robot</span>
-        <span class="afb none">— shared action space · re-collect / fine-tune per robot</span>
-      </div>
-    </div>
-
-    <div class="archblk" style="border-top-style:dashed">
-      <div class="archh" style="color:var(--faint);font-weight:400">— skill-learning: how a repertoire is built (the "skills" pole, §3.4) —</div>
-    </div>
-
-    <div class="archblk" style="border-top:none;padding-top:0">
-      <div class="archh"><b>§3.4.1</b> Unsupervised skill discovery (RL)<span class="arefs">DIAYN · DADS · METRA</span></div>
-      <div class="archrow">
-        <span class="abox">🎲 sample skill z</span><span class="aarr">→</span>
-        <span class="abox core">🧠 skill-policy π(a|s,z)</span><span class="aarr">→</span>
-        <span class="abox">🤖 rollout</span><span class="aarr">→</span>
-        <span class="abox">🔎 discriminator q(z|s)</span>
-        <span class="afb">↺ intrinsic reward = skill ↔ state mutual info · no task reward, no code</span>
-      </div>
-    </div>
-
-    <div class="archblk">
-      <div class="archh"><b>§3.4.2</b> Skill-based / hierarchical RL<span class="arefs">SPiRL · OPAL · SkiMo</span></div>
-      <div class="archrow">
-        <span class="abox">🗂️ offline data</span><span class="aarr">→</span>
-        <span class="abox core">🧩 learn skill space + prior</span><span class="aarr">→</span>
-        <span class="abox">🎯 high-level policy over skills</span><span class="aarr">→</span>
-        <span class="abox">🎢 downstream RL</span>
-        <span class="afb">↺ skill prior guides exploration · gradient-trained, weights not code</span>
-      </div>
-    </div>
-
-  </div>
-  <div class="cap">Figure · Read the §3.1 ladder top-to-bottom: each rung adds one feedback loop, until <b>§3.1.5</b> closes all three (F + S + M) — the ASPIRE cell. The foils use frozen weights (§3.2) or a single loop (§3.3). §3.6 benchmarks are evaluation environments, not architectures. These are high-level shapes — extract the exact figures from the linked papers.</div>
-
-  <!-- Table 1 · ship weights vs ship code -->
-  <div class="sec"><span class="tag">Table 1</span><h3>🔀 The thesis — ship weights vs ship code + skills</h3></div>
-  <div class="scroll"><table class="gt">
-    <thead><tr><th>Aspect</th><th>🧠 Ship weights (end-to-end VLA)</th><th>💻 Ship code + skills (ASPIRE)</th></tr></thead>
-    <tbody>
-      <tr><td class="k">🎯 Output</td><td>continuous action tokens (opaque)</td><td class="new">executable control programs (readable)</td></tr>
-      <tr><td class="k">🏋️ Training</td><td>gradient descent on robot demos</td><td class="new">iterative refinement via execution feedback</td></tr>
-      <tr><td class="k">💾 Artifact</td><td>floating-point policy weights</td><td class="new">a repo of sensorimotor code skills</td></tr>
-      <tr><td class="k">📤 Transfer</td><td>ship tensors; re-collect data + fine-tune</td><td class="new">ship know-how (code) across embodiments</td></tr>
-      <tr><td class="k">🔍 Debuggability</td><td>black-box; a failure is hard to localize</td><td class="new">inspect the trace, edit the program</td></tr>
-      <tr><td class="k">♾️ Improvement</td><td>frozen after the training run</td><td class="new">compounds across tasks via the skill library</td></tr>
-      <tr><td class="k">🆕 A new task</td><td>collect data + retrain / fine-tune</td><td class="new">retrieve skills, write &amp; debug a program</td></tr>
-      <tr><td class="k">🍽️ Data hunger</td><td>large teleoperation datasets</td><td class="new">few demos + self-debugging</td></tr>
-    </tbody>
-  </table></div>
-  <div class="cap">Table 1 · The two camps aren't enemies — but the code-and-skills camp is where <b>self-improvement</b> and <b>interpretability</b> live. VLAs win on raw dexterity and freedom from a fixed API (Table 3).</div>
-
-  <!-- Table 2 · mechanism taxonomy -->
-  <div class="sec"><span class="tag">Table 2</span><h3>🧭 Mechanism taxonomy — six axes (the F/S/M key)</h3></div>
-  <div class="scroll"><table class="gt">
-    <thead><tr><th>🧭 Axis</th><th>❓ Question it answers</th><th>🎛️ Values <span class="hl">(ASPIRE in teal)</span></th></tr></thead>
-    <tbody>
-      <tr><td class="k">✍️ What is authored</td><td>output of the model</td><td><span class="hl">policy code</span> · reward · value map · curriculum · action tokens</td></tr>
-      <tr><td class="k">🔬 Feedback granularity (F)</td><td>debugging substrate</td><td>none · task-level · trajectory · <span class="hl">per-primitive multimodal</span></td></tr>
-      <tr><td class="k">📚 Memory (M)</td><td>what persists</td><td>weights · none · text reflections · <span class="hl">code skills w/ when-to-apply guards</span></td></tr>
-      <tr><td class="k">🔍 Search operator (S)</td><td>how it explores</td><td>none · single-trajectory repair · <span class="hl">evolutionary population</span> · MCTS</td></tr>
-      <tr><td class="k">📐 Gradient?</td><td>learning mechanism</td><td>gradient (VLA) · <span class="hl">gradient-free (code)</span></td></tr>
-      <tr><td class="k">🦾 Transfer axis</td><td>what generalizes</td><td><span class="hl">sim2real · cross-embodiment · cross-task</span></td></tr>
-    </tbody>
-  </table></div>
-  <div class="cap">Table 2 · These F / S / M axes color the map above and tag every row of the catalog.</div>
-
-  <!-- Table 3 · capability matrix -->
-  <div class="sec"><span class="tag">Table 3</span><h3>🥇 Capability matrix — one exemplar per camp</h3></div>
-  <div class="legend">
-    <span><i class="swatch" style="background:var(--yes-bg);color:var(--yes)">✓</i> present / yes</span>
-    <span><i class="swatch" style="background:var(--no-bg);color:var(--no)">✕</i> absent / no</span>
-    <span><i class="swatch" style="background:var(--warn-bg);color:var(--warn)">~</i> partial / caveat</span>
-    <span><i class="swatch" style="background:var(--na-bg);color:var(--na)">–</i> not applicable</span>
-    <span style="color:var(--faint)">▸ cost row: green = low cost</span>
-  </div>
-  <div class="scroll"><table class="matrix" id="matrix"></table></div>
-
-  <!-- Table 4 · related surveys -->
-  <div class="sec"><span class="tag">Table 4</span><h3>📚 Related surveys — the physical-AI landscape</h3></div>
-  <div class="scroll"><table class="gt" id="surveys" style="min-width:1080px"></table></div>
-
-  <!-- §7 · open problems -->
-  <div class="sec"><span class="tag">§7 · open problems</span><h3>🧭 The skill economy — open research problems</h3></div>
-  <div class="scroll"><table class="gt">
-    <thead><tr><th>Open problem</th><th>Trigger (UniStore makes it concrete)</th><th>Maps to</th></tr></thead>
-    <tbody>
-      <tr><td class="k">Static → adaptive gap</td><td>downloaded skills replay; they don't perceive or adapt</td><td class="mono">§3.1.2–5</td></tr>
-      <tr><td class="k">Cross-embodiment portability</td><td>"one skill → G1 / H1 / B2 / Go2" — biped <b>and</b> quadruped</td><td class="mono">§3.5</td></tr>
-      <tr><td class="k">Provenance &amp; trust</td><td>crowdsourced skill / mocap uploads from strangers</td><td class="mono">§3.4</td></tr>
-      <tr><td class="k">Safety verification</td><td>"every skill scanned, tested, verified" — how, exactly?</td><td class="mono new">new</td></tr>
-      <tr><td class="k">Skill composition</td><td>can two downloaded skills combine into a third?</td><td class="mono">§3.4</td></tr>
-      <tr><td class="k">Portability standards / skill ontology</td><td>shared preconditions · effects · embodiment profiles</td><td class="mono"><a class="lnk" href="https://arxiv.org/abs/2212.09242" target="_blank" rel="noopener">2212.09242</a></td></tr>
-      <tr><td class="k">Local vs shared libraries</td><td>self-built (ASPIRE) vs marketplace-downloaded (UniStore)</td><td class="mono">§3.4</td></tr>
-    </tbody>
-  </table></div>
-  <div class="cap">§7 · The commercial skill store (§2) surfaces these as <b>live</b> research problems, not hypotheticals — the survey's forward agenda.</div>
-
-  <footer>📊 Citations = Semantic Scholar snapshots, 5 Jul 2026 (drift daily · lower than Google Scholar) · years use venue where known, else arXiv · anchor: <a href="https://arxiv.org/abs/2607.00272">ASPIRE (arXiv:2607.00272)</a></footer>
+  <div class="sitefoot">Static site on GitHub Pages · each project is a folder of HTML pages under <code>docs/</code>.</div>
 </div>
-
-<script src="assets/matrix.js?v=2"></script>
-<script src="assets/tree.js?v=2"></script>
 </body>
 </html>
