@@ -10,7 +10,7 @@ Table~\ref{tab:compare_main} compares all systems in the map on what each \emph{
 it is evaluated, and whether it improves from its own experience.
 \input{tables/tab_compare_main}
 
-\subsection{Survey methodology: how the corpus was built}
+\subsection{Survey methodology: building and partitioning the corpus}
 \label{sec:method}
 
 Figure~\ref{fig:prisma} summarises the corpus construction in the PRISMA~2020
@@ -39,6 +39,27 @@ and arXiv identifier. Every reference in this survey passed the verification ste
 that failed it were discarded at harvest time, and we report that their count was not logged
 rather than estimate it. Included systems were then mapped onto the taxonomy of
 Figure~\ref{fig:taxonomy_main} by the mechanism definitions of Table~\ref{tab:defs}.
+
+\paragraph{Placement: why a system enters the taxonomy or the landscape.}
+Corpus membership and placement \emph{within} the corpus are two separate decisions, and it is the
+second that produces the 77/225 split. A verified work is \emph{taxonomised}, that is, promoted to
+the 77 systems of Figure~\ref{fig:taxonomy_main} and scored on all six axes of
+Tables~\ref{tab:compare_main}--\ref{tab:compare_34}, only when it passes three tests.
+(i)~\textbf{Axis-placeable}: it takes an unambiguous position on the weights-versus-skills question
+and, for skill-authoring systems, on the self-improvement ladder of \S\ref{sec:code}, so that its
+branch is determined rather than argued. (ii)~\textbf{Distinct}: it contributes a mechanism, rung,
+or branch exemplar not already carried by a system in the map, rather than a near-variant, ablation,
+or reimplementation of one. (iii)~\textbf{Fully characterisable}: its primary source reports enough
+of what it \emph{ships}, how it learns, where it is evaluated, and whether it self-improves to fill
+every comparison column without inference. A verified work that fails any one test is kept rather
+than dropped: it stays in the landscape appendix (Table~\ref{tab:landscape}) as coverage evidence,
+which is where precursors, same-point variants, and the supporting datasets, benchmarks, and
+simulators live. Two further rules keep the map legible on a single page. First, when several
+systems make the same taxonomic point, we taxonomise the earliest or most load-bearing landmark and
+catalogue the rest in the landscape. Second, pure perception, navigation, or locomotion work is
+taxonomised only when it directly authors or improves a manipulation skill, and otherwise anchors
+its area in the landscape alone. The 77/225 split is therefore a statement about analytical
+\emph{role}, sharp exemplar versus representative breadth, not about a work's quality or importance.
 
 \input{figures/fig_prisma}
 
