@@ -1,0 +1,76 @@
+% Cover letter for ACM Computing Surveys (editor-facing; not part of the manuscript).
+% Compile with:  pdflatex cover_letter.tex   ->  cover_letter.pdf
+\documentclass[11pt]{article}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{parskip}
+\setlength{\parskip}{0.4em plus 1pt minus 1pt}
+\linespread{0.96}
+\pagestyle{empty}
+\begin{document}
+
+\noindent\textbf{Date:} July 2026\\
+\textbf{To:} The Editor-in-Chief, ACM Computing Surveys\\
+\textbf{Re:} Submission of \emph{``Weights or Skills? A Survey of Robot-Learning Techniques:
+from Action-Predicting Weights to Robots that Write their Own Skills''}\\
+\textbf{Article type:} Survey\\
+\textbf{Corresponding author:} [Name, affiliation, email]
+
+\smallskip
+\noindent Dear Editor-in-Chief,
+
+We submit \emph{``Weights or Skills?''} for consideration as a Survey in ACM Computing Surveys.
+The manuscript organizes the fast-moving field of robot learning along a single original axis,
+\textbf{what a system ships}: a generalist policy can ship frozen neural-network \textbf{weights}
+that map observations directly to actions (the vision-language-action, or VLA, family), or it can
+ship executable \textbf{skills} as code that the robot writes, debugs, and improves from its own
+experience (the code-as-policy family). To our knowledge, no existing survey organizes the field
+by this weights-versus-skills contrast.
+
+This structure is needed because the field is fragmenting into two research cultures that rarely
+cite each other, and recent surveys track only one pole at a time. Placing both poles on a common
+axis makes them directly comparable on what they ship, where they are evaluated, and whether they
+keep improving after deployment. On top of that axis the survey makes two contributions that, to
+our knowledge, no prior survey provides: (i)~it arranges code-as-policy methods by \textbf{degree
+of self-improvement}, giving operational definitions of the feedback, memory, and search
+mechanisms with necessary-and-sufficient conditions for each rung, and it identifies the sparsely
+populated cell in which execution feedback, persistent skill memory, and evolutionary search
+combine into one open-ended loop, which only a few very recent systems occupy; and (ii)~it
+connects the taxonomy to the emerging \textbf{robot skill economy}, in which skill marketplaces
+distribute one-tap skills across robots, surfacing open problems in adaptation, cross-embodiment
+portability, provenance, safety verification, and standardisation.
+
+We have checked CSUR's recent volumes and the wider literature to position the work. The nearest
+CSUR surveys address adjacent but distinct territory: robot navigation via foundation language
+models (pipeline-stage scope, navigation only), embodied intelligence as a synergy of morphology,
+action, perception, and learning (morphology-centric), world models, and an earlier comprehensive
+survey of hierarchical reinforcement learning that predates the LLM code-as-policy shift. Beyond
+CSUR, the strongest incumbents each cover a single pole or a single sub-area: the
+vision-language-action survey treats only the weights pole; the recent self-evolving-agents
+surveys treat the self-improvement pole but are embodiment-agnostic rather than robot-specific; and
+surveys of LLM-enhanced reinforcement learning, cross-domain policy transfer, and generative
+robotic manipulation each own one of our supporting sub-sections. We cite these as the authorities
+for their sub-areas and frame our value as the cross-cutting synthesis plus the two novel
+contributions above, not as fresh coverage of any one topic. We found no survey, in CSUR or
+elsewhere, that organizes robot learning by weights versus skills, arranges code-as-policy by
+degree of self-improvement, or treats the robot skill economy.
+
+The treatment is comprehensive. It draws on 311 references and 302 systems: 77 placed in the
+taxonomy and compared across six per-family tables, plus 225 further works catalogued in a
+landscape appendix, spanning January 2016 to July 2026 and assembled by a documented two-pass,
+PRISMA-style methodology with explicit inclusion and core-versus-appendix placement criteria. The
+package includes an original taxonomy figure in the introduction, a comparison table that
+organizes the surveyed literature, a family-by-six-axes spec matrix, and an open-problems agenda
+whose future directions are anchored on measurable quantities and named testbeds.
+
+The manuscript is 40 pages in the \texttt{acmsmall} format and is prepared double-anonymous for
+review. The work is original, has not been published previously, and is not under consideration
+elsewhere. The authors declare no conflicts of interest [confirm before sending]. We suggest the
+following reviewers, chosen for breadth across both poles and free of collaboration conflicts:
+[list 4+ names, affiliations, emails]. Thank you for considering the manuscript.
+
+\enlargethispage{2\baselineskip}
+\smallskip
+\noindent Sincerely,\\[2pt]
+[Authors, on behalf of all co-authors]
+
+\end{document}
